@@ -1,0 +1,14 @@
+# Traduction de Adept v2.X Class Features
+
+Allez à la page : https://www.gmbinder.com/share/-Lt5h99cNy9JF9sKolty
+
+## Traduire
+
+Exécuter le code du contenu du fichier `translate.js` dans la console du navigateur de la page.
+
+## En cas d'issue
+
+Si le contenu cible a été modifié, vous allez obtenir des erreurs dans la console. Il faudra alors mettre à jours le contenu du fichier avec les nouveaux updates. Pour vous aidez dans cette tâche, en plus des messages d'erreur, vous avez ces informations.
+
+- Changelog : https://docs.google.com/document/d/1fHzv6JHE_79DlINcKluvMt1VUfq7TDH8AQJyhe0APB4/edit
+- Auteur original : https://twitter.com/RighteousForest/status/1301884748579602433)
