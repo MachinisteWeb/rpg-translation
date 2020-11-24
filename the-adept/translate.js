@@ -2,7 +2,58 @@ var jq = document.createElement('script');
 jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
 document.getElementsByTagName('head')[0].appendChild(jq);
 jq.addEventListener('load', function () {
+	var output = '';
+
 	jQuery.noConflict();
+
+	function generateOutput(item, fr) {
+		if (item.includes('h2')) {
+			output += '\r\n\r\n\r\n\r\n\r\n## '
+			output += fr.trim()
+		} else if (item.includes('h3')) {
+			output += '\r\n\r\n\r\n\r\n### '
+			output += fr.trim()
+		} else if (item.includes('h4')) {
+			output += '\r\n\r\n\r\n#### '
+			output += fr.trim()
+		} else if (item.includes('h5')) {
+			output += '\r\n\r\n##### '
+			output += fr.trim()
+		} else if (item.includes('h6')) {
+			output += '\r\n###### '
+			output += fr.trim()
+		} else if (item.includes('> p')) {
+			output += '\r\n\r\n'
+			output += fr.trim()
+		} else if (item.includes('> li')) {
+			output += '\r\n* '
+			output += fr.trim()
+		}
+	}
+
+	function alternativeList(extraspace) {
+		if (extraspace) {
+			output += '\r\n'
+		}
+		output += '\r\n___'
+	}
+
+	function margin(size) {
+		output += '\r\n<div style="margin-top: ' + size + 'px"></div>'
+	}
+
+	function breakPage() {
+		output += '\n\r\r\n\\page'
+	}
+
+	function pageNumber(number, title) {
+		output += '\r\n\r\n<div class="pageNumber">' + number + '</div>'
+		output += '\r\n<div class="footnote">' + title + '</div>'
+	}
+
+	function plainTag(content) {
+		output += '\r\n' + content
+	}
 
 	function translateItem(item, en, fr, html) {
 		if (jQuery(item).length === 0) {
@@ -10,10 +61,16 @@ jq.addEventListener('load', function () {
 		}
 
 		jQuery(item).each(function (i, content) {
+			var value;
+
 			if (!html) {
 				if (jQuery(content).text().trim() === en.trim()) {
-					jQuery(content).text(fr.trim());
-				} else if (jQuery(content).text().trim() === fr.trim()) {
+					value = fr.trim();
+
+					jQuery(content).text(value);
+
+					generateOutput(item, value);
+				} else if (jQuery(content).text().trim() === value) {
 					console.log(`The following selector “${item}” FR source is already translated.`);
 				} else {
 					console.error(`The following selector “${item}” EN source have changed.`);
@@ -22,8 +79,15 @@ jq.addEventListener('load', function () {
 
 			if (html) {
 				if (jQuery(content).html().trim() === en.trim()) {
-					jQuery(content).html(fr.trim());
-				} else if (jQuery(content).html().trim() === fr.trim()) {
+					value = fr.trim();
+
+					jQuery(content).html(value);
+
+					value = value.replace(/<em>(.+)<\/em>/g, '(*$1*)')
+					value = value.replace(/<strong>(.+)<\/strong>/g, '**$1**')
+
+					generateOutput(item, value);
+				} else if (jQuery(content).html().trim() === value) {
 					console.log(`The following selector “${item}” FR source is already translated.`);
 				} else {
 					console.error(`The following selector “${item}” EN source have changed.`);
@@ -35,6 +99,148 @@ jq.addEventListener('load', function () {
 // TRADUCTION
 
 		// Adept
+		plainTag(`<style>
+  @font-face{font-family:NodestoCaps;src:url('https://www.gmbinder.com/assets/fonts/Nodesto Caps Condensed.otf') format('opentype');font-weight:normal;font-style:normal}
+  .cover-header {
+    position: absolute;
+    font-family: NodestoCaps,nodesto,sans-serif;
+    transform: scale(2, 2) !important;
+    font-weight: normal;
+    font-size: 36px;
+    color: white;
+    width: 700px;
+    text-shadow: 1px 1px 2px #000000, -1px 1px 2px #000000, 1px -1px 2px #000000, -1px -1px 2px #000000;
+    transform: scaleY(3) scaleX(1);
+    top: 50px;
+    text-align: center;
+  }
+  .cover-bottom {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	font-family: NodestoCaps,nodesto,sans-serif;
+  	color: #fff;
+  	font-size: 1.6rem;
+    text-shadow: 1px 1px 2px #000000, -1px 1px 2px #000000, 1px -1px 2px #000000, -1px -1px 2px #000000;
+    text-align: center;
+    width: 100%;
+    line-height: 1.9rem
+  }
+  .cover-splotch {
+    background-image: url('https://www.gmbinder.com/assets/img/UNR8ilF.png');
+    background-size: 350px;
+    position: absolute;
+    left: 0;
+    bottom: 180px;
+    width: 345px;
+    height: 56px;
+  }
+  #p1:after { display:none; }
+  .phb{
+    width : 210mm;
+    height : 296.8mm;
+  }
+  .phb:nth-child(even) .footnote {
+	margin-left: -15px;
+  }
+  .phb:nth-child(odd) .footnote {
+	right 66px;
+  }
+  #p5{
+  	text-align: center;
+  }
+  #p5:after{
+  	display: none;
+  }
+  #p7 > p {
+  	margin-left: 15px;
+  }
+  #table-des-mati-res {
+  	text-align: center;
+  }
+  .toc h3 {
+    margin-bottom: 4px !important;
+    margin-top: 10px !important;
+    line-height: initial !important;
+  }
+  .toc h4 {
+  	margin-top: .2em;
+  	margin-left: 10px !important;
+  }
+  .toc p {
+  	margin-left: 20px !important;
+  }
+</style>
+
+<div class="cover-header">
+<div style="margin-top:165px;"></div>
+CLASSE ADEPTE
+</div>
+<div class="cover-splotch"></div>
+<div class="cover-bottom">
+<div style="margin-top:986px;"></div>
+Tout ce dont un joueur a besoin pour endosser des<br>
+personnages heroïques dans le monde de Weyard
+</div>
+
+<img src="https://images-na.ssl-images-amazon.com/images/I/81t6P5V02AL._AC_SL1500_.jpg" style="position:absolute; top:0px; right:-100px; width:1000px">
+<img src="https://pngimage.net/wp-content/uploads/2018/06/golden-sun-png.png" style="position:absolute; top:80px; right:40px; width:700px">
+<img src="https://www.gmbinder.com/images/SGYtcP2.png" style="position:absolute; top:290px; right:90px; width:580px">
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<div style='margin-top:450px;'></div>
+
+# PLAYER'S HANDBOOK HOMEBREW
+
+<div style='margin-top:25px'></div>
+<div class='wide'>
+##### Classe ADEPTE de GOLDEN SUN — Extension du MANUEL DES JOUEURS
+</div>
+
+\\page
+
+##### Crédit
+<br>
+___
+* **Document originaux :** Adept v2.X (https://docs.google.com/document/d/1fHzv6JHE_79DlINcKluvMt1VUfq7TDH8AQJyhe0APB4/edit)
+* **Auteur original :** @RighteousForest (https://twitter.com/RighteousForest/status/1301884748579602433)
+<br><br>
+___
+* **Adaptation française :** MachinisteWeb (https://www.lesieur.name/)
+
+\\page
+
+<div class="toc">
+# Table des matières
+
+### Partie 1
+  
+#### Chapitre 3 : Les classes
+
+Adepte ..................................................................................... 4
+</div>`)
+
+		breakPage()
+
+		plainTag('\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; left: 0; width: 420mm">');
+		plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-170px; right:0px; width:1000px">');
+		plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:20px;right: 398px;width: 362px;transform:scalex(1);">');
+		plainTag('\n\r<br>')
+		plainTag('<div style="margin-top:619px"></div>')
+
 		translateItem('section#adept h2#adept',
 			`Adept`,
 			`Adepte`
@@ -55,6 +261,9 @@ jq.addEventListener('load', function () {
 			`United by their ability to control the four elements, adepts are practitioners of an ancient form of magic. Whether they choose to take up arms against evil that threatens to upset the balance or devote themselves to preserving their near-forgotten history, those who possess the gift of Psynergy can unlock immense power.`,
 			`Unis par leur aptitude à contrôler les quatre éléments, les adeptes sont des praticiens d'une forme ancienne de magie. Qu'ils choisissent de prendre les armes contre le mal qui menace de rompre l'équilibre ou de se consacrer à la préservation de leur histoire presque oubliée, ceux qui possèdent le don de la Psynergie peuvent déployer un pouvoir immense.`
 		)
+
+			plainTag('\n\r<br>')
+			plainTag('<div style="margin-top:525px"></div>')
 
 			// The Power of Elemental Spirits
 			translateItem('section#adept-the-power-of-elemental-spirits h3#adept-the-power-of-elemental-spirits',
@@ -77,6 +286,16 @@ jq.addEventListener('load', function () {
 				`Due to the typically hereditary nature of adepts' powers, there exist many small villages where nearly every resident is an adept tied to a single element. Despite a shared heritage, the adepts of the present day have little communication with and awareness of each other. The secrecy and dwindling numbers of the adepts is perhaps their greatest downfall, as the poor recordkeeping of ancient adepts has resulted in many secrets being lost to time. It's common for adepts to conceal the existence of Psynergy and the djinn from the common folk, only revealing their abilities to trusted individuals. Sadly, this can also mean that adepts unknowingly hide from each other.`,
 				`En raison de la nature typiquement héréditaire des pouvoirs des adeptes, il existe de nombreux petits villages où presque chaque résident est un adepte lié à un seul élément. Malgré un héritage commun, les adeptes d'aujourd'hui ont peu de communication et de conscience les uns des autres. Le secret et la diminution du nombre d'adeptes est peut-être leur plus grande perte, car la mauvaise tenue des archives des anciens adeptes a entraîné la perte de nombreux secrets dans le temps. Il est fréquent que les adeptes dissimulent l'existence de la Psynergie et du djinn aux gens du commun, ne révélant leurs aptitudes qu'à des personnes de confiance. Malheureusement, cela signifie également que les adeptes se cachent les uns des autres sans le savoir.`
 			)
+
+			pageNumber(4, 'CHAPITRE 3 : LES CLASSES')
+			breakPage()
+
+			plainTag('\n\r\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; right: 0; width: 420mm">');
+			plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-220px; right:-90px; width:1200px;transform:rotate(-30deg)">');
+
+			plainTag('\n\r<br>')
+			plainTag('<div style="margin-top:550px"></div>')
+
 			translateItem('#adept-a-culture-of-magic > p:nth-child(3)',
 				`Most with the potential live as scholars, training more to keep their tradition alive than to become powerful mages and warriors. Those who leave home and become adventurers often seek to keep the balance of the four elements in check. Particularly ambitious adepts sometimes venture forth to find others of their kind. Nearly all Adept adventurers love finding and exploring ancient ruins. Adepts and druids tend to get along well, as their philosophies are very similar. In fact, most adepts born to non-adept families are falsely believed to have an innate gift for druidcraft until they are visited by a djinni and the origin of their powers is revealed. Such adepts are often trained by the djinn that find them, who often suggest they seek out an adept village to complete their training.`,
 				`La plupart de ceux qui ont le potentiel vivent comme des érudits, s'entraînant davantage pour maintenir leur tradition en vie que pour devenir de puissants mages et guerriers. Ceux qui quittent leur foyer et deviennent des aventuriers cherchent souvent à maintenir l'équilibre entre les quatre éléments. Les adeptes particulièrement ambitieux s'aventurent parfois à en trouver d'autres de leur genre. Presque tous les aventuriers adeptes aiment trouver et explorer des ruines anciennes. Les adeptes et les druides ont tendance à bien s'entendre, car leurs philosophies sont très similaires. En fait, on croit à tort que la plupart des adeptes nés dans des familles non adeptes ont un don inné pour la druiderie, jusqu'à ce qu'un djinn leur rende visite et leur révèle l'origine de leurs pouvoirs. Ces adeptes sont souvent formés par le djinn qui les trouve, qui leur suggère souvent de chercher un village d'adeptes pour compléter leur formation.`
@@ -93,6 +312,10 @@ jq.addEventListener('load', function () {
 				`Your adept is focused in only one of the four elements, and it is worth considering which one carefully. While there is some overlap between their areas of influence and djinn provide limited access to their own elements, most of an adept's magic comes from a single element. There is surprisingly little cultural tension between adepts of different elements, and two adepts meeting on the road is considered a fortuitous event.`,
 				`Votre adepte ne se concentre que sur l'un des quatre éléments, et il est important d'examiner soigneusement lequel. Bien qu'il y ait certains recoupements entre leurs zones d'influence et que les djinns ne donnent qu'un accès limité à leurs propres éléments, la magie d'un adepte provient en grande partie d'un seul élément. Il y a étonnamment peu de tension culturelle entre les adeptes des différents éléments, et la rencontre de deux adeptes sur la route est considérée comme un événement fortuit.`
 			)
+
+			plainTag('\n\r<br>')
+			plainTag('<div style="margin-top:521px"></div>')
+
 			translateItem('#adept-creating-an-adept > p:nth-child(3)',
 				`While all adepts have magic, some spend time training with arms and armor. It is very unusual for adepts raised outside of adept villages to become warriors, as mastering both Psynergy and combat simultaneously requires rigorous training. Though most adepts are mages, most adept adventurers are warriors.`,
 				`Si tous les adeptes disposent de la magie, certains passent du temps à s'entraîner avec des armes et des armures. Il est très rare que des adeptes élevés en dehors des villages d'adeptes deviennent des guerriers, car la maîtrise simultanée de la Psynergie et du combat nécessite un entraînement rigoureux. Bien que la plupart des adeptes soient des mages, la plupart des aventuriers adeptes sont des guerriers.`
@@ -127,6 +350,7 @@ jq.addEventListener('load', function () {
 					`Hit Points`,
 					`Points de vie`
 				)
+				alternativeList()
 				translateItem('#adept-class-features-hit-points > ul > li:nth-child(1)',
 					`<strong>Hit Dice:</strong> 1d6 per adept level`,
 					`<strong>Dés de vie :</strong> 1d6 par niveau d'adepte`,
@@ -143,12 +367,15 @@ jq.addEventListener('load', function () {
 					true
 				)
 
+				pageNumber(5, 'CHAPITRE 3 : LES CLASSES')
+				breakPage()
 
 				// Proficiencies
 				translateItem('section#adept-class-features-proficiencies h4#adept-class-features-proficiencies',
 					`Proficiencies`,
 					`Maîtrises`
 				)
+				alternativeList()
 				translateItem('#adept-class-features-proficiencies > ul:nth-child(3) > li:nth-child(1)',
 					`<strong>Armor:</strong> None`,
 					`<strong>Armures :</strong> aucune`,
@@ -165,6 +392,7 @@ jq.addEventListener('load', function () {
 					true
 				)
 
+				alternativeList(true)
 				translateItem('#adept-class-features-proficiencies > ul:nth-child(5) > li:nth-child(1)',
 					`<strong>Saving Throws:</strong> Intelligence, Wisdom`,
 					`<strong>Jets de sauvegarde :</strong> Intelligence, Sagesse`,
@@ -1332,16 +1560,18 @@ your background:`,
 
 // MISE EN PAGE
 
+	console.log(output)
+
 	// Move Page
-	jQuery('#p6').attr("id", 'p8');
+	/*jQuery('#p6').attr("id", 'p8');
 	jQuery('#p5').attr("id", 'p7');
 	jQuery('#p4').attr("id", 'p6');
 	jQuery('#p3').attr("id", 'p5');
 	jQuery('#p2').attr("id", 'p4');
-	jQuery('#p1').attr("id", 'p3');
+	jQuery('#p1').attr("id", 'p2');
 	
 	// Front Page
-	jQuery('#p3').before(
+	jQuery('#p2').before(
 		`
 			<div class="phb" id="p1"><section>
 			<style>
@@ -1352,17 +1582,17 @@ your background:`,
 			<section>
 			<div class="cover-diamond"></div>
 			<section>
-			<div class="cover-header">Adepte : classe D&amp;D 5e</div>
+			<div class="cover-header">Chapitre 1 : Classe Adepte</div>
 			<section>
 			<div class="cover-splotch"></div>
 			<section>
 			<div class="cover-footer">Un guide d'accompagnement à utiliser avec le Player's Handbook de Dungeons &amp; Dragons 5e pour amener Golden Sun à votre table de jeu de rôle.</div>
 			</section></section></section></section></section></section></div>
 		`
-	);
+	);*/
 
 	// Second Page
-	jQuery('#p3').before(
+	/*jQuery('#p3').before(
 		`
 			<div class="phb" id="p2">
 			<section>
@@ -1390,10 +1620,10 @@ your background:`,
 			</section>
 			</section></section></section></div>
 		`
-	);
+	);*/
 
 	// Add CSS
-	jQuery('head').append(
+	/*jQuery('head').append(
 		`<style>
 			.phb:after {
 				content: 'Ceci est un contenu de fan non officiel autorisé en vertu de la politique de contenu de fan. Non approuvé/endossé par Wizards. Certaines parties du matériel utilisé sont la propriété de Wizards of the Coast. ©Wizards of the Coast LLC.';
@@ -1410,13 +1640,48 @@ your background:`,
 	// Footnote
 	jQuery('#djinn-tracker-for-character-sheets- > section:nth-child(15) > section').remove();
 	jQuery('#djinn-tracker-for-character-sheets- > section:nth-child(15) > div').after(`<div class="pageNumber auto"></div>`);
-	jQuery('.footnote').text('HOMEBREW | CLASSE ADEPTE');	
+	jQuery('.footnote').text('CHAPITRE 1 | CLASSE ADEPTE');	
 
 	// Reformating for FR
-	jQuery('section#adept').prepend('<div style="margin-top:530px"></div>')
-	jQuery('#adept-class-features-equipment > section > div.footnote').after('<img src="https://www.gmbinder.com/images/x6YvTEU.png" style="position:absolute; top:20px; right:240px; width:650px;transform:scalex(-1)">');
+
+	// Page 2
+	jQuery('section#adept').prepend('<br /><div style="margin-top:621px"></div>')
+
+	jQuery('section#adept-the-power-of-elemental-spirits').before('<section id="add-1"></section>')
+	jQuery('#add-1').append(jQuery('section#adept-the-power-of-elemental-spirits'))
+	jQuery('section#adept-the-power-of-elemental-spirits').prepend('<br /><div style="margin-top:530px"></div>')
+
+	jQuery('#adept-class-features-equipment > section > div.footnote').after('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:20px;right: 398px;width: 362px;transform:scalex(1);">');
 	jQuery('#adept-class-features-equipment > section > div.footnote').after('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-170px; right:0px; width:1000px">');
-	jQuery('#adept-class-features-equipment > section > div.footnote').after('<img src="https://www.gmbinder.com/images/DAvzJCY.png" style="position:absolute; top:0px; right:-30px; width:1000px">');
+	jQuery('#adept-class-features-equipment > section > div.footnote').after('<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; left: 0; width: 420mm">');
+
+	// Page 3
+	jQuery('#p4').before(
+		`
+			<div class="phb" id="p3">
+				<section>
+					<div class="footnote">CHAPITRE 1 | CLASSE ADEPTE</div>
+
+					<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; right: 0; width: 420mm">
+					<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-220px; right:-90px; width:1200px;transform:rotate(-30deg)">
+
+					<div class="pageNumber auto"></div>
+				<section>
+			</div>
+		`
+	);
+	jQuery('#p3 > section').prepend(jQuery('#adept-a-culture-of-magic > p:nth-child(3)'));
+	jQuery('#p3 > section').prepend('<br /><div style="margin-top:558px"></div>');
+	jQuery('#p3 > section > p').after(jQuery('section#adept-creating-an-adept'));
+
+	jQuery('#adept-creating-an-adept > p:nth-child(3)').before('<section id="add-2"></section>')
+	jQuery('#add-2').append(jQuery('#adept-creating-an-adept > p:nth-child(3)'))
+	jQuery('#add-2').append(jQuery('section#adept-creating-an-adept-quick-build'))
+	jQuery('section#adept-creating-an-adept-quick-build').prepend('<br /><div style="margin-top:515px"></div>')
+	jQuery('#add-2').append(jQuery('section#adept-class-features'))
+	jQuery('section#adept').after(jQuery('section#adept-class-features-equipment'))
+	jQuery('section#adept-class-features-equipment').append(jQuery('#adept-creating-an-adept > p:nth-child(4)')) */
+
 
 	// Page 1
 	// jQuery('#adept-a-culture-of-magic > div').remove();
