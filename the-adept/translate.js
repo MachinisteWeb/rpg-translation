@@ -102,13 +102,16 @@ jq.addEventListener('load', function () {
 		plainTag(`<style>
   @font-face{font-family:NodestoCaps;src:url('https://www.gmbinder.com/assets/fonts/Nodesto Caps Condensed.otf') format('opentype');font-weight:normal;font-style:normal}
   .cover-header {
+  	top: 0;
+  	left: 0;
+    width: 100%;
+  	text-align: center;
     position: absolute;
     font-family: NodestoCaps,nodesto,sans-serif;
     transform: scale(2, 2) !important;
     font-weight: normal;
     font-size: 36px;
     color: white;
-    width: 700px;
     text-shadow: 1px 1px 2px #000000, -1px 1px 2px #000000, 1px -1px 2px #000000, -1px -1px 2px #000000;
     transform: scaleY(3) scaleX(1);
     top: 50px;
@@ -135,22 +138,30 @@ jq.addEventListener('load', function () {
     width: 345px;
     height: 56px;
   }
-  #p1:after { display:none; }
+  #p1:after,
+  #p2:after,
+  #p3:after,
+  #p4:after,
+  #p5:after,
+  #p6:after,
+  #p7:after,
+  #p16:after {
+  	display:none;
+  }
   .phb{
     width : 210mm;
     height : 296.8mm;
   }
   .phb:nth-child(even) .footnote {
 	margin-left: -15px;
+    width: 300px;
   }
   .phb:nth-child(odd) .footnote {
 	right 66px;
+    width: 300px;
   }
   #p5{
   	text-align: center;
-  }
-  #p5:after{
-  	display: none;
   }
   #p7 > p {
   	margin-left: 15px;
@@ -170,6 +181,83 @@ jq.addEventListener('load', function () {
   .toc p {
   	margin-left: 20px !important;
   }
+  .big h1 {
+  	font-size: 3.6rem;
+  }
+  .semi-big h2 {
+  	font-size: 2.1rem;
+  }
+  .partpage {
+  	text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(https://www.gmbinder.com/assets/img/pph.png);
+    background-size: cover;
+    background-position: center;
+    height: 217px;
+  }
+  .partpage h1 {
+    font-family: NodestoCaps;
+    font-size: 60pt;
+    font-weight: normal;
+    letter-spacing: -2px;
+    margin: 12px 0 -17.5px 0;
+  }
+  .partpage h5 {
+  	margin-top: 10px;
+    font-family: ScalySans;
+    font-size: 13pt;
+    color: #58180D;
+  }
+  .back-cover-header {
+    color: #ff2a1a;
+    font-family: NodestoCaps,sans-serif;
+    font-size: 64px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000000, -1px 1px 2px #000000, 1px -1px 2px #000000, -1px -1px 2px #000000;
+  }
+  .back-cover-text {
+    color: #fff;
+    font-family: sans-serif;
+  }
+  .back-cover-text p {
+    font-family: ScalySans,sans-serif;
+    line-height: 1.6em !important;
+    font-size: 16px;
+    padding-bottom: 25px;
+  }
+  .back-cover-diamond {
+    background-image: url(https://www.gmbinder.com/assets/img/DiamondDD.png);
+    background-size: 280px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 90px;
+    top: 110px;
+    width: 280px;
+    height: 8px;
+  }
+  .back-cover-close {
+    color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  .back-cover-close p {
+    font-family: ScalySans,sans-serif;
+    line-height: 1.6em !important;
+    font-size: 16px;
+    padding-bottom: 25px;
+  }
+  .back-cover-logo {
+    background-image: url(https://www.gmbinder.com/assets/img/logo-stacked-light.png);
+    background-size: 120px;
+    position: absolute;
+    left: 165px;
+    bottom: 95px;
+    width: 120px;
+    height: 74px;
+  }
 </style>
 
 <div class="cover-header">
@@ -183,9 +271,10 @@ Tout ce dont un joueur a besoin pour endosser des<br>
 personnages heroïques dans le monde de Weyard
 </div>
 
-<img src="https://images-na.ssl-images-amazon.com/images/I/81t6P5V02AL._AC_SL1500_.jpg" style="position:absolute; top:0px; right:-100px; width:1000px">
+<img src="https://i.pinimg.com/originals/e1/b0/63/e1b06382c76e958dbf4f7b40b34af4d9.jpg" style="position:absolute; top:-90px; right:-250px; width:1800px">
+<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/dnd-cover.png" style="position:absolute; top:20px; right:320px; width:160px">
 <img src="https://pngimage.net/wp-content/uploads/2018/06/golden-sun-png.png" style="position:absolute; top:80px; right:40px; width:700px">
-<img src="https://www.gmbinder.com/images/SGYtcP2.png" style="position:absolute; top:290px; right:90px; width:580px">
+<img src="https://www.gmbinder.com/images/SGYtcP2.png" style="position:absolute; top:290px; right:100px; width:580px">
 
 \\page
 
@@ -201,13 +290,19 @@ personnages heroïques dans le monde de Weyard
 
 \\page
 
-<div style='margin-top:450px;'></div>
+<div style='margin-top:300px;'></div>
 
-# PLAYER'S HANDBOOK HOMEBREW
+# Extension du
+<div class="big">
+# PLAYER'S HANDBOOK
+</div>
+
+<img src="https://www.gmbinder.com/images/SGYtcP2.png" style="position:absolute; top:320px; right:100px; width:580px">
+<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/dnd-n.png" style="position:absolute; top:1000px; right:350px; width:80px">
 
 <div style='margin-top:25px'></div>
-<div class='wide'>
-##### Classe ADEPTE de GOLDEN SUN — Extension du MANUEL DES JOUEURS
+<div class='wide semi-big'>
+## CLASSE ADEPTE DE GOLDEN SUN
 </div>
 
 \\page
@@ -217,29 +312,56 @@ personnages heroïques dans le monde de Weyard
 ___
 * **Document originaux :** Adept v2.X (https://docs.google.com/document/d/1fHzv6JHE_79DlINcKluvMt1VUfq7TDH8AQJyhe0APB4/edit)
 * **Auteur original :** @RighteousForest (https://twitter.com/RighteousForest/status/1301884748579602433)
-<br><br>
 ___
 * **Adaptation française :** MachinisteWeb (https://www.lesieur.name/)
+<br><br>
+
+___
+* **Image couverture :** Marton (https://stiusmarton.tumblr.com/post/139418963129/completed-an-old-drawing-imil-from-golden-sun)
+* **Image Adepte :** Orioto (https://www.deviantart.com/orioto/art/Elemental-Star-Chamber-593190127)
+* **Image Adepte :** GLV-DA (https://www.deviantart.com/glv-da/art/Golden-Sun-Mercury-lighthouse-662045625)
 
 \\page
 
 <div class="toc">
 # Table des matières
 
-### Partie 1
+### Partie 1                                                                        4
   
-#### Chapitre 3 : Les classes
+#### Chapitre 3 : Les classes                                         5
 
-Adepte ..................................................................................... 4
-</div>`)
+Adepte ..................................................................................... 6
+</div>
+
+\\page
+
+<div class="partpage">
+<section id="part-i">
+<h1 id="part-i">1<sup>er</sup> Partie</h1>
+<section id="part-i-creating-a-hero">
+<h5 id="part-i-creating-a-hero">La création de personnages</h5>
+</section>
+</section></div>
+
+<img src="https://images-na.ssl-images-amazon.com/images/I/81t6P5V02AL._AC_SL1500_.jpg" style="position:absolute; top:0px; right:-100px; width:1000px">
+
+<div class="pageNumber">4</div>
+<div class="footnote">1<sup>ère</sup> PARTIE : LA CRÉATION DE PERSONNAGES</div>
+
+\\page
+
+# Chapitre 3 : les classes
+
+<div class="pageNumber">5</div>
+<div class="footnote">CHAPITRE 3 : LES CLASSES</div>`)
 
 		breakPage()
 
-		plainTag('\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; left: 0; width: 420mm">');
-		plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-170px; right:0px; width:1000px">');
-		plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:20px;right: 398px;width: 362px;transform:scalex(1);">');
+		plainTag('\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:-30px; left: -140px; width: 240mm">');
+		plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-600px; right:-200px; width:1500px;transform:rotate(-47deg">');
+		plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:30px;left: 50px;width: 300px;transform:scalex(1);">');
 		plainTag('\n\r<br>')
-		plainTag('<div style="margin-top:619px"></div>')
+		plainTag('<div style="margin-top:503px"></div>')
 
 		translateItem('section#adept h2#adept',
 			`Adept`,
@@ -262,9 +384,6 @@ Adepte .........................................................................
 			`Unis par leur aptitude à contrôler les quatre éléments, les adeptes sont des praticiens d'une forme ancienne de magie. Qu'ils choisissent de prendre les armes contre le mal qui menace de rompre l'équilibre ou de se consacrer à la préservation de leur histoire presque oubliée, ceux qui possèdent le don de la Psynergie peuvent déployer un pouvoir immense.`
 		)
 
-			plainTag('\n\r<br>')
-			plainTag('<div style="margin-top:525px"></div>')
-
 			// The Power of Elemental Spirits
 			translateItem('section#adept-the-power-of-elemental-spirits h3#adept-the-power-of-elemental-spirits',
 				`The Power of Elemental Spirits`,
@@ -272,8 +391,13 @@ Adepte .........................................................................
 			)
 			translateItem('#adept-the-power-of-elemental-spirits > p',
 				`Psynergy is the magic of the adepts. A creature must either be born with the potential to become an adept or have such potential bestowed upon them by a powerful elemental. Adepts draw Psynergy from the forces of Earth, Fire, Water, and Wind through their connection to the djinn. Unlike the powerful djinn of the Elemental Plane of Air, these djinn are minor elemental spirits that are born on the material plane and embody aspects of the four elements. The djinn reveal themselves to adepts with values and goals that align with their own. Only through the resonance between an adept and their djinn can the true might of Psynergy be awakened.`,
-				`La Psynergie est la magie des adeptes. Une créature doit soit naître avec le potentiel de devenir un adepte, soit se voir attribuer ce potentiel par un puissant élémental. Les adeptes tirent la psynergie des forces de la Terre, du Feu, de l'Eau et du Vent grâce à leur connexion au djinn. Contrairement aux puissants djinns du plan élémentaire de l'air, ces djinns sont des esprits élémentaires mineurs qui naissent sur le plan matériel et incarnent des aspects des quatre éléments. Les djinns se révèlent aux adeptes avec des valeurs et des objectifs qui s'alignent sur les leurs. Ce n'est que par la résonance entre un adepte et son djinn que la véritable puissance de la Psynergie peut être éveillée.`
+				`La Psynergie est la magie des adeptes. Une créature doit soit naître avec le potentiel de devenir un adepte, soit se voir attribuer ce potentiel par un puissant élémental. Les adeptes tirent la psynergie des forces de la Terre, du Feu, de l'Eau et du Vent grâce à leur connexion au djinn.`
 			)
+
+			plainTag('\n\r<br>')
+			plainTag('<div style="margin-top:186px"></div>')
+
+			plainTag(`\n\rContrairement aux puissants djinns du plan élémentaire de l'air, ces djinns sont des esprits élémentaires mineurs qui naissent sur le plan matériel et incarnent des aspects des quatre éléments. Les djinns se révèlent aux adeptes avec des valeurs et des objectifs qui s'alignent sur les leurs. Ce n'est que par la résonance entre un adepte et son djinn que la véritable puissance de la Psynergie peut être éveillée.`)
 
 
 
@@ -286,22 +410,10 @@ Adepte .........................................................................
 				`Due to the typically hereditary nature of adepts' powers, there exist many small villages where nearly every resident is an adept tied to a single element. Despite a shared heritage, the adepts of the present day have little communication with and awareness of each other. The secrecy and dwindling numbers of the adepts is perhaps their greatest downfall, as the poor recordkeeping of ancient adepts has resulted in many secrets being lost to time. It's common for adepts to conceal the existence of Psynergy and the djinn from the common folk, only revealing their abilities to trusted individuals. Sadly, this can also mean that adepts unknowingly hide from each other.`,
 				`En raison de la nature typiquement héréditaire des pouvoirs des adeptes, il existe de nombreux petits villages où presque chaque résident est un adepte lié à un seul élément. Malgré un héritage commun, les adeptes d'aujourd'hui ont peu de communication et de conscience les uns des autres. Le secret et la diminution du nombre d'adeptes est peut-être leur plus grande perte, car la mauvaise tenue des archives des anciens adeptes a entraîné la perte de nombreux secrets dans le temps. Il est fréquent que les adeptes dissimulent l'existence de la Psynergie et du djinn aux gens du commun, ne révélant leurs aptitudes qu'à des personnes de confiance. Malheureusement, cela signifie également que les adeptes se cachent les uns des autres sans le savoir.`
 			)
-
-			pageNumber(4, 'CHAPITRE 3 : LES CLASSES')
-			breakPage()
-
-			plainTag('\n\r\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; right: 0; width: 420mm">');
-			plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-220px; right:-90px; width:1200px;transform:rotate(-30deg)">');
-
-			plainTag('\n\r<br>')
-			plainTag('<div style="margin-top:550px"></div>')
-
 			translateItem('#adept-a-culture-of-magic > p:nth-child(3)',
 				`Most with the potential live as scholars, training more to keep their tradition alive than to become powerful mages and warriors. Those who leave home and become adventurers often seek to keep the balance of the four elements in check. Particularly ambitious adepts sometimes venture forth to find others of their kind. Nearly all Adept adventurers love finding and exploring ancient ruins. Adepts and druids tend to get along well, as their philosophies are very similar. In fact, most adepts born to non-adept families are falsely believed to have an innate gift for druidcraft until they are visited by a djinni and the origin of their powers is revealed. Such adepts are often trained by the djinn that find them, who often suggest they seek out an adept village to complete their training.`,
 				`La plupart de ceux qui ont le potentiel vivent comme des érudits, s'entraînant davantage pour maintenir leur tradition en vie que pour devenir de puissants mages et guerriers. Ceux qui quittent leur foyer et deviennent des aventuriers cherchent souvent à maintenir l'équilibre entre les quatre éléments. Les adeptes particulièrement ambitieux s'aventurent parfois à en trouver d'autres de leur genre. Presque tous les aventuriers adeptes aiment trouver et explorer des ruines anciennes. Les adeptes et les druides ont tendance à bien s'entendre, car leurs philosophies sont très similaires. En fait, on croit à tort que la plupart des adeptes nés dans des familles non adeptes ont un don inné pour la druiderie, jusqu'à ce qu'un djinn leur rende visite et leur révèle l'origine de leurs pouvoirs. Ces adeptes sont souvent formés par le djinn qui les trouve, qui leur suggère souvent de chercher un village d'adeptes pour compléter leur formation.`
 			)
-
-
 
 			// Creating an Adept
 			translateItem('section#adept-creating-an-adept h3#adept-creating-an-adept',
@@ -312,6 +424,19 @@ Adepte .........................................................................
 				`Your adept is focused in only one of the four elements, and it is worth considering which one carefully. While there is some overlap between their areas of influence and djinn provide limited access to their own elements, most of an adept's magic comes from a single element. There is surprisingly little cultural tension between adepts of different elements, and two adepts meeting on the road is considered a fortuitous event.`,
 				`Votre adepte ne se concentre que sur l'un des quatre éléments, et il est important d'examiner soigneusement lequel. Bien qu'il y ait certains recoupements entre leurs zones d'influence et que les djinns ne donnent qu'un accès limité à leurs propres éléments, la magie d'un adepte provient en grande partie d'un seul élément. Il y a étonnamment peu de tension culturelle entre les adeptes des différents éléments, et la rencontre de deux adeptes sur la route est considérée comme un événement fortuit.`
 			)
+
+			pageNumber(6, 'CHAPITRE 3 : LES CLASSES')
+			breakPage()
+
+			plainTag('\n\r\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; right: 0; width: 420mm">');
+			plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-220px; right:-90px; width:1200px;transform:rotate(-30deg)">');
+
+			plainTag('\n\r<br>')
+			plainTag('<div style="margin-top:550px"></div>')
+
+
+
+
 
 			plainTag('\n\r<br>')
 			plainTag('<div style="margin-top:521px"></div>')
@@ -367,8 +492,85 @@ Adepte .........................................................................
 					true
 				)
 
-				pageNumber(5, 'CHAPITRE 3 : LES CLASSES')
-				breakPage()
+				pageNumber(7, 'CHAPITRE 3 : LES CLASSES')
+				//breakPage()
+
+plainTag(`\\page
+
+# Autres projets
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<section>
+<div style="margin-top:20px;"></div>
+<div class="back-cover-header">
+<p>Merci !</p>
+</div>
+</section>
+<section>
+<div class="back-cover-text">
+<p>Cet Homebrew a été réalisé par MachinisteWeb qui apprécie l'univers des jeu Golden Sun depuis de nombreuses années et qui voulaient l'introduire dans Dungeons &amp; Dragons pour que tout le monde puisse en profiter.</p>
+<p>C'est une véritable aventure pour moi, et j'ai beaucoup de plaisir à la réaliser et à l'améliorer. J'espére que cela apportera de la joie à de nombreuses tables D&amp;D dans le monde entier. Bonne chance à tous les adeptes et tous les djinns &lt;3</p>
+</div>
+</section>
+<section>
+<div class="back-cover-diamond" style="top: 600px;"></div>
+<div style="margin-top:155px;"></div>
+<div class="back-cover-close">
+<p>Saviez-vous que ce document a été réalisé avec NaturalCrit Homebrewery ? Je ne saurais trop insister sur le fait que c'est un outil fantastique pour créer des homebrew pour la 5e édition de D&amp;D.</p>
+</div>
+<div class="back-cover-logo"></div>
+</section>
+<section>
+<section>
+<img src="https://i.pinimg.com/originals/e1/b0/63/e1b06382c76e958dbf4f7b40b34af4d9.jpg" style="position:absolute; top:-90px; right:-1044px; width:1800px">
+<img src="https://www.gmbinder.com/images/x83va2I.png" style="position:absolute; top:0px; right:-100px; width:900px"></section>
+</section>`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				// Proficiencies
 				translateItem('section#adept-class-features-proficiencies h4#adept-class-features-proficiencies',
