@@ -6,24 +6,39 @@ jq.addEventListener('load', function () {
 
 	jQuery.noConflict();
 
+	quote = false;
+
 	function generateOutput(item, fr) {
-		if (item.includes('h2')) {
-			output += '\r\n\r\n\r\n\r\n\r\n## '
+		if (item.includes('h1')) {
+			output += '# '
+			output += fr.trim()
+		} else if (item.includes('h2')) {
+			output += '\r\n\r\n\r\n\r\n\r\n'
+			output += '## '
 			output += fr.trim()
 		} else if (item.includes('h3')) {
-			output += '\r\n\r\n\r\n\r\n### '
+			output += '\r\n\r\n\r\n\r\n'
+			output += '### '
 			output += fr.trim()
 		} else if (item.includes('h4')) {
-			output += '\r\n\r\n\r\n#### '
+			output += '\r\n\r\n\r\n'
+			output += '#### '
 			output += fr.trim()
 		} else if (item.includes('h5')) {
-			output += '\r\n\r\n##### '
+			output += '\r\n'
+			output += '\r\n'
+			if (quote) { output += '> ' }
+			output += '##### '
 			output += fr.trim()
 		} else if (item.includes('h6')) {
-			output += '\r\n###### '
+			output += '\r\n'
+			output += '###### '
 			output += fr.trim()
 		} else if (item.includes('> p')) {
-			output += '\r\n\r\n'
+			output += '\r\n'
+			if (quote) { output += '> ' }
+			output += '\r\n'
+			if (quote) { output += '> ' }
 			output += fr.trim()
 		} else if (item.includes('> li')) {
 			output += '\r\n* '
@@ -1889,12 +1904,14 @@ your background:`,
 				`Enfin, en passant 1 minute en méditation avec la nature, vous pouvez récupérer les points de Psynergie dépensés et resélectionner votre djinn lié comme si vous veniez de terminer un court repos. Vous devez ensuite terminer un long repos avant de le refaire.`
 			)
 
+			plainTag('\n\r<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/djinns.png" style="position:absolute; top:970px; left:60px; width:85mm">')
+
 	pageNumber(10, 'CHAPITRE 3 : LES CLASSES')
 
 	breakPage()
 
-	plainTag('\n\r<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ec3a9251-1fa4-480a-bd75-1f0600b20815/dhtd7o-8196ba72-073a-4787-93d0-bd6a1919235b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZWMzYTkyNTEtMWZhNC00ODBhLWJkNzUtMWYwNjAwYjIwODE1XC9kaHRkN28tODE5NmJhNzItMDczYS00Nzg3LTkzZDAtYmQ2YTE5MTkyMzViLmpwZyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl19.1gcPriNfJpFgln7QqdlpWt8wGU188L7dwVJMHUO40Zc" style="position:absolute; top:0px; left:-730px; width:480mm">');
-	plainTag('<img src="https://www.gmbinder.com/images/ohZghLL.png" style="position:absolute; top:0px; right:-100px; width:900px">');
+	plainTag('\n\r<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ec3a9251-1fa4-480a-bd75-1f0600b20815/dhtd7o-8196ba72-073a-4787-93d0-bd6a1919235b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZWMzYTkyNTEtMWZhNC00ODBhLWJkNzUtMWYwNjAwYjIwODE1XC9kaHRkN28tODE5NmJhNzItMDczYS00Nzg3LTkzZDAtYmQ2YTE5MTkyMzViLmpwZyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl19.1gcPriNfJpFgln7QqdlpWt8wGU188L7dwVJMHUO40Zc" style="position:absolute; top:0px; left:-740px; width:480mm">');
+	plainTag('<img src="https://www.gmbinder.com/images/ohZghLL.png" style="position:absolute; top:0px; right:-80px; width:900px">');
 	plainTag('\n\r<br>')
 	plainTag('<div style="margin-top:976px"></div>')
 
@@ -2001,6 +2018,33 @@ your background:`,
 
 
 				// Djinni Knowledge
+				translateItem('section#adept-adept-archetypes-elemental-mage-djinni-knowledge h4#adept-adept-archetypes-elemental-mage-djinni-knowledge',
+					`Djinni Knowledge`,
+					`Connaissance des djinns`
+				)
+				/*translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(2) > em',
+					`3rd-level Elemental Mage feature`,
+					`Aptitude de mage élémentaire de niveau 3`
+				)*/
+				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(3)',
+					`Your djinn share magical expertise with you, expanding`,
+					`À partir du niveau 3, votre djinn partage avec vous son expertise magique, élargissant ainsi votre répertoire de sorts.`
+				)
+				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(6)',
+					`Whenever one of your djinn becomes active, each of the spells on that djinni's Spells table for which your adept level is at least the level indicated in the Mage Level column of that table are considered known adept spells for you for as long as that djinni remains active. These spells don't count against your number of adept spells known.`,
+					`Chaque fois qu'un de vos djinns est lié, chacun des sorts du tableau des sorts de ce djinn pour lequel votre niveau d'adepte est au moins le niveau indiqué dans la colonne niveau de mage de ce tableau est considéré comme un sort d'adepte connu pour vous tant que ce djinn reste lié. Ces sorts ne sont pas comptabilisés dans le nombre de sorts d'adeptes connus.`
+				)
+				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(7)',
+					`When you become able to have multiple active djinn at once at higher levels, the appropriate spells from the lists associated with all of your active djinn are considered known adept spells for you.`,
+					`Lorsque vous devenez capable d'avoir plusieurs djinns actifs en même temps à des niveaux plus élevés, les sorts appropriés des listes associées à tous vos djinns liés sont considérés comme des sorts d'adeptes connus pour vous.`
+				)
+				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(8)',
+					`You can also cast any adept spell you know of 1st level or higher with spell slots you create with your Djinni Magic feature, in addition to your active djinn's associated spells.`,
+					`Vous pouvez également lancer n'importe quel sort d'adepte que vous connaissez de niveau 1 ou supérieur grâce aux emplacements de sorts que vous créez avec votre aptitude magie de djinn, en plus des sorts associés à votre djinn lié.`
+				)
+
+
+				// Elemental Savant
 				translateItem('section#adept-adept-archetypes-elemental-mage-elemental-savant h4#adept-adept-archetypes-elemental-mage-elemental-savant',
 					`Elemental Savant`,
 					`Savant élémentaire`
@@ -2011,8 +2055,15 @@ your background:`,
 				)*/
 				translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(3)',
 					`Your oneness with, and knowledge of, the elements allows you to tap into the powers of all four. For each element other than your own, choose one spell from the spell list available to adepts of that element. A spell you choose must be of a level for which you have spell slots, as shown on the Adept table, or a cantrip. The chosen spells count as adept spells for you but don't count against the number of adept spells you know.`,
-					`À partir du niveau 6, votre union avec les éléments et votre connaissance de ceux-ci vous permettent d'exploiter les pouvoirs des quatre. Pour chaque élément autre que le vôtre, choisissez un sort dans la liste des sorts disponibles pour les adeptes de cet élément. Le sort que vous choisissez doit être d'un niveau pour lequel vous disposez d'emplacements de sorts, comme indiqué dans le tableau des adeptes, ou d'un tour de magie. Les sorts choisis comptent comme des sorts d'adeptes pour vous mais ne comptent pas dans le nombre de sorts d'adeptes que vous connaissez.`
+					`À partir du niveau 6, votre union avec les éléments et votre connaissance de ceux-ci vous permettent d'exploiter les pouvoirs des quatre. Pour chaque élément autre que le vôtre, choisissez un sort dans la liste des sorts disponibles pour les adeptes de cet élément.\n\r\n\rLe sort que vous choisissez doit être d'un niveau pour lequel vous disposez d'emplacements de sorts, comme indiqué dans le tableau des adeptes, ou d'un tour de magie.`
 				)
+
+	pageNumber(11, 'CHAPITRE 3 : LES CLASSES')
+
+	breakPage()
+
+				plainTag(`Les sorts choisis comptent comme des sorts d'adeptes pour vous mais ne comptent pas dans le nombre de sorts d'adeptes que vous connaissez.`)
+
 				translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(4)',
 					`For example, an Earth adept could choose the <em>fire bolt</em> cantrip from the Fire adept spell list, the 2nd-level spell <em>magic weapon</em> from the Water adept spell list, and the 2nd-level spell <em>shatter</em> from the Wind adept spell list.`,
 					`Par exemple, un adepte de la Terre pourrait choisir le tour de magie <em>boule de feu</em> dans la liste des sorts d'adepte du Feu, le sort de niveau 2 <em>arme magique</em> dans la liste des sorts d'adepte de l'Eau, et le sort de niveau 2 <em>fragmentation</em> dans la liste des sorts d'adepte du Vent.`,
@@ -2024,7 +2075,7 @@ your background:`,
 				)
 
 
-				// Djinni Knowledge
+				// Elemental Augmentation
 				translateItem('section#adept-adept-archetypes-elemental-mage-elemental-augmentation h4#adept-adept-archetypes-elemental-mage-elemental-augmentation',
 					`Elemental Augmentation`,
 					`Augmentation élémentaire`
@@ -2037,16 +2088,6 @@ your background:`,
 					`Your elemental magic has become especially potent. You can add your Intelligence modifier to one damage or healing roll of any adept spell you cast or spirit you summon.`,
 					`Au niveau 14, votre magie élémentaire est devenue particulièrement puissante. Vous pouvez ajouter votre modificateur d'Intelligence à un jet de dégâts ou de soins de tout sort d'adepte que vous lancez ou de tout esprit que vous invoquez.`
 				)
-
-	pageNumber(11, 'CHAPITRE 3 : LES CLASSES')
-
-	breakPage()
-
-
-
-
-
-
 
 
 
@@ -2119,40 +2160,13 @@ your background:`,
 					`Armed Caster`,
 					`Porteur armé`
 				)
-				translateItem('#adept-adept-archetypes-elemental-warrior-armed-caster > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-warrior-armed-caster > p:nth-child(2) > em',
 					`1st-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 1`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-warrior-armed-caster > p:nth-child(3)',
 					`You gain proficiency with light and medium armor, shields, and all martial weapons. In addition, if you are proficient with`,
-					`Vous maîtrisez les armures légères et moyennes, les boucliers et toutes les armes de combat. De plus, si vous êtes compétent avec une arme que vous maîtrisez, vous pouvez l'utiliser comme focaliseur d'incantation pour le lancement de vos sorts d'adeptes.`
-				)
-
-
-				// Djinni Knowledge
-				translateItem('section#adept-adept-archetypes-elemental-mage-djinni-knowledge h4#adept-adept-archetypes-elemental-mage-djinni-knowledge',
-					`Djinni Knowledge`,
-					`Connaissance des djinns`
-				)
-				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(2) > em',
-					`3rd-level Elemental Mage feature`,
-					`Aptitude de mage élémentaire de niveau 3`
-				)
-				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(3)',
-					`Your djinn share magical expertise with you, expanding`,
-					`Votre djinn partage avec vous son expertise magique, élargissant ainsi votre répertoire de sorts.`
-				)
-				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(6)',
-					`Whenever one of your djinn becomes active, each of the spells on that djinni's Spells table for which your adept level is at least the level indicated in the Mage Level column of that table are considered known adept spells for you for as long as that djinni remains active. These spells don't count against your number of adept spells known.`,
-					`Chaque fois qu'un de vos djinns est lié, chacun des sorts du tableau des sorts de ce djinn pour lequel votre niveau d'adepte est au moins le niveau indiqué dans la colonne niveau de mage de ce tableau est considéré comme un sort d'adepte connu pour vous tant que ce djinn reste lié. Ces sorts ne sont pas comptabilisés dans le nombre de sorts d'adeptes connus.`
-				)
-				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(7)',
-					`When you become able to have multiple active djinn at once at higher levels, the appropriate spells from the lists associated with all of your active djinn are considered known adept spells for you.`,
-					`Lorsque vous devenez capable d'avoir plusieurs djinns actifs en même temps à des niveaux plus élevés, les sorts appropriés des listes associées à tous vos djinns liés sont considérés comme des sorts d'adeptes connus pour vous.`
-				)
-				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(8)',
-					`You can also cast any adept spell you know of 1st level or higher with spell slots you create with your Djinni Magic feature, in addition to your active djinn's associated spells.`,
-					`Vous pouvez également lancer n'importe quel sort d'adepte que vous connaissez de niveau 1 ou supérieur grâce aux emplacements de sorts que vous créez avec votre aptitude magie de djinn, en plus des sorts associés à votre djinn lié.`
+					`Au niveau 1, vous maîtrisez les armures légères et moyennes, les boucliers et toutes les armes de combat. De plus, si vous êtes compétent avec une arme que vous maîtrisez, vous pouvez l'utiliser comme focaliseur d'incantation pour le lancement de vos sorts d'adeptes.`
 				)
 
 
@@ -2161,13 +2175,13 @@ your background:`,
 					`Warrior's Resilience`,
 					`Résilience du guerrier`
 				)
-				translateItem('#adept-adept-archetypes-elemental-warrior-warriors-resilience > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-warrior-warriors-resilience > p:nth-child(2) > em',
 					`1st-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 1`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-warrior-warriors-resilience > p:nth-child(3)',
 					`You've learned how to take a hit and keep on hitting. Your hit point maximum increases by 2 when you gain this feature, and by 2 again whenever you gain a level in this class.`,
-					`Vous avez appris à prendre un coup et à encaisser. Vos points de vie maximums augmentent de 2 lorsque vous gagnez cette aptitude, et de 2 à nouveau chaque fois que vous gagnez un niveau dans cette classe.`
+					`À partir du niveau 1, vous avez appris à prendre un coup et à encaisser. Vos points de vie maximums augmentent de 2 lorsque vous gagnez cette aptitude, et de 2 à nouveau chaque fois que vous gagnez un niveau dans cette classe.`
 				)
 
 
@@ -2176,13 +2190,13 @@ your background:`,
 					`Unleashed Strike`,
 					`Frappe déchainée`
 				)
-				translateItem('#adept-adept-archetypes-elemental-warrior-unleashed-strike > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-warrior-unleashed-strike > p:nth-child(2) > em',
 					`3rd-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 3`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-warrior-unleashed-strike > p:nth-child(3)',
 					`You have the ability to enhance weapon attacks with the djinn's elemental magic.`,
-					`Vous avez la possibilité d'améliorer les attaques à l'arme grâce à la magie élémentaire du djinn.`
+					`À partir du niveau 3, vous avez la possibilité d'améliorer les attaques à l'arme grâce à la magie élémentaire du djinn.`
 				)
 				translateItem('#adept-adept-archetypes-elemental-warrior-unleashed-strike > p:nth-child(4)',
 					`When you hit with a weapon attack, you can expend one spell slot to deal additional damage to the target equal to 1d6 per level of the spell slot used, up to a maximum of 5d6. Your weapon and the extra damage are considered magical for that attack, and the damage type of the extra damage is determined by your active djinni, as detailed in each djinni's description. When you become able to have multiple active djinn at once at higher levels, you choose which one of your active djinn's Unleashed Strike damage types to use each time you use this feature. If you don't have an active djinni, such as after using the Spirit Summoning feature, the extra damage dealt is of the weapon's damage type.`,
@@ -2199,13 +2213,13 @@ your background:`,
 					`Extra Attack`,
 					`Attaque supplémentaire`
 				)
-				translateItem('#adept-adept-archetypes-elemental-warrior-extra-attack > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-warrior-extra-attack > p:nth-child(2) > em',
 					`6th-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 6`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-warrior-extra-attack > p:nth-child(3)',
 					`You can attack twice, instead of once, whenever you take the attack action on your turn.`,
-					`Vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous choisissez l'action attaquer lors votre tour.`
+					`À partir du niveau 6, vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous choisissez l'action attaquer lors votre tour.`
 				)
 
 
@@ -2214,16 +2228,18 @@ your background:`,
 					`Battle Magic`,
 					`Bataille magique`
 				)
-				translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic > p:nth-child(2) > em',
 					`14th-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 14`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic > p:nth-child(3)',
 					`You've learned how to follow up your elemental magic with a mighty blow. When you use your action to cast an adept spell or summon a spirit, you can make one weapon attack as a bonus action.`,
-					`Vous avez appris à asseiner un coup puissant après une attaque magique élémentaire. Lorsque vous utilisez votre action pour lancer un sort d'adepte ou invoquer un esprit, vous pouvez faire une attaque d'arme comme action bonus.`
+					`Au niveau 14, vous avez appris à asseiner un coup puissant après une attaque magique élémentaire. Lorsque vous utilisez votre action pour lancer un sort d'adepte ou invoquer un esprit, vous pouvez faire une attaque d'arme comme action bonus.`
 				)
 
 					// Optional Rule: Multiclassing
+					plainTag(`\n\r<br>`)
+					quote = true;
 					translateItem('section#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing h5#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing',
 						`Optional Rule: Multiclassing`,
 						`Règle optionnelle : multiclassage`
@@ -2252,20 +2268,130 @@ your background:`,
 						`<em><strong>Incantation.</strong></em> Ajoutez la moitié de vos niveaux (arrondis à l'entier supérieur) dans la classe d'adepte aux niveaux appropriés des autres classes pour déterminer vos emplacements de sorts disponibles.`,
 						true
 					)
+					quote = false;
 
+	plainTag('\n\r<img src="https://giantbomb1.cbsistatic.com/uploads/scale_medium/1/11164/437254-isaac2.jpg" style="position:absolute; top:725px; right:-80px; width:570px">');
+	plainTag('<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:0px; right:0px; width:900px;transform:scale(-1) rotate(-7deg)">');
+	
+	pageNumber(12, 'CHAPITRE 3 : LES CLASSES')
 
-
-
-
-
-
+	breakPage()
 
 	translateItem('section#djinn-tracker-for-character-sheets h1#djinn-tracker-for-character-sheets',
 		`Djinn Tracker for Character Sheets`,
 		`Suivi de djinn pour feuille de personnage`
 	)
 
-		translateItem('#djinn-tracker-for-character-sheets- > ul > li:nth-child(1) > strong',
+	plainTag(`___
+> ## Djinn :
+> ___
+> * **Élément :**
+> * **Frappe déchainée :**
+> * **Aptitude active :**
+>___
+> ### Sort
+> ***Niveau 1 :***
+>
+> ***Niveau 2 :***
+>
+> ***Niveau 3 :***
+>
+> ***Niveau 4 :***
+>
+> ***Niveau 5 :***
+
+___
+> ## Djinn :
+> ___
+> * **Élément :**
+> * **Frappe déchainée :**
+> * **Aptitude active :**
+>___
+> ### Sort
+> ***Niveau 1 :***
+>
+> ***Niveau 2 :***
+>
+> ***Niveau 3 :***
+>
+> ***Niveau 4 :***
+>
+> ***Niveau 5 :***
+  
+  
+___
+> ## Djinn :
+> ___
+> * **Élément :**
+> * **Frappe déchainée :**
+> * **Aptitude active :**
+>___
+> ### Sort
+> ***Niveau 1 :***
+>
+> ***Niveau 2 :***
+>
+> ***Niveau 3 :***
+>
+> ***Niveau 4 :***
+>
+> ***Niveau 5 :***
+
+___
+> ## Djinn :
+> ___
+> * **Élément :**
+> * **Frappe déchainée :**
+> * **Aptitude active :**
+>___
+> ### Sort
+> ***Niveau 1 :***
+>
+> ***Niveau 2 :***
+>
+> ***Niveau 3 :***
+>
+> ***Niveau 4 :***
+>
+> ***Niveau 5 :***
+  
+___
+> ## Djinn :
+> ___
+> * **Élément :**
+> * **Frappe déchainée :**
+> * **Aptitude active :**
+>___
+> ### Sort
+> ***Niveau 1 :***
+>
+> ***Niveau 2 :***
+>
+> ***Niveau 3 :***
+>
+> ***Niveau 4 :***
+>
+> ***Niveau 5 :***
+  
+___
+> ## Djinn :
+> ___
+> * **Élément :**
+> * **Frappe déchainée :**
+> * **Aptitude active :**
+>___
+> ### Sort
+> ***Niveau 1 :***
+>
+> ***Niveau 2 :***
+>
+> ***Niveau 3 :***
+>
+> ***Niveau 4 :***
+>
+> ***Niveau 5 :***`)
+
+		/*translateItem('#djinn-tracker-for-character-sheets- > ul > li:nth-child(1) > strong',
 			`Element`,
 			`Élément`
 		)
@@ -2502,9 +2628,9 @@ your background:`,
 			translateItem('#djinn-tracker-for-character-sheets-djinn-tracker-for-character-sheets--6-spells > p:nth-child(6) > em > strong',
 				`5th-Level:`,
 				`Niveau 5 :`
-			)
+			)*/
 
-	pageNumber(8, 'CHAPITRE 3 : LES CLASSES')
+	pageNumber(13, 'CHAPITRE 3 : LES CLASSES')
 
 	breakPage()
 
