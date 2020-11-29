@@ -28,6 +28,14 @@ jq.addEventListener('load', function () {
 		} else if (item.includes('> li')) {
 			output += '\r\n* '
 			output += fr.trim()
+		} else if (item.includes('table > thead > tr > th')) {
+			output += ' '
+			output += fr.trim()
+			output += ' |'
+		} else if (item.includes('table > tbody > tr:nth-child')) {
+			output += ' '
+			output += fr.trim()
+			output += ' |'
 		}
 	}
 
@@ -51,8 +59,11 @@ jq.addEventListener('load', function () {
 		output += '\r\n<div class="footnote">' + title + '</div>'
 	}
 
-	function plainTag(content) {
-		output += '\r\n' + content
+	function plainTag(content, nospace) {
+		if (!nospace) {
+			output += '\r\n'
+		}
+		output += content
 	}
 
 	function translateItem(item, en, fr, html) {
@@ -83,7 +94,7 @@ jq.addEventListener('load', function () {
 
 					jQuery(content).html(value);
 
-					value = value.replace(/<em>(.+)<\/em>/g, '(*$1*)')
+					value = value.replace(/<em>(.+)<\/em>/g, '*$1*')
 					value = value.replace(/<strong>(.+)<\/strong>/g, '**$1**')
 
 					generateOutput(item, value);
@@ -299,6 +310,12 @@ personnages heroïques dans le monde de Weyard
 
 <img src="https://www.gmbinder.com/images/SGYtcP2.png" style="position:absolute; top:320px; right:100px; width:580px">
 <img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/dnd-n.png" style="position:absolute; top:1000px; right:350px; width:80px">
+<img src="https://pbs.twimg.com/media/ElpvZ0WWMAEGZ6O?format=jpg&name=large" style="position:absolute; top:500px; right:0px; width: 210mm">
+<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-200px; right:0px; width:1050px;transform:rotate(180deg)">
+<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:230px; right:-80px; width:1050px;transform:rotate(0deg)">
+<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:200px; right:180px; width:1050px;transform:rotate(90deg)">
+<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:100px; left:80px; width:1050px;transform:rotate(270deg)">
+<img src="https://www.gmbinder.com/images/6aELefD.png" style="position:absolute; top:-270px; right:0px; width:900px">
 
 <div style='margin-top:25px'></div>
 <div class='wide semi-big'>
@@ -318,7 +335,9 @@ ___
 
 ___
 * **Image couverture :** Marton (https://stiusmarton.tumblr.com/post/139418963129/completed-an-old-drawing-imil-from-golden-sun)
-* **Image Adepte :** Orioto (https://www.deviantart.com/orioto/art/Elemental-Star-Chamber-593190127)
+* **Image présentation :** Fjado (https://twitter.com/Fjado_/status/1322491932015284224/photo/1)
+* **Image mage élémentaire :** OutlawStarStud (https://www.deviantart.com/outlawstarstud/art/Golden-Sun-Mia-Wallpaper-29923620)
+* **Image aptitude de classe :** Orioto (https://www.deviantart.com/orioto/art/Elemental-Star-Chamber-593190127)
 * **Image Adepte :** GLV-DA (https://www.deviantart.com/glv-da/art/Golden-Sun-Mercury-lighthouse-662045625)
 
 \\page
@@ -355,13 +374,13 @@ Adepte .........................................................................
 <div class="pageNumber">5</div>
 <div class="footnote">CHAPITRE 3 : LES CLASSES</div>`)
 
-		breakPage()
+	breakPage()
 
-		plainTag('\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:-30px; left: -140px; width: 240mm">');
-		plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-600px; right:-200px; width:1500px;transform:rotate(-47deg">');
-		plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:30px;left: 50px;width: 300px;transform:scalex(1);">');
-		plainTag('\n\r<br>')
-		plainTag('<div style="margin-top:503px"></div>')
+	plainTag('\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:-30px; left: -140px; width: 240mm">');
+	plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-600px; right:-200px; width:1500px;transform:rotate(-47deg">');
+	plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:30px;left: 50px;width: 300px;transform:scalex(1);">');
+	plainTag('\n\r<br>')
+	plainTag('<div style="margin-top:503px"></div>')
 
 		translateItem('section#adept h2#adept',
 			`Adept`,
@@ -369,7 +388,7 @@ Adepte .........................................................................
 		)
 		translateItem('#adept > p:nth-child(2)',
 			`An elderly gnome gripping a wooden staff raises her hand, calling slabs of stone out of the earth. The dragon's fiery breath licks the surface of the barrier as she hurriedly casts a spell to resuscitate her fallen companions.`,
-			`Un vieux gnome tenant un bâton en bois lève la main, appelant des blocs de pierre hors de la terre. Le souffle ardent du dragon lèche la surface de la barrière alors qu'elle s'empresse de jeter un sort pour ressusciter ses compagnons tombés.`
+			`Un vieux gnome armé d'un bâton de bois lève la main, construisant un bouclier de blocs de pierre sortie de la terre. Le souffle ardent du dragon lèche la surface de cette barrière alors même que l'adepte jete un sort pour ressusciter ses compagnons tombés.`
 		)
 		translateItem('#adept > p:nth-child(3)',
 			`A human teacher and the tiny red entity serving as his assistant stand before a small group of students, displaying the many ways in which fire can be shaped to one's will. Copying his instructor, a young boy conjures a pillar of burning light that blasts a hole in the roof of the schoolhouse.`,
@@ -377,11 +396,11 @@ Adepte .........................................................................
 		)
 		translateItem('#adept > p:nth-child(4)',
 			`The orc army's aggression falters as the half-elf general conjures a massive head made of clouds. Before the word to retreat can be given, the orcs are swept away in a whirlwind as the head exhales.`,
-			`L'agressivité de l'armée orque faiblit lorsque le demi-général invoque une tête massive faite de nuages. Avant que le signal de retraite ne soit donné, les orcs sont emportés dans un tourbillon par le souffle de la tête.`
+			`L'agressivité de l'armée orque faiblit lorsque le général demi-elf invoque une tête massive faite de nuages. Avant que le signal de retraite ne soit donné, les orcs sont emportés dans un tourbillon par le souffle de la tête.`
 		)
 		translateItem('#adept > p:nth-child(5)',
 			`United by their ability to control the four elements, adepts are practitioners of an ancient form of magic. Whether they choose to take up arms against evil that threatens to upset the balance or devote themselves to preserving their near-forgotten history, those who possess the gift of Psynergy can unlock immense power.`,
-			`Unis par leur aptitude à contrôler les quatre éléments, les adeptes sont des praticiens d'une forme ancienne de magie. Qu'ils choisissent de prendre les armes contre le mal qui menace de rompre l'équilibre ou de se consacrer à la préservation de leur histoire presque oubliée, ceux qui possèdent le don de la Psynergie peuvent déployer un pouvoir immense.`
+			`Unis par leur aptitude à contrôler les quatre éléments, les adeptes sont des praticiens d'une forme ancienne de magie. Qu'ils choisissent de prendre les armes contre le mal qui menace de rompre l'équilibre ou de se consacrer à la préservation de leur histoire presque oublié, ceux qui possèdent le don de la Psynergie peuvent déployer un pouvoir immense.`
 		)
 
 			// The Power of Elemental Spirits
@@ -391,13 +410,13 @@ Adepte .........................................................................
 			)
 			translateItem('#adept-the-power-of-elemental-spirits > p',
 				`Psynergy is the magic of the adepts. A creature must either be born with the potential to become an adept or have such potential bestowed upon them by a powerful elemental. Adepts draw Psynergy from the forces of Earth, Fire, Water, and Wind through their connection to the djinn. Unlike the powerful djinn of the Elemental Plane of Air, these djinn are minor elemental spirits that are born on the material plane and embody aspects of the four elements. The djinn reveal themselves to adepts with values and goals that align with their own. Only through the resonance between an adept and their djinn can the true might of Psynergy be awakened.`,
-				`La Psynergie est la magie des adeptes. Une créature doit soit naître avec le potentiel de devenir un adepte, soit se voir attribuer ce potentiel par un puissant élémental. Les adeptes tirent la psynergie des forces de la Terre, du Feu, de l'Eau et du Vent grâce à leur connexion au djinn.`
+				`La Psynergie est la magie des adeptes. Une créature doit soit naître avec le potentiel de devenir un adepte, soit se voir attribuer ce potentiel par un puissant élémental. Les adeptes tirent la Psynergie des forces de la Terre, du Feu, de l'Eau et du Vent grâce à leur liens aux djinns.`
 			)
 
-			plainTag('\n\r<br>')
-			plainTag('<div style="margin-top:186px"></div>')
+	plainTag('\n\r<br>')
+	plainTag('<div style="margin-top:186px"></div>')
 
-			plainTag(`\n\rContrairement aux puissants djinns du plan élémentaire de l'air, ces djinns sont des esprits élémentaires mineurs qui naissent sur le plan matériel et incarnent des aspects des quatre éléments. Les djinns se révèlent aux adeptes avec des valeurs et des objectifs qui s'alignent sur les leurs. Ce n'est que par la résonance entre un adepte et son djinn que la véritable puissance de la Psynergie peut être éveillée.`)
+	plainTag(`\n\rContrairement aux puissants djinns du plan élémentaire de l'air, ces djinns sont des esprits élémentaires mineurs qui naissent sur le plan matériel et incarnent des aspects des quatre éléments. Les djinns se révèlent aux adeptes avec des valeurs et des objectifs qui s'alignent sur les leurs. Ce n'est que par la résonance entre un adepte et son djinn que la véritable puissance de la Psynergie peut être éveillée.`)
 
 
 
@@ -408,7 +427,7 @@ Adepte .........................................................................
 			)
 			translateItem('#adept-a-culture-of-magic > p:nth-child(2)',
 				`Due to the typically hereditary nature of adepts' powers, there exist many small villages where nearly every resident is an adept tied to a single element. Despite a shared heritage, the adepts of the present day have little communication with and awareness of each other. The secrecy and dwindling numbers of the adepts is perhaps their greatest downfall, as the poor recordkeeping of ancient adepts has resulted in many secrets being lost to time. It's common for adepts to conceal the existence of Psynergy and the djinn from the common folk, only revealing their abilities to trusted individuals. Sadly, this can also mean that adepts unknowingly hide from each other.`,
-				`En raison de la nature typiquement héréditaire des pouvoirs des adeptes, il existe de nombreux petits villages où presque chaque résident est un adepte lié à un seul élément. Malgré un héritage commun, les adeptes d'aujourd'hui ont peu de communication et de conscience les uns des autres. Le secret et la diminution du nombre d'adeptes est peut-être leur plus grande perte, car la mauvaise tenue des archives des anciens adeptes a entraîné la perte de nombreux secrets dans le temps. Il est fréquent que les adeptes dissimulent l'existence de la Psynergie et du djinn aux gens du commun, ne révélant leurs aptitudes qu'à des personnes de confiance. Malheureusement, cela signifie également que les adeptes se cachent les uns des autres sans le savoir.`
+				`En raison de la nature typiquement héréditaire des pouvoirs des adeptes, il existe de nombreux petits villages où presque chaque résident est un adepte lié à un seul élément. Malgré un héritage commun, les adeptes d'aujourd'hui ont peu de communication et de conscience les uns des autres. Le secret et la diminution du nombre d'adeptes est peut-être leur plus grande perte, car la mauvaise tenue des archives des anciens adeptes a entraîné la perte de nombreux secrets dans le temps. Il est fréquent que les adeptes dissimulent l'existence de la Psynergie et des djinns aux gens du commun, ne révélant leurs aptitudes qu'à des personnes de confiance. Malheureusement, cela signifie également que les adeptes se cachent les uns des autres sans le savoir.`
 			)
 			translateItem('#adept-a-culture-of-magic > p:nth-child(3)',
 				`Most with the potential live as scholars, training more to keep their tradition alive than to become powerful mages and warriors. Those who leave home and become adventurers often seek to keep the balance of the four elements in check. Particularly ambitious adepts sometimes venture forth to find others of their kind. Nearly all Adept adventurers love finding and exploring ancient ruins. Adepts and druids tend to get along well, as their philosophies are very similar. In fact, most adepts born to non-adept families are falsely believed to have an innate gift for druidcraft until they are visited by a djinni and the origin of their powers is revealed. Such adepts are often trained by the djinn that find them, who often suggest they seek out an adept village to complete their training.`,
@@ -425,21 +444,1005 @@ Adepte .........................................................................
 				`Votre adepte ne se concentre que sur l'un des quatre éléments, et il est important d'examiner soigneusement lequel. Bien qu'il y ait certains recoupements entre leurs zones d'influence et que les djinns ne donnent qu'un accès limité à leurs propres éléments, la magie d'un adepte provient en grande partie d'un seul élément. Il y a étonnamment peu de tension culturelle entre les adeptes des différents éléments, et la rencontre de deux adeptes sur la route est considérée comme un événement fortuit.`
 			)
 
-			pageNumber(6, 'CHAPITRE 3 : LES CLASSES')
-			breakPage()
+	pageNumber(6, 'CHAPITRE 3 : LES CLASSES')
 
-			plainTag('\n\r\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; right: 0; width: 420mm">');
-			plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-220px; right:-90px; width:1200px;transform:rotate(-30deg)">');
+	breakPage()
 
-			plainTag('\n\r<br>')
-			plainTag('<div style="margin-top:550px"></div>')
+					// Table The Adept
+					plainTag('\n\r<div class="classTable wide">');
+					translateItem('section#adept-class-features-djinni-magic-the-adept-spell-slots- h5#adept-class-features-djinni-magic-the-adept-spell-slots-',
+						`-- The Adept --------------------------------------------------------------------------------------------------------------- Spell Slots --`,
+						`L'adepte                                                                                                                                             — Emplacements de sorts —`
+					)
+					plainTag('|');
 
 
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(1)',
+						`Level`,
+						`Niv`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(2)',
+						`Proficiency Bonus`,
+						`Bonus de maîtrise`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(3)',
+						`Features`,
+						`Aptitudes`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(4)',
+						`Djinn`,
+						`Djinn`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(5)',
+						`Cantrips Known`,
+						`Sorts mineurs connus`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(6)',
+						`Spells Known`,
+						`Sorts connus`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(7)',
+						`1st`,
+						`1`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(8)',
+						`2nd`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(9)',
+						`3rd`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(10)',
+						`4th`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(11)',
+						`5th`,
+						`5`
+					)
+					plainTag('|:---:|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|');
+					plainTag('|');
 
 
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+						`1st`,
+						`1`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+						`+2`,
+						`+2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+						`Focus Element, Spellcasting, Adept Archetype`,
+						`Élement maître, Incantation, Archétype d'adepte`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(6)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(7)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(8)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(9)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
 
-			plainTag('\n\r<br>')
-			plainTag('<div style="margin-top:521px"></div>')
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+						`2nd`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+						`+2`,
+						`+2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+						`Djinn (1 active djinni), Djinni Magic`,
+						`Djinn (1 djinn lié), Magie de djinn`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+						`1`,
+						`1`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(6)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(7)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(8)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(9)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+						`3rd`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+						`+2`,
+						`+2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+						`Adept Archetype feature`,
+						`Aptitude d'archétype d'adepte`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(6)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(7)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(8)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(9)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+						`4th`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+						`+2`,
+						`+2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+						`Ability Score Improvement`,
+						`Amélioration de caractéristiques`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(6)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(7)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(8)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(9)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+						`5th`,
+						`5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+						`+3`,
+						`+3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(6)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(8)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(9)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(1)',
+						`6th`,
+						`6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(2)',
+						`+3`,
+						`+3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(3)',
+						`Adept Archetype feature`,
+						`Aptitude d'archétype d'adepte`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(4)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(6)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(8)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(9)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(1)',
+						`7th`,
+						`7`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(2)',
+						`+3`,
+						`+3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(3)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(4)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(6)',
+						`5`,
+						`5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(9)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(1)',
+						`8th`,
+						`8`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(2)',
+						`+3`,
+						`+3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(3)',
+						`Ability Score Improvement`,
+						`Amélioration de caractéristiques`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(4)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(6)',
+						`5`,
+						`5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(9)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(1)',
+						`9th`,
+						`9`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(2)',
+						`+4`,
+						`+4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(3)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(4)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(5)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(6)',
+						`6`,
+						`6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(9)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(1)',
+						`10th`,
+						`10`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(2)',
+						`+4`,
+						`+4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(3)',
+						`Djinn (2 active djinn)`,
+						`Djinn (2 djinns liés)`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(4)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(5)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(6)',
+						`6`,
+						`6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(9)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(1)',
+						`11th`,
+						`11`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(2)',
+						`+4`,
+						`+4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(3)',
+						`Spirit Summoning (6th-level spirit)`,
+						`Invocation d'esprit (esprit niveau 6)`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(4)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(5)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(6)',
+						`7`,
+						`7`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(1)',
+						`12th`,
+						`12`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(2)',
+						`+4`,
+						`+4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(3)',
+						`Ability Score Improvement`,
+						`Amélioration de caractéristiques`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(4)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(5)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(6)',
+						`7`,
+						`7`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(10)',
+						`—`,
+						`—`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(1)',
+						`13th`,
+						`13`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(2)',
+						`+5`,
+						`+5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(3)',
+						`Spirit Summoning (7th-level spirit)`,
+						`Invocation d'esprit (esprit niveau 7)`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(4)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(5)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(6)',
+						`8`,
+						`8`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(10)',
+						`1`,
+						`1`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(1)',
+						`14th`,
+						`14`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(2)',
+						`+5`,
+						`+5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(3)',
+						`Adept Archetype feature`,
+						`Aptitude d'archétype d'adepte`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(4)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(5)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(6)',
+						`8`,
+						`8`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(10)',
+						`1`,
+						`1`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(1)',
+						`15th`,
+						`15`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(2)',
+						`+5`,
+						`+5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(3)',
+						`Spirit Summoning (8th-level spirit)`,
+						`Invocation d'esprit (esprit niveau 8)`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(4)',
+						`5`,
+						`5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(5)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(6)',
+						`9`,
+						`9`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(10)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(1)',
+						`16th`,
+						`16`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(2)',
+						`+5`,
+						`+5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(3)',
+						`Ability Score Improvement`,
+						`Amélioration de caractéristiques`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(4)',
+						`5`,
+						`5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(5)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(6)',
+						`9`,
+						`9`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(10)',
+						`2`,
+						`2`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(11)',
+						`—`,
+						`—`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(1)',
+						`17th`,
+						`17`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(2)',
+						`+6`,
+						`+6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(3)',
+						`Spirit Summoning (9th-level spirit)`,
+						`Invocation d'esprit (esprit niveau 9)`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(4)',
+						`5`,
+						`5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(5)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(6)',
+						`10`,
+						`10`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(10)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(11)',
+						`1`,
+						`1`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(1)',
+						`18th`,
+						`18`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(2)',
+						`+6`,
+						`+6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(3)',
+						`Djinn (3 active djinn)`,
+						`Djinn (3 djinns liés)`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(4)',
+						`5`,
+						`5`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(5)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(6)',
+						`10`,
+						`10`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(10)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(11)',
+						`1`,
+						`1`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(1)',
+						`19th`,
+						`19`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(2)',
+						`+6`,
+						`+6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(3)',
+						`Ability Score Improvement`,
+						`Amélioration de caractéristiques`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(4)',
+						`6`,
+						`6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(5)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(6)',
+						`11`,
+						`11`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(10)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(11)',
+						`2`,
+						`2`
+					)
+					plainTag('|');
+					
+
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(1)',
+						`20th`,
+						`20`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(2)',
+						`+6`,
+						`+6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(3)',
+						`One with the World`,
+						`Un avec le monde`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(4)',
+						`6`,
+						`6`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(5)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(6)',
+						`11`,
+						`11`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(7)',
+						`4`,
+						`4`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(8)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(9)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(10)',
+						`3`,
+						`3`
+					)
+					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(11)',
+						`2`,
+						`2`
+					)
+					plainTag(`</div>`);
 
 			translateItem('#adept-creating-an-adept > p:nth-child(3)',
 				`While all adepts have magic, some spend time training with arms and armor. It is very unusual for adepts raised outside of adept villages to become warriors, as mastering both Psynergy and combat simultaneously requires rigorous training. Though most adepts are mages, most adept adventurers are warriors.`,
@@ -453,8 +1456,11 @@ Adepte .........................................................................
 				)
 				translateItem('#adept-creating-an-adept-quick-build > p:nth-child(2)',
 					`You can make an adept quickly by following these suggestions. If you're an elemental mage, Intelligence should be your highest ability score, followed by Dexterity or Constitution. If you're an elemental warrior, Strength or Dexterity should be your highest ability score, followed by Intelligence. Then, choose the sage background.`,
-					`Vous pouvez créer rapidement votre adepte en suivant les suggestions suivantes. Si vous êtes un mage élémentaire, attribuez votre meilleur valeur de caractéristique à l'Intelligence, la suivante à la Dextérité ou la Constitution. Si vous êtes un guerrier élémentaire, attribuez plutôt votre meilleur valeur de caractéristique à la Force ou la Dextérité et la suivante à l'Intelligence. Ensuite, choisissez l'historique de sage.`
+					`Vous pouvez créer rapidement votre adepte en suivant les suggestions suivantes. Si vous êtes un mage élémentaire, attribuez votre meilleur valeur de caractéristique à l'Intelligence et la suivante à la Dextérité ou la Constitution. Si vous êtes un guerrier élémentaire, attribuez plutôt votre meilleur valeur de caractéristique à la Force ou la Dextérité et la suivante à l'Intelligence. Ensuite, choisissez l'historique de sage.`
 				)
+
+	plainTag('\n\r<br>')
+	plainTag('<div style="margin-top:128px"></div>')
 
 
 
@@ -492,85 +1498,6 @@ Adepte .........................................................................
 					true
 				)
 
-				pageNumber(7, 'CHAPITRE 3 : LES CLASSES')
-				//breakPage()
-
-plainTag(`\\page
-
-# Autres projets
-
-\\page
-
-<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
-
-\\page
-
-<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
-
-\\page
-
-<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
-
-\\page
-
-<section>
-<div style="margin-top:20px;"></div>
-<div class="back-cover-header">
-<p>Merci !</p>
-</div>
-</section>
-<section>
-<div class="back-cover-text">
-<p>Cet Homebrew a été réalisé par MachinisteWeb qui apprécie l'univers des jeu Golden Sun depuis de nombreuses années et qui voulaient l'introduire dans Dungeons &amp; Dragons pour que tout le monde puisse en profiter.</p>
-<p>C'est une véritable aventure pour moi, et j'ai beaucoup de plaisir à la réaliser et à l'améliorer. J'espére que cela apportera de la joie à de nombreuses tables D&amp;D dans le monde entier. Bonne chance à tous les adeptes et tous les djinns &lt;3</p>
-</div>
-</section>
-<section>
-<div class="back-cover-diamond" style="top: 600px;"></div>
-<div style="margin-top:155px;"></div>
-<div class="back-cover-close">
-<p>Saviez-vous que ce document a été réalisé avec NaturalCrit Homebrewery ? Je ne saurais trop insister sur le fait que c'est un outil fantastique pour créer des homebrew pour la 5e édition de D&amp;D.</p>
-</div>
-<div class="back-cover-logo"></div>
-</section>
-<section>
-<section>
-<img src="https://i.pinimg.com/originals/e1/b0/63/e1b06382c76e958dbf4f7b40b34af4d9.jpg" style="position:absolute; top:-90px; right:-1044px; width:1800px">
-<img src="https://www.gmbinder.com/images/x83va2I.png" style="position:absolute; top:0px; right:-100px; width:900px"></section>
-</section>`)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 				// Proficiencies
 				translateItem('section#adept-class-features-proficiencies h4#adept-class-features-proficiencies',
@@ -606,11 +1533,17 @@ plainTag(`\\page
 					true
 				)
 
+	plainTag('\n\r\n\r<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25954a58-0198-4aff-81c3-ed57fc6df8f5/d9t64fj-c45d570b-f774-48c8-b97a-aca7cf1d1feb.jpg/v1/fill/w_1064,h_751,q_70,strp/elemental_star_chamber_by_orioto_d9t64fj-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD05MDQiLCJwYXRoIjoiXC9mXC8yNTk1NGE1OC0wMTk4LTRhZmYtODFjMy1lZDU3ZmM2ZGY4ZjVcL2Q5dDY0ZmotYzQ1ZDU3MGItZjc3NC00OGM4LWI5N2EtYWNhN2NmMWQxZmViLmpwZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.GK80Cx26mEElWVXdLOP4IVu1gWOXpYwYjF_SUZn7lpY" style="position:absolute; top:750px; left:0; width:210mm">');
+	plainTag('<img src="https://www.gmbinder.com/images/6aELefD.png" style="position:absolute; top:-100px; right:-100px; width:1100px;transform:rotate(10deg)">');
+
+	pageNumber(7, 'CHAPITRE 3 : LES CLASSES')
+
+	breakPage()
 
 				// Equipment
 				translateItem('section#adept-class-features-equipment h4#adept-class-features-equipment',
 					`Equipment`,
-					`Équipement`
+					`Equipement` // Équipement
 				)
 				translateItem('#adept-class-features-equipment > p:nth-child(2)',
 					`Your starting equipment option depend on the adept archetype you are selecting at 1st level.`,
@@ -681,7 +1614,7 @@ your background:`,
 			// Focus Element
 			translateItem('section#adept-class-features-focus-element h3#adept-class-features-focus-element',
 				`Focus Element`,
-				`Élement principal`
+				`Element maître` // Élement maître
 			)
 			translateItem('#adept-class-features-focus-element > p',
 				`Your innate powers are tied to a single element. You are your choice of an Earth adept, Fire adept, Water adept, or Wind adept. While your decision here does affect how some of your adept features will work, the most significant impact of your element is on the spells you can choose from when you learn new adept spells.`,
@@ -826,7 +1759,9 @@ your background:`,
 				`Au niveau 1, vous avez déjà commencé votre formation spécialisée en Psynergy. Choisissez un archétype d'adepte, qui représente la façon dont vous utilisez la Psynergy : mage élémentaire ou guerrier élémentaire, tous deux détaillés dans la section Archétypes d'adepte plus loin. L'archétype que vous choisissez vous permet d'obtenir des aptitudes spéciales au niveau 1 puis de nouvelles aux niveaux 3, 6 et 14.`,
 			)
 
+	pageNumber(9, 'CHAPITRE 3 : LES CLASSES')
 
+	breakPage()
 
 			// Djinn
 			translateItem('section#adept-class-features-djinn h3#adept-class-features-djinn',
@@ -852,7 +1787,7 @@ your background:`,
 				// Active Djinn & Djinn Spells
 				translateItem('section#adept-class-features-djinn-active-djinn-djinn-spells h4#adept-class-features-djinn-active-djinn-djinn-spells',
 					`Active Djinn & Djinn Spells`,
-					`Djinn lié & sort de djinn`
+					`Djinn lié &amp; sort de djinn`
 				)
 				translateItem('#adept-class-features-djinn-active-djinn-djinn-spells > p:nth-child(2)',
 					`Whenever you finish a short or long rest, you choose one of your djinn to become your active djinni until you finish another rest. Starting at 10th level, you instead choose two djinn to become active whenever you finish a rest, and at 18th level you choose three active djinn.`,
@@ -879,207 +1814,7 @@ your background:`,
 				`Vous disposez d'une réserve de points de Psynergie, ou PP, égale à la moitié de votre niveau d'adepte (arrondi au chiffre supérieur). Vous récupérez tous les PP dépensés lorsque vous terminez un court ou un long repos. Vous pouvez créer un emplacement de sorts avec ces points en dépensant un nombre de PP égal au niveau de l'emplacement que vous souhaitez créer. Les emplacements de sorts créées avec les PP ne peuvent être utilisées que pour lancer un des sorts associés à votre djinn lié.`
 			)
 
-					// Table The Adept
-					translateItem('section#adept-class-features-djinni-magic-the-adept-spell-slots- h5#adept-class-features-djinni-magic-the-adept-spell-slots-',
-						`-- The Adept --------------------------------------------------------------------------------------------------------------- Spell Slots --`,
-						`L'adepte                                                — Emplacements de sorts —`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(1)',
-						`Level`,
-						`Niv`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(2)',
-						`Proficiency Bonus`,
-						`Bonus de maîtrise`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(3)',
-						`Features`,
-						`Aptitudes`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(4)',
-						`Djinn`,
-						`Djinn`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(5)',
-						`Cantrips Known`,
-						`Sorts mineurs connus`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(6)',
-						`Spells Known`,
-						`Sorts connus`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(7)',
-						`1st`,
-						`1`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(8)',
-						`2nd`,
-						`2`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(9)',
-						`3rd`,
-						`3`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(10)',
-						`4th`,
-						`4`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > thead > tr > th:nth-child(11)',
-						`5th`,
-						`5`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(1)',
-						`1st`,
-						`1`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(1) > td:nth-child(3)',
-						`Focus Element, Spellcasting, Adept Archetype`,
-						`Élement principal, Incantation, Archétype d'adepte`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(1)',
-						`2nd`,
-						`2`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(2) > td:nth-child(3)',
-						`Djinn (1 active djinni), Djinni Magic`,
-						`Djinn (1 djinn lié), Magie de djinn`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(1)',
-						`3rd`,
-						`3`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(3) > td:nth-child(3)',
-						`Adept Archetype feature`,
-						`Aptitude d'archétype d'adepte`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(1)',
-						`4th`,
-						`4`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(4) > td:nth-child(3)',
-						`Ability Score Improvement`,
-						`Amélioration de caractéristiques`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(5) > td:nth-child(1)',
-						`5th`,
-						`5`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(1)',
-						`6th`,
-						`6`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(6) > td:nth-child(3)',
-						`Adept Archetype feature`,
-						`Aptitude d'archétype d'adepte`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(7) > td:nth-child(1)',
-						`7th`,
-						`7`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(1)',
-						`8th`,
-						`8`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(8) > td:nth-child(3)',
-						`Ability Score Improvement`,
-						`Amélioration de caractéristiques`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(9) > td:nth-child(1)',
-						`9th`,
-						`9`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(1)',
-						`10th`,
-						`10`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(10) > td:nth-child(3)',
-						`Djinn (2 active djinn)`,
-						`Djinn (2 djinns liés)`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(11) > td:nth-child(1)',
-						`11th`,
-						`11`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(1)',
-						`12th`,
-						`12`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(12) > td:nth-child(3)',
-						`Ability Score Improvement`,
-						`Amélioration de caractéristiques`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(13) > td:nth-child(1)',
-						`13th`,
-						`13`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(1)',
-						`14th`,
-						`14`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(14) > td:nth-child(3)',
-						`Adept Archetype feature`,
-						`Aptitude d'archétype d'adepte`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(15) > td:nth-child(1)',
-						`15th`,
-						`15`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(1)',
-						`16th`,
-						`16`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(16) > td:nth-child(3)',
-						`Ability Score Improvement`,
-						`Amélioration de caractéristiques`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(17) > td:nth-child(1)',
-						`17th`,
-						`17`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(1)',
-						`18th`,
-						`18`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(18) > td:nth-child(3)',
-						`Djinn (3 active djinn)`,
-						`Djinn (3 djinns liés)`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(1)',
-						`19th`,
-						`19`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(19) > td:nth-child(3)',
-						`Ability Score Improvement`,
-						`Amélioration de caractéristiques`
-					)
-
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(1)',
-						`20th`,
-						`20`
-					)
-					translateItem('#adept-class-features-djinni-magic-the-adept-spell-slots- > table > tbody > tr:nth-child(20) > td:nth-child(3)',
-						`One with the World`,
-						`Un avec le monde`
-					)
+				// TABLE
 
 			translateItem('#p3 > p:nth-child(2)',
 				`spells. You create the spell slot at the same time you expend it, with no additional action required. Once you create two spell slots using PP, you can't create another one until you finish a short or long rest, even if you have PP remaining.`,
@@ -1087,7 +1822,7 @@ your background:`,
 			)
 			translateItem('#p3 > p:nth-child(3)',
 				`Spells you cast with this feature follow all the normal rules for casting your adept spells, except you expend a Djinni Magic spell slot instead of a regular spell slot. You can use PP to create spell slots of a higher level than you can with your Spellcasting feature, but you can't create slots of 6th level or higher. For example, when you reach 3rd level and have 2 PP to spend between rests, you could spend both of them at once to create a 2nd-level spell slot and use it to cast your active djinni's 2nd-level spell.`,
-				`Les sorts que vous lancez avec cette aptitude suivent toutes les règles normales pour lancer vos sorts d'adeptes, sauf que vous dépensez un emplacement de sorts de magie de djinn au lieu d'un emplacement de sorts ordinaires. Vous pouvez utiliser les PP pour créer des emplacements de sorts d'un niveau supérieur à celui de votre aptitude d'incantation, mais vous ne pouvez pas créer d'emplacements de niveau 6 ou supérieur. Par exemple, lorsque vous atteignez le niveau 3 et que vous avez 2 PP à dépenser entre les repos, vous pouvez les dépenser tous les deux en même temps pour créer un emplacement de sorts de niveau 2 et l'utiliser pour lancer le sort de niveau 2 de votre djinn lié.`
+				`Les sorts que vous lancez avec cette aptitude suivent toutes les règles normales pour lancer vos sorts d'adeptes, sauf que vous dépensez un emplacement de sorts de magie de djinn au lieu d'un emplacement de sorts ordinaires. \n\r\n\rVous pouvez utiliser les PP pour créer des emplacements de sorts d'un niveau supérieur à celui de votre aptitude d'incantation, mais vous ne pouvez pas créer d'emplacements de niveau 6 ou supérieur. Par exemple, lorsque vous atteignez le niveau 3 et que vous avez 2 PP à dépenser entre les repos, vous pouvez les dépenser tous les deux en même temps pour créer un emplacement de sorts de niveau 2 et l'utiliser pour lancer le sort de niveau 2 de votre djinn lié.`
 			)
 
 
@@ -1115,7 +1850,7 @@ your background:`,
 			// Spirit Summoning
 			translateItem('section#adept-class-features-spirit-summoning h3#adept-class-features-spirit-summoning',
 				`Spirit Summoning`,
-				`Invocation d'esprits`
+				`Invocation d'esprit`
 			)
 			translateItem('#adept-class-features-spirit-summoning > p:nth-child(2)',
 				`When you become an 11th-level adept, the djinn teach you how to call upon even greater spirits with their power.`,
@@ -1154,9 +1889,14 @@ your background:`,
 				`Enfin, en passant 1 minute en méditation avec la nature, vous pouvez récupérer les points de Psynergie dépensés et resélectionner votre djinn lié comme si vous veniez de terminer un court repos. Vous devez ensuite terminer un long repos avant de le refaire.`
 			)
 
+	pageNumber(10, 'CHAPITRE 3 : LES CLASSES')
 
+	breakPage()
 
-
+	plainTag('\n\r<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ec3a9251-1fa4-480a-bd75-1f0600b20815/dhtd7o-8196ba72-073a-4787-93d0-bd6a1919235b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZWMzYTkyNTEtMWZhNC00ODBhLWJkNzUtMWYwNjAwYjIwODE1XC9kaHRkN28tODE5NmJhNzItMDczYS00Nzg3LTkzZDAtYmQ2YTE5MTkyMzViLmpwZyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl19.1gcPriNfJpFgln7QqdlpWt8wGU188L7dwVJMHUO40Zc" style="position:absolute; top:0px; left:-730px; width:480mm">');
+	plainTag('<img src="https://www.gmbinder.com/images/ohZghLL.png" style="position:absolute; top:0px; right:-100px; width:900px">');
+	plainTag('\n\r<br>')
+	plainTag('<div style="margin-top:976px"></div>')
 
 		// Adept Archetypes
 		translateItem('section#adept-adept-archetypes h2#adept-adept-archetypes',
@@ -1179,7 +1919,7 @@ your background:`,
 			)
 
 					// Table Elemental Mage Features
-					translateItem('section#adept-adept-archetypes-elemental-mage-elemental-mage-features h5#adept-adept-archetypes-elemental-mage-elemental-mage-features',
+					/*translateItem('section#adept-adept-archetypes-elemental-mage-elemental-mage-features h5#adept-adept-archetypes-elemental-mage-elemental-mage-features',
 						`Elemental Mage Features`,
 						`Aptitudes de mage élémentaire`
 					)
@@ -1227,21 +1967,21 @@ your background:`,
 					translateItem('#adept-adept-archetypes-elemental-mage-elemental-mage-features > table > tbody > tr:nth-child(4) > td:nth-child(2)',
 						`Elemental Augmentation`,
 						`Augmentation élémentaire`
-					)
+					)*/
 
 
 				// Student of the World
 				translateItem('section#adept-adept-archetypes-elemental-mage-student-of-the-world h4#adept-adept-archetypes-elemental-mage-student-of-the-world',
 					`Student of the World`,
-					`Étudiant du monde`
+					`Etudiant du monde` // Étudiant du monde
 				)
-				translateItem('#adept-adept-archetypes-elemental-mage-student-of-the-world > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-mage-student-of-the-world > p:nth-child(2) > em',
 					`1st-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 1`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-mage-student-of-the-world > p:nth-child(3)',
 					`You learn the Primordial language and gain proficiency in one skill of your choice and one type of artisan's tools or musical instrument of your choice. You also learn an additional adept cantrip and 1st-level adept spell of your choice. You can replace the 1st-level spell you learn with this feature with another adept spell when you gain levels in this class, just like any other adept spell you know.`,
-					`Vous apprenez le langage primordial et vous maîtrisez une compétence de votre choix et un type d'outils d'artisan ou d'instrument de musique de votre choix. Vous apprenez également un tour de magie supplémentaire et un sort d'adepte de niveau 1 de votre choix. Vous pouvez remplacer le sort de niveau 1 que vous apprenez avec cette aptitude par un autre sort d'adepte lorsque vous gagnez des niveaux dans cette classe, tout comme n'importe quel autre sort d'adepte que vous connaissez.`
+					`Au niveau 1, vous apprenez le langage primordial et vous maîtrisez une compétence de votre choix et un type d'outils d'artisan ou d'instrument de musique de votre choix. Vous apprenez également un tour de magie supplémentaire et un sort d'adepte de niveau 1 de votre choix. Vous pouvez remplacer le sort de niveau 1 que vous apprenez avec cette aptitude par un autre sort d'adepte lorsque vous gagnez des niveaux dans cette classe, tout comme n'importe quel autre sort d'adepte que vous connaissez.`
 				)
 
 
@@ -1250,13 +1990,13 @@ your background:`,
 					`Ritual Casting`,
 					`Incantation rituelle`
 				)
-				translateItem('#adept-adept-archetypes-elemental-mage-ritual-casting > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-mage-ritual-casting > p:nth-child(2) > em',
 					`1st-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 1`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-mage-ritual-casting > p:nth-child(3)',
 					`You can cast an adept spell you know without expending a spell slot by casting it as a ritual if it has the ritual tag.`,
-					`Vous pouvez lancer un sort d'adepte que vous connaissez sans dépenser un emplacement de sort sous la forme d'un rituel s'il porte la mention « rituel ».`
+					`Au niveau 1, vous pouvez lancer un sort d'adepte que vous connaissez sans dépenser un emplacement de sort sous la forme d'un rituel s'il porte la mention « rituel ».`
 				)
 
 
@@ -1265,13 +2005,13 @@ your background:`,
 					`Elemental Savant`,
 					`Savant élémentaire`
 				)
-				translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(2) > em',
 					`6th-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 6`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(3)',
 					`Your oneness with, and knowledge of, the elements allows you to tap into the powers of all four. For each element other than your own, choose one spell from the spell list available to adepts of that element. A spell you choose must be of a level for which you have spell slots, as shown on the Adept table, or a cantrip. The chosen spells count as adept spells for you but don't count against the number of adept spells you know.`,
-					`Votre union avec les éléments et votre connaissance de ceux-ci vous permettent d'exploiter les pouvoirs des quatre. Pour chaque élément autre que le vôtre, choisissez un sort dans la liste des sorts disponibles pour les adeptes de cet élément. Le sort que vous choisissez doit être d'un niveau pour lequel vous disposez d'emplacements de sorts, comme indiqué dans le tableau des adeptes, ou d'un tour de magie. Les sorts choisis comptent comme des sorts d'adeptes pour vous mais ne comptent pas dans le nombre de sorts d'adeptes que vous connaissez.`
+					`À partir du niveau 6, votre union avec les éléments et votre connaissance de ceux-ci vous permettent d'exploiter les pouvoirs des quatre. Pour chaque élément autre que le vôtre, choisissez un sort dans la liste des sorts disponibles pour les adeptes de cet élément. Le sort que vous choisissez doit être d'un niveau pour lequel vous disposez d'emplacements de sorts, comme indiqué dans le tableau des adeptes, ou d'un tour de magie. Les sorts choisis comptent comme des sorts d'adeptes pour vous mais ne comptent pas dans le nombre de sorts d'adeptes que vous connaissez.`
 				)
 				translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(4)',
 					`For example, an Earth adept could choose the <em>fire bolt</em> cantrip from the Fire adept spell list, the 2nd-level spell <em>magic weapon</em> from the Water adept spell list, and the 2nd-level spell <em>shatter</em> from the Wind adept spell list.`,
@@ -1289,14 +2029,18 @@ your background:`,
 					`Elemental Augmentation`,
 					`Augmentation élémentaire`
 				)
-				translateItem('#adept-adept-archetypes-elemental-mage-elemental-augmentation > p:nth-child(2) > em',
+				/*translateItem('#adept-adept-archetypes-elemental-mage-elemental-augmentation > p:nth-child(2) > em',
 					`14th-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 14`
-				)
+				)*/
 				translateItem('#adept-adept-archetypes-elemental-mage-elemental-augmentation > p:nth-child(3)',
 					`Your elemental magic has become especially potent. You can add your Intelligence modifier to one damage or healing roll of any adept spell you cast or spirit you summon.`,
-					`Votre magie élémentaire est devenue particulièrement puissante. Vous pouvez ajouter votre modificateur d'Intelligence à un jet de dégâts ou de soins de tout sort d'adepte que vous lancez ou de tout esprit que vous invoquez.`
+					`Au niveau 14, votre magie élémentaire est devenue particulièrement puissante. Vous pouvez ajouter votre modificateur d'Intelligence à un jet de dégâts ou de soins de tout sort d'adepte que vous lancez ou de tout esprit que vous invoquez.`
 				)
+
+	pageNumber(11, 'CHAPITRE 3 : LES CLASSES')
+
+	breakPage()
 
 
 
@@ -1319,7 +2063,7 @@ your background:`,
 			)
 
 					// Table Elemental Mage Features
-					translateItem('section#adept-adept-archetypes-elemental-warrior-elemental-warrior-features h5#adept-adept-archetypes-elemental-warrior-elemental-warrior-features',
+					/*translateItem('section#adept-adept-archetypes-elemental-warrior-elemental-warrior-features h5#adept-adept-archetypes-elemental-warrior-elemental-warrior-features',
 						`Elemental Warrior Features`,
 						`Aptitudes de guerrier élémentaire`
 					)
@@ -1367,7 +2111,7 @@ your background:`,
 					translateItem('#adept-adept-archetypes-elemental-warrior-elemental-warrior-features > table > tbody > tr:nth-child(4) > td:nth-child(2)',
 						`Battle Magic`,
 						`Bataille magique`
-					)
+					)*/
 
 
 				// Armed Caster
@@ -1759,6 +2503,58 @@ your background:`,
 				`5th-Level:`,
 				`Niveau 5 :`
 			)
+
+	pageNumber(8, 'CHAPITRE 3 : LES CLASSES')
+
+	breakPage()
+
+plainTag(`
+
+# Autres projets
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<div style='position:absolute; top: 0; left: 0; width: 100%; height: 100%;background-color: #000;z-index: 101'></div>
+
+\\page
+
+<section>
+<div style="margin-top:20px;"></div>
+<div class="back-cover-header">
+<p>Merci !</p>
+</div>
+</section>
+<section>
+<div class="back-cover-text">
+<p>Cet Homebrew a été réalisé par MachinisteWeb qui apprécie l'univers des jeu Golden Sun depuis de nombreuses années et qui voulaient l'introduire dans Dungeons &amp; Dragons pour que tout le monde puisse en profiter.</p>
+<p>C'est une véritable aventure pour moi, et j'ai beaucoup de plaisir à la réaliser et à l'améliorer. J'espére que cela apportera de la joie à de nombreuses tables D&amp;D dans le monde entier. Bonne chance à tous les adeptes et tous les djinns &lt;3</p>
+</div>
+</section>
+<section>
+<div class="back-cover-diamond" style="top: 600px;"></div>
+<div style="margin-top:155px;"></div>
+<div class="back-cover-close">
+<p>Saviez-vous que ce document a été réalisé avec NaturalCrit Homebrewery ? Je ne saurais trop insister sur le fait que c'est un outil fantastique pour créer des homebrew pour la 5e édition de D&amp;D.</p>
+</div>
+<div class="back-cover-logo"></div>
+</section>
+<section>
+<section>
+<img src="https://i.pinimg.com/originals/e1/b0/63/e1b06382c76e958dbf4f7b40b34af4d9.jpg" style="position:absolute; top:-90px; right:-1044px; width:1800px">
+<img src="https://www.gmbinder.com/images/x83va2I.png" style="position:absolute; top:0px; right:-100px; width:900px"></section>
+</section>`)
+
+
+
+
 
 // MISE EN PAGE
 
