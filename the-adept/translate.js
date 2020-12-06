@@ -3,126 +3,143 @@ jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
 document.getElementsByTagName('head')[0].appendChild(jq);
 jq.addEventListener('load', function () {
 	var output = '';
+	var quote = false;
+  var currentUrl = 'https://www.gmbinder.com/share/-Lt5h99cNy9JF9sKolty';
 
 	jQuery.noConflict();
 
-	quote = false;
-
 	function generateOutput(item, fr) {
-		if (item.includes('h1')) {
-			output += '# '
-			output += fr.trim()
-		} else if (item.includes('h2')) {
-			output += '\r\n\r\n\r\n\r\n\r\n'
-			output += '## '
-			output += fr.trim()
-		} else if (item.includes('h3')) {
-			output += '\r\n\r\n\r\n\r\n'
-			output += '### '
-			output += fr.trim()
-		} else if (item.includes('h4')) {
-			output += '\r\n\r\n\r\n'
-			output += '#### '
-			output += fr.trim()
-		} else if (item.includes('h5')) {
-			output += '\r\n'
-			output += '\r\n'
-			if (quote) { output += '> ' }
-			output += '##### '
-			output += fr.trim()
-		} else if (item.includes('h6')) {
-			output += '\r\n'
-			output += '###### '
-			output += fr.trim()
-		} else if (item.includes('> p')) {
-			output += '\r\n'
-			if (quote) { output += '> ' }
-			output += '\r\n'
-			if (quote) { output += '> ' }
-			output += fr.trim()
-		} else if (item.includes('> li')) {
-			output += '\r\n* '
-			output += fr.trim()
-		} else if (item.includes('table > thead > tr > th')) {
-			output += ' '
-			output += fr.trim()
-			output += ' |'
-		} else if (item.includes('table > tbody > tr:nth-child')) {
-			output += ' '
-			output += fr.trim()
-			output += ' |'
-		}
+    if (currentUrl === window.location.href) {
+  		if (item.includes('h1')) {
+  			output += '\r\n\r\n# '
+  			output += fr.trim()
+  		} else if (item.includes('h2')) {
+  			output += '\r\n\r\n\r\n\r\n\r\n'
+  			output += '## '
+  			output += fr.trim()
+  		} else if (item.includes('h3')) {
+  			output += '\r\n\r\n\r\n\r\n'
+  			output += '### '
+  			output += fr.trim()
+  		} else if (item.includes('h4')) {
+  			output += '\r\n\r\n\r\n'
+  			output += '#### '
+  			output += fr.trim()
+  		} else if (item.includes('h5')) {
+  			output += '\r\n'
+  			output += '\r\n'
+  			if (quote) { output += '> ' }
+  			output += '##### '
+  			output += fr.trim()
+  		} else if (item.includes('h6')) {
+  			output += '\r\n'
+  			output += '###### '
+  			output += fr.trim()
+  		} else if (item.includes('> p')) {
+  			output += '\r\n'
+  			if (quote) { output += '> ' }
+  			output += '\r\n'
+  			if (quote) { output += '> ' }
+  			output += fr.trim()
+  		} else if (item.includes('> li')) {
+  			output += '\r\n- '
+  			output += fr.trim()
+  		} else if (item.includes('table > thead > tr > th')) {
+  			output += ' '
+  			output += fr.trim()
+  			output += ' |'
+  		} else if (item.includes('table > tbody > tr:nth-child')) {
+  			output += ' '
+  			output += fr.trim()
+  			output += ' |'
+  		}
+    }
 	}
 
 	function alternativeList(extraspace) {
-		if (extraspace) {
-			output += '\r\n'
-		}
-		output += '\r\n___'
+    if (currentUrl === window.location.href) {
+  		if (extraspace) {
+  			output += '\r\n'
+  		}
+  		output += '\r\n___'
+    }
 	}
 
 	function margin(size) {
-		output += '\r\n<div style="margin-top: ' + size + 'px"></div>'
-	}
+    if (currentUrl === window.location.href) {
+		  output += '\r\n<div style="margin-top: ' + size + 'px"></div>'
+	 }
+  }
 
 	function breakPage() {
-		output += '\n\r\r\n\\page'
-	}
+    if (currentUrl === window.location.href) {
+		  output += '\n\r\r\n\\page'
+	  }
+  }
 
 	function pageNumber(number, title) {
-		output += '\r\n\r\n<div class="pageNumber">' + number + '</div>'
-		output += '\r\n<div class="footnote">' + title + '</div>'
-	}
+    if (currentUrl === window.location.href) {
+		  output += '\r\n\r\n<div class="pageNumber">' + number + '</div>'
+		  output += '\r\n<div class="footnote">' + title + '</div>'
+	  }
+  }
 
 	function plainTag(content, nospace) {
-		if (!nospace) {
-			output += '\r\n'
-		}
-		output += content
-	}
+    if (currentUrl === window.location.href) {
+  		if (!nospace) {
+  			output += '\r\n'
+  		}
+  		output += content
+  	}
+  }
 
 	function translateItem(item, en, fr, html) {
-		if (jQuery(item).length === 0) {
-			console.error(`The following selector “${item}” doesn't exist anymore.`);
-		}
+    if (currentUrl === window.location.href) {
+  		if (jQuery(item).length === 0) {
+  			console.error(`The following selector “${item}” doesn't exist anymore.`);
+  		}
 
-		jQuery(item).each(function (i, content) {
-			var value;
+  		jQuery(item).each(function (i, content) {
+  			var value;
 
-			if (!html) {
-				if (jQuery(content).text().trim() === en.trim()) {
-					value = fr.trim();
+  			if (!html) {
+  				if (jQuery(content).text().trim() === en.trim()) {
+  					value = fr.trim();
 
-					jQuery(content).text(value);
+  					jQuery(content).text(value);
 
-					generateOutput(item, value);
-				} else if (jQuery(content).text().trim() === value) {
-					console.log(`The following selector “${item}” FR source is already translated.`);
-				} else {
-					console.error(`The following selector “${item}” EN source have changed.`);
-				}
-			}
+            value = value.replace(/\*/g, '\\\*')
 
-			if (html) {
-				if (jQuery(content).html().trim() === en.trim()) {
-					value = fr.trim();
+  					generateOutput(item, value);
+  				} else if (jQuery(content).text().trim() === value) {
+  					console.log(`The following selector “${item}” FR source is already translated.`);
+  				} else {
+  					console.error(`The following selector “${item}” EN source have changed.`);
+  				}
+  			}
 
-					jQuery(content).html(value);
+  			if (html) {
+  				if (jQuery(content).html().trim() === en.trim()) {
+  					value = fr.trim();
 
-					value = value.replace(/<em>(.+)<\/em>/g, '*$1*')
-					value = value.replace(/<strong>(.+)<\/strong>/g, '**$1**')
+  					jQuery(content).html(value);
 
-					generateOutput(item, value);
-				} else if (jQuery(content).html().trim() === value) {
-					console.log(`The following selector “${item}” FR source is already translated.`);
-				} else {
-					console.error(`The following selector “${item}” EN source have changed.`);
-				}
-			}
-		});
+            value = value.replace(/\*/g, '\\\*')
+  					//value = value.replace(/<em>(.+)<\/em>/g, '*$1*')
+  					//value = value.replace(/<strong>(.+)<\/strong>/g, '**$1**')
+
+  					generateOutput(item, value);
+  				} else if (jQuery(content).html().trim() === value) {
+  					console.log(`The following selector “${item}” FR source is already translated.`);
+  				} else {
+  					console.error(`The following selector “${item}” EN source have changed.`);
+  				}
+  			}
+  		});
+    }
 	}
 
-// TRADUCTION
+// TRADUCTION CLASSE
 
 		// Adept
 		plainTag(`<style>
@@ -284,6 +301,12 @@ jq.addEventListener('load', function () {
     width: 120px;
     height: 74px;
   }
+  .spellList small {
+    font-size: 8px;
+  }
+  .spellList h3 {
+    margin-bottom: 20px;
+  }
 </style>
 
 <div class="cover-header">
@@ -371,7 +394,7 @@ Adepte .........................................................................
 
 <div class="partpage">
 <section id="part-i">
-<h1 id="part-i">1<sup>er</sup> Partie</h1>
+<h1 id="part-i">1<sup>re</sup> Partie</h1>
 <section id="part-i-creating-a-hero">
 <h5 id="part-i-creating-a-hero">La création de personnages</h5>
 </section>
@@ -1906,34 +1929,34 @@ your background:`,
 
 			plainTag('\n\r<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/djinns.png" style="position:absolute; top:970px; left:60px; width:85mm">')
 
-	pageNumber(10, 'CHAPITRE 3 : LES CLASSES')
+	pageNumber(10, 'CHAPITRE 3 : LES CLASSES');
 
-	breakPage()
+	breakPage();
 
 	plainTag('\n\r<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ec3a9251-1fa4-480a-bd75-1f0600b20815/dhtd7o-8196ba72-073a-4787-93d0-bd6a1919235b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZWMzYTkyNTEtMWZhNC00ODBhLWJkNzUtMWYwNjAwYjIwODE1XC9kaHRkN28tODE5NmJhNzItMDczYS00Nzg3LTkzZDAtYmQ2YTE5MTkyMzViLmpwZyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl19.1gcPriNfJpFgln7QqdlpWt8wGU188L7dwVJMHUO40Zc" style="position:absolute; top:0px; left:-740px; width:480mm">');
 	plainTag('<img src="https://www.gmbinder.com/images/ohZghLL.png" style="position:absolute; top:0px; right:-80px; width:900px">');
-	plainTag('\n\r<br>')
-	plainTag('<div style="margin-top:976px"></div>')
+	plainTag('\n\r<br>');
+	plainTag('<div style="margin-top:976px"></div>');
 
 		// Adept Archetypes
 		translateItem('section#adept-adept-archetypes h2#adept-adept-archetypes',
 			`Adept Archetypes`,
 			`Archétypes d'adepte`
-		)
+		);
 		translateItem('#adept-adept-archetypes > p',
 			`Adepts are primarily differentiated from each other by their element, djinn, and favored Psynergy, so their specialized training is broken into only two categories: The elemental warriors who train with arms and armor, and the elemental mages who expand their mundane and magical education.`,
 			`Les adeptes se différencient principalement par leur élément, le djinn, et leur Psynergie favorisée, de sorte que leur formation spécialisée n'est divisée qu'en deux catégories : les guerriers élémentaires qui s'entraînent avec des armes et des armures, et les mages élémentaires qui élargissent leur éducation mondaine et magique.`
-		)
+		);
 
 			// Elemental Mage
 			translateItem('section#adept-adept-archetypes-elemental-mage h3#adept-adept-archetypes-elemental-mage',
 				`Elemental Mage`,
 				`Mage élémentaire`
-			)
+			);
 			translateItem('#adept-adept-archetypes-elemental-mage > p',
 				`Most adepts, regardless of whether or not they were raised in adept communities, train to be elemental mages. Mages not only have greater versatility with their Psynergy than warriors, but their education extends to other fields of study, making them extremely well-rounded individuals.`,
 				`La plupart des adeptes, qu'ils aient ou non été élevés dans des communautés d'adeptes, s'entraînent à devenir des mages élémentaires. Les mages ont non seulement une plus grande polyvalence avec leur Psynergie que les guerriers, mais leur éducation s'étend à d'autres domaines d'études, ce qui fait d'eux des individus extrêmement bien équilibrés.`
-			)
+			);
 
 					// Table Elemental Mage Features
 					/*translateItem('section#adept-adept-archetypes-elemental-mage-elemental-mage-features h5#adept-adept-archetypes-elemental-mage-elemental-mage-features',
@@ -1991,7 +2014,7 @@ your background:`,
 				translateItem('section#adept-adept-archetypes-elemental-mage-student-of-the-world h4#adept-adept-archetypes-elemental-mage-student-of-the-world',
 					`Student of the World`,
 					`Etudiant du monde` // Étudiant du monde
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-mage-student-of-the-world > p:nth-child(2) > em',
 					`1st-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 1`
@@ -1999,14 +2022,14 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-mage-student-of-the-world > p:nth-child(3)',
 					`You learn the Primordial language and gain proficiency in one skill of your choice and one type of artisan's tools or musical instrument of your choice. You also learn an additional adept cantrip and 1st-level adept spell of your choice. You can replace the 1st-level spell you learn with this feature with another adept spell when you gain levels in this class, just like any other adept spell you know.`,
 					`Au niveau 1, vous apprenez le langage primordial et vous maîtrisez une compétence de votre choix et un type d'outils d'artisan ou d'instrument de musique de votre choix. Vous apprenez également un tour de magie supplémentaire et un sort d'adepte de niveau 1 de votre choix. Vous pouvez remplacer le sort de niveau 1 que vous apprenez avec cette aptitude par un autre sort d'adepte lorsque vous gagnez des niveaux dans cette classe, tout comme n'importe quel autre sort d'adepte que vous connaissez.`
-				)
+				);
 
 
 				// Ritual Casting
 				translateItem('section#adept-adept-archetypes-elemental-mage-ritual-casting h4#adept-adept-archetypes-elemental-mage-ritual-casting',
 					`Ritual Casting`,
 					`Incantation rituelle`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-mage-ritual-casting > p:nth-child(2) > em',
 					`1st-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 1`
@@ -2014,14 +2037,14 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-mage-ritual-casting > p:nth-child(3)',
 					`You can cast an adept spell you know without expending a spell slot by casting it as a ritual if it has the ritual tag.`,
 					`Au niveau 1, vous pouvez lancer un sort d'adepte que vous connaissez sans dépenser un emplacement de sort sous la forme d'un rituel s'il porte la mention « rituel ».`
-				)
+				);
 
 
 				// Djinni Knowledge
 				translateItem('section#adept-adept-archetypes-elemental-mage-djinni-knowledge h4#adept-adept-archetypes-elemental-mage-djinni-knowledge',
 					`Djinni Knowledge`,
 					`Connaissance des djinns`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(2) > em',
 					`3rd-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 3`
@@ -2029,26 +2052,26 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(3)',
 					`Your djinn share magical expertise with you, expanding`,
 					`À partir du niveau 3, votre djinn partage avec vous son expertise magique, élargissant ainsi votre répertoire de sorts.`
-				)
+				);
 				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(6)',
 					`Whenever one of your djinn becomes active, each of the spells on that djinni's Spells table for which your adept level is at least the level indicated in the Mage Level column of that table are considered known adept spells for you for as long as that djinni remains active. These spells don't count against your number of adept spells known.`,
 					`Chaque fois qu'un de vos djinns est lié, chacun des sorts du tableau des sorts de ce djinn pour lequel votre niveau d'adepte est au moins le niveau indiqué dans la colonne niveau de mage de ce tableau est considéré comme un sort d'adepte connu pour vous tant que ce djinn reste lié. Ces sorts ne sont pas comptabilisés dans le nombre de sorts d'adeptes connus.`
-				)
+				);
 				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(7)',
 					`When you become able to have multiple active djinn at once at higher levels, the appropriate spells from the lists associated with all of your active djinn are considered known adept spells for you.`,
 					`Lorsque vous devenez capable d'avoir plusieurs djinns actifs en même temps à des niveaux plus élevés, les sorts appropriés des listes associées à tous vos djinns liés sont considérés comme des sorts d'adeptes connus pour vous.`
-				)
+				);
 				translateItem('#adept-adept-archetypes-elemental-mage-djinni-knowledge > p:nth-child(8)',
 					`You can also cast any adept spell you know of 1st level or higher with spell slots you create with your Djinni Magic feature, in addition to your active djinn's associated spells.`,
 					`Vous pouvez également lancer n'importe quel sort d'adepte que vous connaissez de niveau 1 ou supérieur grâce aux emplacements de sorts que vous créez avec votre aptitude magie de djinn, en plus des sorts associés à votre djinn lié.`
-				)
+				);
 
 
 				// Elemental Savant
 				translateItem('section#adept-adept-archetypes-elemental-mage-elemental-savant h4#adept-adept-archetypes-elemental-mage-elemental-savant',
 					`Elemental Savant`,
 					`Savant élémentaire`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(2) > em',
 					`6th-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 6`
@@ -2056,11 +2079,11 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(3)',
 					`Your oneness with, and knowledge of, the elements allows you to tap into the powers of all four. For each element other than your own, choose one spell from the spell list available to adepts of that element. A spell you choose must be of a level for which you have spell slots, as shown on the Adept table, or a cantrip. The chosen spells count as adept spells for you but don't count against the number of adept spells you know.`,
 					`À partir du niveau 6, votre union avec les éléments et votre connaissance de ceux-ci vous permettent d'exploiter les pouvoirs des quatre. Pour chaque élément autre que le vôtre, choisissez un sort dans la liste des sorts disponibles pour les adeptes de cet élément.\n\r\n\rLe sort que vous choisissez doit être d'un niveau pour lequel vous disposez d'emplacements de sorts, comme indiqué dans le tableau des adeptes, ou d'un tour de magie.`
-				)
+				);
 
-	pageNumber(11, 'CHAPITRE 3 : LES CLASSES')
+	pageNumber(11, 'CHAPITRE 3 : LES CLASSES');
 
-	breakPage()
+	breakPage();
 
 				plainTag(`Les sorts choisis comptent comme des sorts d'adeptes pour vous mais ne comptent pas dans le nombre de sorts d'adeptes que vous connaissez.`)
 
@@ -2068,18 +2091,18 @@ your background:`,
 					`For example, an Earth adept could choose the <em>fire bolt</em> cantrip from the Fire adept spell list, the 2nd-level spell <em>magic weapon</em> from the Water adept spell list, and the 2nd-level spell <em>shatter</em> from the Wind adept spell list.`,
 					`Par exemple, un adepte de la Terre pourrait choisir le tour de magie <em>boule de feu</em> dans la liste des sorts d'adepte du Feu, le sort de niveau 2 <em>arme magique</em> dans la liste des sorts d'adepte de l'Eau, et le sort de niveau 2 <em>fragmentation</em> dans la liste des sorts d'adepte du Vent.`,
 					true
-				)
+				);
 				translateItem('#adept-adept-archetypes-elemental-mage-elemental-savant > p:nth-child(5)',
 					`Whenever you gain a level in this class and choose to replace one of your known adept spells, if you choose one of the spells you know from this feature, you select the replacement spell from the spell list of the same element that the spell you're replacing came from.`,
 					`Chaque fois que vous gagnez un niveau dans cette classe et que vous choisissez de remplacer un de vos sorts d'adeptes connus, si vous choisissez un des sorts que vous connaissez grâce à cette fonction, vous sélectionnez le sort de remplacement dans la liste des sorts du même élément que celui d'où provient le sort que vous remplacez.`
-				)
+				);
 
 
 				// Elemental Augmentation
 				translateItem('section#adept-adept-archetypes-elemental-mage-elemental-augmentation h4#adept-adept-archetypes-elemental-mage-elemental-augmentation',
 					`Elemental Augmentation`,
 					`Augmentation élémentaire`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-mage-elemental-augmentation > p:nth-child(2) > em',
 					`14th-level Elemental Mage feature`,
 					`Aptitude de mage élémentaire de niveau 14`
@@ -2087,7 +2110,7 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-mage-elemental-augmentation > p:nth-child(3)',
 					`Your elemental magic has become especially potent. You can add your Intelligence modifier to one damage or healing roll of any adept spell you cast or spirit you summon.`,
 					`Au niveau 14, votre magie élémentaire est devenue particulièrement puissante. Vous pouvez ajouter votre modificateur d'Intelligence à un jet de dégâts ou de soins de tout sort d'adepte que vous lancez ou de tout esprit que vous invoquez.`
-				)
+				);
 
 
 
@@ -2101,7 +2124,7 @@ your background:`,
 			translateItem('#adept-adept-archetypes-elemental-warrior > p',
 				`Young adepts who prove themselves to be more physically capable than their peers are often given specialized training to become elemental warriors. While this does come at the cost of the multidisciplinary curriculum and magical specialization of the mages, warriors are very capable in combat and are relied upon to defend many adept villages.`,
 				`Les jeunes adeptes qui se révèlent plus capables physiquement que leurs pairs reçoivent souvent un entraînement spécialisé pour devenir des guerriers élémentaires. Bien que cela se fasse au détriment du programme multidisciplinaire et de la spécialisation magique des mages, les guerriers sont très compétents au combat et on compte sur eux pour défendre de nombreux villages d'adeptes.`
-			)
+			);
 
 					// Table Elemental Mage Features
 					/*translateItem('section#adept-adept-archetypes-elemental-warrior-elemental-warrior-features h5#adept-adept-archetypes-elemental-warrior-elemental-warrior-features',
@@ -2159,7 +2182,7 @@ your background:`,
 				translateItem('section#adept-adept-archetypes-elemental-warrior-armed-caster h4#adept-adept-archetypes-elemental-warrior-armed-caster',
 					`Armed Caster`,
 					`Porteur armé`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-warrior-armed-caster > p:nth-child(2) > em',
 					`1st-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 1`
@@ -2167,14 +2190,14 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-warrior-armed-caster > p:nth-child(3)',
 					`You gain proficiency with light and medium armor, shields, and all martial weapons. In addition, if you are proficient with`,
 					`Au niveau 1, vous maîtrisez les armures légères et moyennes, les boucliers et toutes les armes de combat. De plus, si vous êtes compétent avec une arme que vous maîtrisez, vous pouvez l'utiliser comme focaliseur d'incantation pour le lancement de vos sorts d'adeptes.`
-				)
+				);
 
 
 				// Warrior's Resilience
 				translateItem('section#adept-adept-archetypes-elemental-warrior-warriors-resilience h4#adept-adept-archetypes-elemental-warrior-warriors-resilience',
 					`Warrior's Resilience`,
 					`Résilience du guerrier`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-warrior-warriors-resilience > p:nth-child(2) > em',
 					`1st-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 1`
@@ -2182,14 +2205,14 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-warrior-warriors-resilience > p:nth-child(3)',
 					`You've learned how to take a hit and keep on hitting. Your hit point maximum increases by 2 when you gain this feature, and by 2 again whenever you gain a level in this class.`,
 					`À partir du niveau 1, vous avez appris à prendre un coup et à encaisser. Vos points de vie maximums augmentent de 2 lorsque vous gagnez cette aptitude, et de 2 à nouveau chaque fois que vous gagnez un niveau dans cette classe.`
-				)
+				);
 
 
 				// Unleashed Strike
 				translateItem('section#adept-adept-archetypes-elemental-warrior-unleashed-strike h4#adept-adept-archetypes-elemental-warrior-unleashed-strike',
 					`Unleashed Strike`,
 					`Frappe déchainée`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-warrior-unleashed-strike > p:nth-child(2) > em',
 					`3rd-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 3`
@@ -2197,22 +2220,22 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-warrior-unleashed-strike > p:nth-child(3)',
 					`You have the ability to enhance weapon attacks with the djinn's elemental magic.`,
 					`À partir du niveau 3, vous avez la possibilité d'améliorer les attaques à l'arme grâce à la magie élémentaire du djinn.`
-				)
+				);
 				translateItem('#adept-adept-archetypes-elemental-warrior-unleashed-strike > p:nth-child(4)',
 					`When you hit with a weapon attack, you can expend one spell slot to deal additional damage to the target equal to 1d6 per level of the spell slot used, up to a maximum of 5d6. Your weapon and the extra damage are considered magical for that attack, and the damage type of the extra damage is determined by your active djinni, as detailed in each djinni's description. When you become able to have multiple active djinn at once at higher levels, you choose which one of your active djinn's Unleashed Strike damage types to use each time you use this feature. If you don't have an active djinni, such as after using the Spirit Summoning feature, the extra damage dealt is of the weapon's damage type.`,
 					`Lorsque vous frappez avec une attaque à l'arme, vous pouvez dépenser un emplacement de sorts pour infliger à la cible des dégâts supplémentaires égaux à 1d6 par niveau d'emplacement de sort utilisé, jusqu'à un maximum de 5d6. Votre arme et les dégâts supplémentaires sont considérés comme magiques pour cette attaque, et le type de dégâts supplémentaires est déterminé par votre djinn lié, comme détaillé dans la description de chaque djinn. Lorsque vous devenez capable d'avoir plusieurs djinns liés en même temps à des niveaux plus élevés, vous choisissez lequel des types de dégâts de votre djinn lié frappe déchainée utilise à chaque fois que vous utilisez cette aptitude. Si vous n'avez pas de djinn lié, par exemple après avoir utilisé la fonction d'invocation d'esprit, les dégâts supplémentaires infligés sont du type de ceux de l'arme.`
-				)
+				);
 				translateItem('#adept-adept-archetypes-elemental-warrior-unleashed-strike > p:nth-child(5)',
 					`You can use spell slots created with the Psynergy Points from your Djinni Magic to deal extra damage with your Unleashed Strike feature, in addition to using them to cast your active djinn's associated spells.`,
 					`Vous pouvez utiliser les emplacements de sorts créés avec les points de Psynergie de votre magie de djinn pour infliger des dégâts supplémentaires avec l'aptitude frappe déchaînée, en plus de les utiliser pour lancer les sorts associés à votre djinn lié.`
-				)
+				);
 
 
 				// Extra Attack
 				translateItem('section#adept-adept-archetypes-elemental-warrior-extra-attack h4#adept-adept-archetypes-elemental-warrior-extra-attack',
 					`Extra Attack`,
 					`Attaque supplémentaire`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-warrior-extra-attack > p:nth-child(2) > em',
 					`6th-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 6`
@@ -2220,14 +2243,14 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-warrior-extra-attack > p:nth-child(3)',
 					`You can attack twice, instead of once, whenever you take the attack action on your turn.`,
 					`À partir du niveau 6, vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous choisissez l'action attaquer lors votre tour.`
-				)
+				);
 
 
 				// Battle Magic
 				translateItem('section#adept-adept-archetypes-elemental-warrior-battle-magic h4#adept-adept-archetypes-elemental-warrior-battle-magic',
 					`Battle Magic`,
 					`Bataille magique`
-				)
+				);
 				/*translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic > p:nth-child(2) > em',
 					`14th-level Elemental Warrior feature`,
 					`Aptitude de guerrier élémentaire de niveau 14`
@@ -2235,59 +2258,1469 @@ your background:`,
 				translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic > p:nth-child(3)',
 					`You've learned how to follow up your elemental magic with a mighty blow. When you use your action to cast an adept spell or summon a spirit, you can make one weapon attack as a bonus action.`,
 					`Au niveau 14, vous avez appris à asseiner un coup puissant après une attaque magique élémentaire. Lorsque vous utilisez votre action pour lancer un sort d'adepte ou invoquer un esprit, vous pouvez faire une attaque d'arme comme action bonus.`
-				)
+				);
 
 					// Optional Rule: Multiclassing
-					plainTag(`\n\r<br>`)
+					plainTag(`\n\r<br>`);
 					quote = true;
 					translateItem('section#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing h5#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing',
 						`Optional Rule: Multiclassing`,
 						`Règle optionnelle : multiclassage`
-					)
+					);
 					translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing > p:nth-child(2)',
 						`If your group uses the optional multiclassing rule, here's what you need to know if you choose adept as one of your classes.`,
 						`Si votre groupe utilise la règle optionnelle du multiclassage, voici ce que vous devez savoir si vous choisissez la classe d'adepte.`
-					)
+					);
 					translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing > p:nth-child(3)',
 						`<em><strong>Ability Score Minimum.</strong></em> As a multiclass character, you must have at least an Intelligence score of 13 to take a level in this class.`,
 						`<em><strong>Valeur de caractéristique minimum.</strong></em> En tant que personnage multiclasse, vous devez avoir une caractéristique d'Intelligence de 13 minimum pour passer un niveau dans une autre classe.`,
 						true
-					)
+					);
 					translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing > p:nth-child(4)',
 						`<em><strong>Proficiency Gained.</strong></em> If adept isn't your initial class, you gain proficiency in all simple weapons when you take your first level as an adept.`,
 						`<em><strong>Gain de maîtrise.</strong></em> Si adepte n'est pas votre classe initiale, vous gagnez en compétence dans toutes les armes simples lorsque vous passez votre premier niveau d'adepte.`,
 						true
-					)
+					);
 					translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing > p:nth-child(5)',
 						`<em><strong>Extra Attack.</strong></em> If you gain the Extra Attack feature from both the elemental warrior adept archetype and another class, the features don't add together.`,
 						`<em><strong>Attaque supplémentaire.</strong></em> Si vous obtenez la fonction Extra Attack à la fois de l'archétype guerrier élémentaire adepte et d'une autre classe, les fonctions ne s'additionnent pas.`,
 						true
-					)
+					);
 					translateItem('#adept-adept-archetypes-elemental-warrior-battle-magic-optional-rule-multiclassing > p:nth-child(6)',
 						`<em><strong>Spellcasting.</strong></em> Add half your levels (rounded up) in the adept class to the appropriate levels from other classes to determine your available spell slots.`,
 						`<em><strong>Incantation.</strong></em> Ajoutez la moitié de vos niveaux (arrondis à l'entier supérieur) dans la classe d'adepte aux niveaux appropriés des autres classes pour déterminer vos emplacements de sorts disponibles.`,
 						true
-					)
+					);
 					quote = false;
 
 	plainTag('\n\r<img src="https://giantbomb1.cbsistatic.com/uploads/scale_medium/1/11164/437254-isaac2.jpg" style="position:absolute; top:725px; right:-80px; width:570px">');
 	plainTag('<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:0px; right:0px; width:900px;transform:scale(-1) rotate(-7deg)">');
 	
-	pageNumber(12, 'CHAPITRE 3 : LES CLASSES')
+	pageNumber(12, 'CHAPITRE 3 : LES CLASSES');
 
-	breakPage()
 
-	translateItem('section#djinn-tracker-for-character-sheets h1#djinn-tracker-for-character-sheets',
-		`Djinn Tracker for Character Sheets`,
-		`Suivi de djinn pour feuille de personnage`
-	)
 
-	plainTag(`___
+
+
+// TRADUCTION SORTS
+
+  currentUrl = 'https://www.gmbinder.com/share/-Lt60srWR9aVXizwPAHp';
+
+  breakPage();
+
+  translateItem('section#adept-spell-list h1#adept-spell-list',
+    `Adept Spell List`,
+    `Chapitre 11 : Les sorts d'adepte`
+  );
+
+  translateItem('#adept-spell-list > p:nth-child(2)',
+    `This section contains the lists of spells you consult when you learn an adept spell. The list is divided up by the elements associated with the spells and further organized by spell level within each classification.`,
+    `Cette section contient les listes de sorts à consulter lorsque vous apprenez un sort d'adepte. La liste est divisée en fonction des éléments associés aux sorts et organisée par niveau de sort au sein de chaque classification.`
+  );
+
+  translateItem('#adept-spell-list > p:nth-child(3)',
+    `Spells marked with an asterisk (*) are found in <em>Xanathar's Guide to Everything</em>. Those marked with two are found in the <em>Sword Coast Adventurer's Guide</em>. All other spells can be found in the <em>Player's Handbook</em>.`,
+    `Les sorts marqués d'un astérisque (*) se trouvent dans <em>Le Guide Complet de Xanathar (Xanathar's Guide to Everything)</em>. Les sorts marqués de deux (*) se trouvent dans <em>Le Guide des Aventuriers de la Côte des Epées (Sword Coast Adventurer's Guide)</em>. Tous les autres sorts se trouvent dans le <em>Manuel du joueur (Player's Handbook)</em>.`,
+    true
+  );
+
+  plainTag(`<div class='spellList'>`);
+
+  translateItem('section#adept-spell-list-earth-spells h3#adept-spell-list-earth-spells',
+    `Earth Spells`,
+    `Sorts de la Terre`
+  );
+  translateItem('section#adept-spell-list-earth-spells-cantrips-0-level h5#adept-spell-list-earth-spells-cantrips-0-level',
+    `Cantrips (0 Level)`,
+    `Tours de magie <small>(niveau 0)</small>`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(1)',
+    `Chill Touch`,
+    `contact glacial`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(2)',
+    `Druidcraft`,
+    `druidisme`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(3)',
+    `Guidance`,
+    `assistance`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(4)',
+    `Mage Hand`,
+    `main du mage`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(5)',
+    `Magic Stone*`,
+    `pierre magique*`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(6)',
+    `Mold Earth*`,
+    `modeler la terre*`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(7)',
+    `Poison Spray`,
+    `bouffée de poison`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(8)',
+    `Thaumaturgy`,
+    `thaumaturgie`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(9)',
+    `Thorn Whip`,
+    `fouet épineux`
+  );
+  translateItem('#adept-spell-list-earth-spells-cantrips-0-level > ul > li:nth-child(10)',
+    `True Strike`,
+    `viser juste`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-1st-level h5#adept-spell-list-earth-spells-1st-level',
+    `1st Level`,
+    `Niveau 1`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(1)',
+    `Absorb Elements*`,
+    `absorption des éléments*`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(2)',
+    `Ceremony*`,
+    `cérémonie*`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(3)',
+    `Chromatic Orb`,
+    `orbe chromatique`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(4)',
+    `Cure Wounds`,
+    `soin des blessures`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(5)',
+    `Detect Magic`,
+    `détection de la magie`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(6)',
+    `Earth Tremor*`,
+    `secousse sismique*`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(7)',
+    `Ensnaring Strike`,
+    `frappe piégeuse`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(8)',
+    `Entangle`,
+    `enchevêtrement`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(9)',
+    `Goodberry`,
+    `baies nourricières`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(10)',
+    `Hail of Thorns`,
+    `grêle d'épines`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(11)',
+    `Hex`,
+    `maléfice`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(12)',
+    `Identify`,
+    `identification`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(13)',
+    `Mage Armor`,
+    `armure du mage`
+  );
+  translateItem('#adept-spell-list-earth-spells-1st-level > ul > li:nth-child(14)',
+    `Ray of Sickness`,
+    `rayon empoisonné`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-2nd-level h5#adept-spell-list-earth-spells-2nd-level',
+    `2nd Level`,
+    `Niveau 2`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(1)',
+    `Barkskin`,
+    `peau d'écorce`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(2)',
+    `Cordon of Arrows`,
+    `cordon de flèches`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(3)',
+    `Darkvision`,
+    `vision dans le noir`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(4)',
+    `Dust Devil*`,
+    `tourbillon de poussière*`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(5)',
+    `Earthbind*`,
+    `attraction terrestre*`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(6)',
+    `Enhance Ability`,
+    `amélioration de caractéristique`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(7)',
+    `Find Traps`,
+    `sens des pièges`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(8)',
+    `Levitate`,
+    `lévitation`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(9)',
+    `Locate Animals and Plants`,
+    `localiser des animaux ou des plantes`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(10)',
+    `Magic Weapon`,
+    `arme magique`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(2) > li:nth-child(11)',
+    `Maximilian’s Earthen Grasp*`,
+    `poigne terreuse de Maximilien*`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(4) > li:nth-child(1)',
+    `See Invisibility`,
+    `voir l'invisible`
+  );
+  translateItem('#adept-spell-list-earth-spells-2nd-level > ul:nth-child(4) > li:nth-child(2)',
+    `Spike Growth`,
+    `croissance d'épines`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-3rd-level h5#adept-spell-list-earth-spells-3rd-level',
+    `3rd Level`,
+    `Niveau 3`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(1)',
+    `Animate Dead`,
+    `animation des morts`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(2)',
+    `Bestow Curse`,
+    `malédiction`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(3)',
+    `Dispel Magic`,
+    `dissipation de la magie`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(4)',
+    `Elemental Weapon`,
+    `arme élémentaire`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(5)',
+    `Erupting Earth*`,
+    `éruption de terre*`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(6)',
+    `Feign Death`,
+    `mort simulée`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(7)',
+    `Glyph of Warding`,
+    `glyphe de protection`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(8)',
+    `Meld into Stone`,
+    `fusion dans la pierre`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(9)',
+    `Plant Growth`,
+    `croissance végétale`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(10)',
+    `Protection from Energy`,
+    `protection contre l'énergie`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(11)',
+    `Revivify`,
+    `revigorer`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(12)',
+    `Speak with Plants`,
+    `communication avec les plantes`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(13)',
+    `Stinking Cloud`,
+    `nuage puant`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(14)',
+    `Wall of Sand*`,
+    `mur de sable*`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-4th-level h5#adept-spell-list-earth-spells-4th-level',
+    `4th Level`,
+    `Niveau 4`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-4th-level > ul > li:nth-child(1)',
+    `Blight`,
+    `flétrissement`
+  );
+  translateItem('#adept-spell-list-earth-spells-4th-level > ul > li:nth-child(2)',
+    `Conjure Minor Elementals`,
+    `invoquer des élémentaires mineurs`
+  );
+  translateItem('#adept-spell-list-earth-spells-4th-level > ul > li:nth-child(3)',
+    `Elemental Bane`,
+    `fléau élémentaire`
+  );
+  translateItem('#adept-spell-list-earth-spells-4th-level > ul > li:nth-child(4)',
+    `Grasping Vine`,
+    `liane agrippeuse`
+  );
+  translateItem('#adept-spell-list-earth-spells-4th-level > ul > li:nth-child(5)',
+    `Guardian of Nature*`,
+    `gardien de la nature*`
+  );
+  translateItem('#adept-spell-list-earth-spells-4th-level > ul > li:nth-child(6)',
+    `Otiluke’s Resilient Sphere`,
+    `sphère résiliente d'Otiluke`
+  );
+  translateItem('#adept-spell-list-earth-spells-4th-level > ul > li:nth-child(7)',
+    `Stone Shape`,
+    `façonnage de la pierre`
+  );
+  translateItem('#adept-spell-list-earth-spells-4th-level > ul > li:nth-child(8)',
+    `Stoneskin`,
+    `peau de pierre`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-5th-level h5#adept-spell-list-earth-spells-5th-level',
+    `5th Level`,
+    `Niveau 5`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(1)',
+    `Cloudkill`,
+    `nuage mortel`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(2)',
+    `Commune with Nature`,
+    `communion avec la nature`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(3)',
+    `Conjure Elemental`,
+    `invoquer un élémentaire`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(4)',
+    `Contagion`,
+    `contagion`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(5)',
+    `Danse Macabre*`,
+    `danse macabre*`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(6)',
+    `Destructive Wave`,
+    `vague destructrice`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(7)',
+    `Skill Empowerment*`,
+    `amélioration de compétences*`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(8)',
+    `Telekinesis`,
+    `télékinésie`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(9)',
+    `Teleportation Circle`,
+    `cercle de téléportation`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(10)',
+    `Transmute Rock*`,
+    `transmutation de la pierre*`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(11)',
+    `Tree Stride`,
+    `passage par les arbres`
+  );
+  translateItem('#adept-spell-list-earth-spells-5th-level > ul > li:nth-child(12)',
+    `Wall of Stone`,
+    `mur de pierre`
+  );
+  translateItem('#adept-spell-list-earth-spells-3rd-level > ul > li:nth-child(13)',
+    `Wrath of Nature*`,
+    `fureur de la nature*`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-fire-spells h3#adept-spell-list-earth-spells-fire-spells',
+    `Fire Spells`,
+    `Sorts du Feu`
+  );
+  translateItem('section#adept-spell-list-earth-spells-fire-spells-cantrips-0-level h5#adept-spell-list-earth-spells-fire-spells-cantrips-0-level',
+    `Cantrips (0 Level)`,
+    `Tours de magie <small>(niveau 0)</small>`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(1)',
+    `Blade Ward`,
+    `protection contre les armes`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(2)',
+    `Control Flames*`,
+    `contrôle des flammes*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(3)',
+    `Create Bonfire*`,
+    `embrasement*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(4)',
+    `Fire Bolt`,
+    `trait de feu`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(5)',
+    `Green-Flame Blade**`,
+    `lame aux flammes vertes**`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(6)',
+    `Guidance`,
+    `assistance`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(7)',
+    `Mage Hand`,
+    `main du mage`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(8)',
+    `Produce Flame`,
+    `produire une flamme`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(9)',
+    `Sacred Flame`,
+    `flamme sacrée`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(10)',
+    `Thaumaturgy`,
+    `thaumaturgie`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(11)',
+    `True Strike`,
+    `viser juste`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-cantrips-0-level > ul > li:nth-child(12)',
+    `Word of Radiance*`,
+    `mot de radiance*`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-fire-spells-1st-level h5#adept-spell-list-earth-spells-fire-spells-1st-level',
+    `1st Level`,
+    `Niveau 1`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(1)',
+    `Absorb Elements*`,
+    `absorption des éléments*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(2)',
+    `Burning Hands`,
+    `mains brûlantes`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(3)',
+    `Ceremony*`,
+    `cérémonie*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(4)',
+    `Chromatic Orb`,
+    `orbe chromatique`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(5)',
+    `Color Spray`,
+    `couleurs dansantes`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(6)',
+    `Detect Magic`,
+    `détection de la magie`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(7)',
+    `Divine Favor`,
+    `faveur divine`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(8)',
+    `Guiding Bolt`,
+    `balisage`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(9)',
+    `Healing Word`,
+    `mot de guérison`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(10)',
+    `Hellish Rebuke`,
+    `représailles infernales`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(11)',
+    `Identify`,
+    `identification`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(12)',
+    `Mage Armor`,
+    `armure du mage`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(13)',
+    `Sanctuary`,
+    `sanctuaire`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(14)',
+    `Searing Smite`,
+    `frappe ardente`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(15)',
+    `Shield of Faith`,
+    `bouclier de la foi`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(16)',
+    `Thunderous Smite`,
+    `frappe tonitruante`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-1st-level > ul > li:nth-child(17)',
+    `Wrathful Smite`,
+    `frappe colérique`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-fire-spells-2nd-level h5#adept-spell-list-earth-spells-fire-spells-2nd-level',
+    `2nd Level`,
+    `Niveau 2`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(2) > li:nth-child(1)',
+    `Aganazzar’s Scorcher*`,
+    `flambée d'Aganazzar*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(2) > li:nth-child(2)',
+    `Branding Smite`,
+    `frappe lumineuse`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(2) > li:nth-child(3)',
+    `Continual Flame`,
+    `flamme éternelle`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(2) > li:nth-child(4)',
+    `Enhance Ability`,
+    `amélioration de caractéristique`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(2) > li:nth-child(5)',
+    `Flame Blade`,
+    `lame de feu`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(2) > li:nth-child(6)',
+    `Flaming Sphere`,
+    `sphère de feu`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(4) > li:nth-child(1)',
+    `Heat Metal`,
+    `chauffer le métal`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(4) > li:nth-child(2)',
+    `Levitate`,
+    `lévitation`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(4) > li:nth-child(3)',
+    `Magic Weapon`,
+    `arme magique`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(4) > li:nth-child(4)',
+    `Pyrotechnics*`,
+    `pyrotechnie*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(4) > li:nth-child(5)',
+    `Scorching Ray`,
+    `rayon ardent`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-2nd-level > ul:nth-child(4) > li:nth-child(6)',
+    `Shatter`,
+    `briser`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-fire-spells-3rd-level h5#adept-spell-list-earth-spells-fire-spells-3rd-level',
+    `3rd Level`,
+    `Niveau 3`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(1)',
+    `Aura of Vitality`,
+    `aura de vitalité`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(2)',
+    `Blinding Smite`,
+    `frappe aveuglante`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(3)',
+    `Daylight`,
+    `lumière du jour`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(4)',
+    `Dispel Magic`,
+    `dissipation de la magie`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(5)',
+    `Elemental Weapon`,
+    `arme élémentaire`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(6)',
+    `Fireball`,
+    `boule de feu`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(7)',
+    `Flame Arrows*`,
+    `flèches enflammées*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(8)',
+    `Glyph of Warding`,
+    `glyphe de protection`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(9)',
+    `Melf’s Minute Meteors*`,
+    `minuscules météores de Melf*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(10)',
+    `Protection from Energy`,
+    `protection contre l'énergie`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-3rd-level > ul > li:nth-child(11)',
+    `Spirit Guardians`,
+    `esprits gardiens`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-fire-spells-4th-level h5#adept-spell-list-earth-spells-fire-spells-4th-level',
+    `4th Level`,
+    `Niveau 4`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-4th-level > ul > li:nth-child(1)',
+    `Conjure Minor Elementals`,
+    `invoquer des élémentaires mineurs`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-4th-level > ul > li:nth-child(2)',
+    `Elemental Bane`,
+    `fléau élémentaire`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-4th-level > ul > li:nth-child(3)',
+    `Fire Shield`,
+    `bouclier de feu`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-4th-level > ul > li:nth-child(4)',
+    `Otiluke’s Resilient Sphere`,
+    `sphère résiliente d'Otiluke`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-4th-level > ul > li:nth-child(5)',
+    `Sickening Radiance*`,
+    `rayonnement écoeurant*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-4th-level > ul > li:nth-child(6)',
+    `Staggering Smite`,
+    `frappe assommante`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-4th-level > ul > li:nth-child(7)',
+    `Wall of Fire`,
+    `mur de feu`
+  );
+
+
+  translateItem('section#adept-spell-list-earth-spells-fire-spells-5th-level h5#adept-spell-list-earth-spells-fire-spells-5th-level',
+    `5th Level`,
+    `Niveau 5`,
+    true
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(1)',
+    `Commune with Nature`,
+    `communion avec la nature`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(2)',
+    `Conjure Elemental`,
+    `invoquer un élémentaire`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(3)',
+    `Dawn*`,
+    `aube*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(4)',
+    `Destructive Wave`,
+    `vague destructrice`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(5)',
+    `Flame Strike`,
+    `colonne de flamme`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(6)',
+    `Holy Weapon*`,
+    `arme sacrée*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(7)',
+    `Immolation*`,
+    `immolation*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(8)',
+    `Skill Empowerment*`,
+    `amélioration de compétences*`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(9)',
+    `Telekinesis`,
+    `télékinésie`
+  );
+  translateItem('#adept-spell-list-earth-spells-fire-spells-5th-level > ul > li:nth-child(10)',
+    `Teleportation Circle`,
+    `cercle de téléportation`
+  );
+
+  plainTag('\n\r<br>');
+
+  plainTag(`
+  </div>`);
+
+  pageNumber(13, "CHAPITRE 11 : LES SORTS D'ADEPTE");
+  breakPage();
+
+
+
+  plainTag(`<div class='spellList'>`);
+
+  translateItem('section#adept-spell-list-cont-water-spells h3#adept-spell-list-cont-water-spells',
+    `Water Spells`,
+    `Sorts de l'Eau`
+  );
+  translateItem('section#adept-spell-list-cont-water-spells-cantrips-0-level h5#adept-spell-list-cont-water-spells-cantrips-0-level',
+    `Cantrips (0 Level)`,
+    `Tours de magie <small>(niveau 0)</small>`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(1)',
+    `Frostbite*`,
+    `gelure*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(2)',
+    `Guidance`,
+    `assistance`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(3)',
+    `Mage Hand`,
+    `main du mage`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(4)',
+    `Mending`,
+    `réparation`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(5)',
+    `Ray of Frost`,
+    `rayon de givre`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(6)',
+    `Shape Water*`,
+    `modeler l'eau*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(7)',
+    `Spare the Dying`,
+    `épargner les mourants`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(8)',
+    `Thaumaturgy`,
+    `thaumaturgie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-cantrips-0-level > ul > li:nth-child(9)',
+    `True Strike`,
+    `viser juste`
+  );
+
+
+  translateItem('section#adept-spell-list-cont-water-spells-1st-level h5#adept-spell-list-cont-water-spells-1st-level',
+    `1st Level`,
+    `Niveau 1`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(1)',
+    `Absorb Elements*`,
+    `absorption des éléments*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(2)',
+    `Armor of Agathys`,
+    `armure d'Agathys`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(3)',
+    `Ceremony*`,
+    `cérémonie*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(4)',
+    `Chromatic Orb`,
+    `orbe chromatique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(5)',
+    `Create or Destroy Water`,
+    `création ou destruction d'eau`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(6)',
+    `Cure Wounds`,
+    `soin des blessures`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(7)',
+    `Detect Magic`,
+    `détection de la magie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(8)',
+    `Detect Poison and Disease`,
+    `détection du poison et des maladies`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(9)',
+    `Grease`,
+    `graisse`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(10)',
+    `Healing Word`,
+    `mot de guérison`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(11)',
+    `Heroism`,
+    `héroïsme`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(12)',
+    `Ice Knife*`,
+    `couteau de glace*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(13)',
+    `Identify`,
+    `identification`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(14)',
+    `Mage Armor`,
+    `armure du mage`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-1st-level > ul > li:nth-child(15)',
+    `Purify Food and Drink`,
+    `purification de la nourriture et de l'eau`
+  );
+
+
+  translateItem('section#adept-spell-list-cont-water-spells-2nd-level h5#adept-spell-list-cont-water-spells-2nd-level',
+    `2nd Level`,
+    `Niveau 2`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(1)',
+    `Augury`,
+    `augure`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(2)',
+    `Calm Emotions`,
+    `apaisement des émotions`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(3)',
+    `Detect Thoughts`,
+    `détection des pensées`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(4)',
+    `Enhance Ability`,
+    `amélioration de caractéristique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(5)',
+    `Gentle Repose`,
+    `doux repos`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(6)',
+    `Healing Spirit*`,
+    `esprit guérisseur*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(7)',
+    `Invisibility`,
+    `invisibilité`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(8)',
+    `Lesser Restoration`,
+    `restauration inférieure`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(9)',
+    `Levitate`,
+    `lévitation`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(10)',
+    `Magic Weapon`,
+    `arme magique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(11)',
+    `Misty Step`,
+    `pas brumeux`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(12)',
+    `Nondetection`,
+    `non-détection`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(13)',
+    `Nystul’s Magic Aura`,
+    `aura magique de Nystul`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(14)',
+    `Pass without Trace`,
+    `passage sans trace`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(2) > li:nth-child(15)',
+    `Prayer of Healing`,
+    `prière de soins`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(4) > li:nth-child(1)',
+    `Protection from Poison`,
+    `protection contre le poison`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-2nd-level > ul:nth-child(4) > li:nth-child(2)',
+    `Snilloc’s Snowball Swarm*`,
+    `nuée de boules de neige de Snilloc*`
+  );
+
+
+  translateItem('section#adept-spell-list-cont-water-spells-3rd-level h5#adept-spell-list-cont-water-spells-3rd-level',
+    `3rd Level`,
+    `Niveau 3`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(1)',
+    `aura de vitalité`,
+    `Aura of Vitality`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(2)',
+    `Beacon of Hope`,
+    `lueur d'espoir`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(3)',
+    `Dispel Magic`,
+    `dissipation de la magie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(4)',
+    `Elemental Weapon`,
+    `arme élémentaire`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(5)',
+    `Glyph of Warding`,
+    `glyphe de protection`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(6)',
+    `Mass Healing Word`,
+    `mot de guérison de groupe`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(7)',
+    `Protection from Energy`,
+    `protection contre l'énergie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(8)',
+    `Remove Curse`,
+    `lever une malédiction`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(9)',
+    `Sleet Storm`,
+    `tempête de neige`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(10)',
+    `Tidal Wave*`,
+    `raz-de-marée*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(11)',
+    `Wall of Water*`,
+    `mur d'eau*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(12)',
+    `Water Breathing`,
+    `respiration aquatique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-3rd-level > ul > li:nth-child(13)',
+    `Water Walk`,
+    `marche sur l'eau`
+  );
+
+
+  translateItem('section#adept-spell-list-cont-water-spells-4th-level h5#adept-spell-list-cont-water-spells-4th-level',
+    `4th Level`,
+    `Niveau 4`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(1)',
+    `Aura of Life`,
+    `aura de vie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(2)',
+    `Aura of Purity`,
+    `aura de pureté`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(3)',
+    `Conjure Minor Elementals`,
+    `invoquer des élémentaires mineurs`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(4)',
+    `Control Water`,
+    `contrôle de l'eau`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(5)',
+    `Death Ward`,
+    `protection contre la mort`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(6)',
+    `Divination`,
+    `divination`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(7)',
+    `Elemental Bane`,
+    `fléau élémentaire`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(8)',
+    `Greater Invisibility`,
+    `invisibilité supérieure`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(9)',
+    `Ice Storm`,
+    `tempête de grêle`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(10)',
+    `Otiluke’s Resilient Sphere`,
+    `sphère résiliente d'Otiluke`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-4th-level > ul > li:nth-child(11)',
+    `Watery Sphere*`,
+    `sphère aqueuse*`
+  );
+
+
+  translateItem('section#adept-spell-list-cont-water-spells-5th-level h5#adept-spell-list-cont-water-spells-5th-level',
+    `5th Level`,
+    `Niveau 5`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(1)',
+    `Commune with Nature`,
+    `communion avec la nature`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(2)',
+    `Cone of Cold`,
+    `cône de froid`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(3)',
+    `Conjure Elemental`,
+    `invoquer un élémentaire`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(4)',
+    `Greater Restoration`,
+    `restauration supérieure`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(5)',
+    `Maelstrom*`,
+    `maelström*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(6)',
+    `Mass Cure Wounds`,
+    `soin des blessures de groupe`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(7)',
+    `Raise Dead`,
+    `relever les morts`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(8)',
+    `Skill Empowerment*`,
+    `amélioration de compétences*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(9)',
+    `Telekinesis`,
+    `télékinésie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-5th-level > ul > li:nth-child(10)',
+    `Teleportation Circle`,
+    `cercle de téléportation`
+  );
+
+
+  plainTag('\n\r<br>');
+  translateItem('section#adept-spell-list-cont-water-spells-wind-spells h3#adept-spell-list-cont-water-spells-wind-spells',
+    `Wind Spells`,
+    `Sorts de l'Air`
+  );
+  translateItem('section#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level h5#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level',
+    `Cantrips (0 Level)`,
+    `Tours de magie <small>(niveau 0)</small>`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(1)',
+    `Booming Blade**`,
+    `lame tonnante**`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(2)',
+    `Guidance`,
+    `assistance`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(3)',
+    `Gust*`,
+    `rafale de vent*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(4)',
+    `Lightning Lure**`,
+    `fouet électrique**`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(5)',
+    `Mage Hand`,
+    `main du mage`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(6)',
+    `Message`,
+    `message`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(7)',
+    `Resistance`,
+    `résistance`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(8)',
+    `Shocking Grasp`,
+    `poigne électrique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(9)',
+    `Thaumaturgy`,
+    `thaumaturgie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(10)',
+    `Thunderclap*`,
+    `coup de tonnerre*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-cantrips-0-level > ul > li:nth-child(11)',
+    `True Strike`,
+    `viser juste`
+  );
+
+
+  translateItem('section#adept-spell-list-cont-water-spells-wind-spells-1st-level h5#adept-spell-list-cont-water-spells-wind-spells-1st-level',
+    `1st Level`,
+    `Niveau 1`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(1)',
+    `Absorb Elements*`,
+    `absorption des éléments*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(2)',
+    `Bane`,
+    `fléau`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(3)',
+    `Bless`,
+    `bénédiction`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(4)',
+    `Ceremony*`,
+    `cérémonie*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(5)',
+    `Charm Person`,
+    `charme-personne`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(6)',
+    `Chromatic Orb`,
+    `orbe chromatique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(7)',
+    `Detect Magic`,
+    `détection de la magie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(8)',
+    `Feather Fall`,
+    `léger comme une plume`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(9)',
+    `Fog Cloud`,
+    `nappe de brouillard`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(10)',
+    `Guiding Bolt`,
+    `balisage`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(11)',
+    `Healing Word`,
+    `mot de guérison`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(12)',
+    `Identify`,
+    `identification`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(13)',
+    `Jump`,
+    `saut`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(14)',
+    `Mage Armor`,
+    `armure du mage`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(15)',
+    `Sleep`,
+    `sommeil`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(16)',
+    `Thunderwave`,
+    `vague tonnante`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(17)',
+    `Witch Bolt`,
+    `carreau ensorcelé`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-1st-level > ul > li:nth-child(18)',
+    `Zephyr Strike*`,
+    `frappe du zéphyr*`
+  );
+
+
+  translateItem('section#adept-spell-list-cont-water-spells-wind-spells-2nd-level h5#adept-spell-list-cont-water-spells-wind-spells-2nd-level',
+    `2nd Level`,
+    `Niveau 2`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(1)',
+    `Augury`,
+    `augure`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(2)',
+    `Blindness/Deafness`,
+    `cécité/surdité`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(3)',
+    `Darkvision`,
+    `vision dans le noir`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(4)',
+    `Detect Thoughts`,
+    `détection des pensées`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(5)',
+    `Enhance Ability`,
+    `amélioration de caractéristique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(6)',
+    `Enthrall`,
+    `envoûtement`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(7)',
+    `Find Traps`,
+    `trouver les pièges`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(8)',
+    `Gust of Wind`,
+    `bourrasque`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(9)',
+    `Levitate`,
+    `lévitation`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(2) > li:nth-child(10)',
+    `Locate Object`,
+    `localiser un objet`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(4) > li:nth-child(1)',
+    `Magic Weapon`,
+    `arme magique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(4) > li:nth-child(2)',
+    `Ray of Enfeeblement`,
+    `rayon affaiblissant`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(4) > li:nth-child(3)',
+    `See Invisibility`,
+    `voir l'invisible`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(4) > li:nth-child(4)',
+    `Shatter`,
+    `briser`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(4) > li:nth-child(5)',
+    `Silence`,
+    `silence`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(4) > li:nth-child(6)',
+    `Skywrite*`,
+    `écrire dans le ciel*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(4) > li:nth-child(7)',
+    `Warding Wind*`,
+    `vent protecteur*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-2nd-level > ul:nth-child(4) > li:nth-child(8)',
+    `Zone of Truth`,
+    `zone de vérité`
+  );
+
+
+  translateItem('section#adept-spell-list-cont-water-spells-wind-spells-3rd-level h5#adept-spell-list-cont-water-spells-wind-spells-3rd-level',
+    `3rd Level`,
+    `Niveau 3`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(1)',
+    `Call Lightning`,
+    `appel de la foudre`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(2)',
+    `Counterspell`,
+    `contresort`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(3)',
+    `Crusader’s Mantle`,
+    `aura du croisé`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(4)',
+    `Dispel Magic`,
+    `dissipation de la magie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(5)',
+    `Elemental Weapon`,
+    `arme élémentaire`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(6)',
+    `Fly`,
+    `vol`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(7)',
+    `Glyph of Warding`,
+    `glyphe de protection`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(8)',
+    `Hypnotic Pattern`,
+    `motif hypnotique`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(9)',
+    `Lightning Arrow`,
+    `flèche de foudre`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(10)',
+    `Lightning Bolt`,
+    `éclair`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(11)',
+    `Mass Healing Word`,
+    `mot de guérison de groupe`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(12)',
+    `Protection from Energy`,
+    `protection contre l'énergie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(13)',
+    `Sending`,
+    `envoi de message`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(14)',
+    `Slow`,
+    `lenteur`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(15)',
+    `Thunder Step`,
+    `pas de tonnerre`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-3rd-level > ul > li:nth-child(16)',
+    `Wind Wall`,
+    `mur de vent`
+  );
+  
+
+  translateItem('section#adept-spell-list-cont-water-spells-wind-spells-4th-level h5#adept-spell-list-cont-water-spells-wind-spells-4th-level',
+    `4th Level`,
+    `Niveau 4`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-4th-level > ul > li:nth-child(1)',
+    `Charm Monster*`,
+    `charme-monstre*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-4th-level > ul > li:nth-child(2)',
+    `Conjure Minor Elementals`,
+    `invoquer des élémentaires mineurs`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-4th-level > ul > li:nth-child(3)',
+    `Divination`,
+    `divination`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-4th-level > ul > li:nth-child(4)',
+    `Elemental Bane`,
+    `fléau élémentaire`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-4th-level > ul > li:nth-child(5)',
+    `Freedom of Movement`,
+    `liberté de mouvement`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-4th-level > ul > li:nth-child(6)',
+    `Otiluke’s Resilient Sphere`,
+    `sphère résiliente d'Otiluke`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-4th-level > ul > li:nth-child(7)',
+    `Storm Sphere`,
+    `sphère de tempête`
+  );
+  
+
+  translateItem('section#adept-spell-list-cont-water-spells-wind-spells-5th-level h5#adept-spell-list-cont-water-spells-wind-spells-5th-level',
+    `5th Level`,
+    `Niveau 5`,
+    true
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(1)',
+    `Circle of Power`,
+    `cercle de pouvoir`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(2)',
+    `Commune with Nature`,
+    `communion avec la nature`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(3)',
+    `Conjure Elemental`,
+    `invoquer un élémentaire`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(4)',
+    `Control Winds*`,
+    `contrôle des vents*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(5)',
+    `Modify Memory`,
+    `modification de mémoire`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(6)',
+    `Rary’s Telepathic Bond`,
+    `lien télépathique de Rary`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(7)',
+    `Skill Empowerment*`,
+    `amélioration de compétences*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(8)',
+    `Steel Wind Strike*`,
+    `frappe du vent d'acier*`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(9)',
+    `Telekinesis`,
+    `télékinésie`
+  );
+  translateItem('#adept-spell-list-cont-water-spells-wind-spells-5th-level > ul > li:nth-child(10)',
+    `Teleportation Circle`,
+    `cercle de téléportation`
+  );
+  
+  plainTag(`
+  </div>`);
+
+  pageNumber(14, "CHAPITRE 11 : LES SORTS D'ADEPTE");
+  breakPage();
+
+	plainTag(`
+# Suivi de djinn pour personnage
+
+<br><br><br><br><br><br><br>
+___
 > ## Djinn :
 > ___
-> * **Élément :**
-> * **Frappe déchainée :**
-> * **Aptitude active :**
+> - **Élément :**
+> - **Frappe déchainée :**
+> - **Aptitude active :**
 >___
 > ### Sort
 > ***Niveau 1 :***
@@ -2303,9 +3736,9 @@ your background:`,
 ___
 > ## Djinn :
 > ___
-> * **Élément :**
-> * **Frappe déchainée :**
-> * **Aptitude active :**
+> - **Élément :**
+> - **Frappe déchainée :**
+> - **Aptitude active :**
 >___
 > ### Sort
 > ***Niveau 1 :***
@@ -2318,13 +3751,12 @@ ___
 >
 > ***Niveau 5 :***
   
-  
 ___
 > ## Djinn :
 > ___
-> * **Élément :**
-> * **Frappe déchainée :**
-> * **Aptitude active :**
+> - **Élément :**
+> - **Frappe déchainée :**
+> - **Aptitude active :**
 >___
 > ### Sort
 > ***Niveau 1 :***
@@ -2336,13 +3768,15 @@ ___
 > ***Niveau 4 :***
 >
 > ***Niveau 5 :***
+  
+<br><br><br><br><br><br><br>
 
 ___
 > ## Djinn :
 > ___
-> * **Élément :**
-> * **Frappe déchainée :**
-> * **Aptitude active :**
+> - **Élément :**
+> - **Frappe déchainée :**
+> - **Aptitude active :**
 >___
 > ### Sort
 > ***Niveau 1 :***
@@ -2358,9 +3792,9 @@ ___
 ___
 > ## Djinn :
 > ___
-> * **Élément :**
-> * **Frappe déchainée :**
-> * **Aptitude active :**
+> - **Élément :**
+> - **Frappe déchainée :**
+> - **Aptitude active :**
 >___
 > ### Sort
 > ***Niveau 1 :***
@@ -2376,9 +3810,9 @@ ___
 ___
 > ## Djinn :
 > ___
-> * **Élément :**
-> * **Frappe déchainée :**
-> * **Aptitude active :**
+> - **Élément :**
+> - **Frappe déchainée :**
+> - **Aptitude active :**
 >___
 > ### Sort
 > ***Niveau 1 :***
@@ -2389,7 +3823,7 @@ ___
 >
 > ***Niveau 4 :***
 >
-> ***Niveau 5 :***`)
+> ***Niveau 5 :***`);
 
 		/*translateItem('#djinn-tracker-for-character-sheets- > ul > li:nth-child(1) > strong',
 			`Element`,
@@ -2630,12 +4064,11 @@ ___
 				`Niveau 5 :`
 			)*/
 
-	pageNumber(13, 'CHAPITRE 3 : LES CLASSES')
+	pageNumber(14, 'CHAPITRE 3 : LES CLASSES');
 
-	breakPage()
+	breakPage();
 
 plainTag(`
-
 # Autres projets
 
 \\page
@@ -2676,142 +4109,12 @@ plainTag(`
 <section>
 <img src="https://i.pinimg.com/originals/e1/b0/63/e1b06382c76e958dbf4f7b40b34af4d9.jpg" style="position:absolute; top:-90px; right:-1044px; width:1800px">
 <img src="https://www.gmbinder.com/images/x83va2I.png" style="position:absolute; top:0px; right:-100px; width:900px"></section>
-</section>`)
+</section>`);
 
 
 
 
 
 // MISE EN PAGE
-
-	console.log(output)
-
-	// Move Page
-	/*jQuery('#p6').attr("id", 'p8');
-	jQuery('#p5').attr("id", 'p7');
-	jQuery('#p4').attr("id", 'p6');
-	jQuery('#p3').attr("id", 'p5');
-	jQuery('#p2').attr("id", 'p4');
-	jQuery('#p1').attr("id", 'p2');
-	
-	// Front Page
-	jQuery('#p2').before(
-		`
-			<div class="phb" id="p1"><section>
-			<style>
-			  .phb#p1:after { display:none; }
-			</style>
-			<section>
-			<img src="https://i.pinimg.com/originals/6e/a5/52/6ea55215d1a914a47005f82163478ed1.jpg" class="cover-image">
-			<section>
-			<div class="cover-diamond"></div>
-			<section>
-			<div class="cover-header">Chapitre 1 : Classe Adepte</div>
-			<section>
-			<div class="cover-splotch"></div>
-			<section>
-			<div class="cover-footer">Un guide d'accompagnement à utiliser avec le Player's Handbook de Dungeons &amp; Dragons 5e pour amener Golden Sun à votre table de jeu de rôle.</div>
-			</section></section></section></section></section></section></div>
-		`
-	);*/
-
-	// Second Page
-	/*jQuery('#p3').before(
-		`
-			<div class="phb" id="p2">
-			<section>
-				<div class="footnote">Homebrew traduit par MachinisteWeb</div>
-				<div class="pageNumber auto"></div></section>
-			<section>
-			<style>
-			  .phb#p1{ text-align:center; }
-			  .phb#p1:after{ display:none; }
-			</style>
-			<section>
-			<div style="margin-top:450px;"></div>
-			<section id="ffxiv-class-compendium">
-			<h1 id="ffxiv-class-compendium">Classe inspirée du jeu vidéo Golden Sun</h1>
-			<section>
-			<div style="margin-top:25px"></div>
-			<div class="wide">
-			<section id="ffxiv-class-compendium-a-love-letter-to-dd-and-final-fantasy-xiv-please-enjoy-its-been-quite-a-journey-putting-this-together-soren-sorenson-asgard-on-the-gilgamesh-server">
-			<h4 id="ffxiv-class-compendium-a-love-letter-to-dd-and-final-fantasy-xiv-please-enjoy-its-been-quite-a-journey-putting-this-together-soren-sorenson-asgard-on-the-gilgamesh-server">Ce document est la traduction du fichier <a href="https://docs.google.com/document/d/1fHzv6JHE_79DlINcKluvMt1VUfq7TDH8AQJyhe0APB4/edit" target="_blank">Adept v2.X Class Features</a> créer par <a href="https://twitter.com/RighteousForest" target="_blank">Righteous Forest</a>.</h4>
-			</section>
-			<section id="ffxiv-class-compendium-note-these-classes-and-races-have-been-balanced-for-and-are-intended-for-use-with-the-5th-edition-of-dungeons-and-dragons">
-			<h5 id="ffxiv-class-compendium-note-these-classes-and-races-have-been-balanced-for-and-are-intended-for-use-with-the-5th-edition-of-dungeons-and-dragons">Note : Cette classe équilibrée est destinée à être utilisée avec le Player's Handbook de Dungeons &amp; Dragons 5e.</h5>
-			</section>
-			</div>
-			</section>
-			</section></section></section></div>
-		`
-	);*/
-
-	// Add CSS
-	/*jQuery('head').append(
-		`<style>
-			.phb:after {
-				content: 'Ceci est un contenu de fan non officiel autorisé en vertu de la politique de contenu de fan. Non approuvé/endossé par Wizards. Certaines parties du matériel utilisé sont la propriété de Wizards of the Coast. ©Wizards of the Coast LLC.';
-				color: #c9ad6a;
-				z-index: -1;
-			}
-			.phb {
-				width: 210mm;
-				height: 296.8mm;
-			}
-		</style>`
-	);
-
-	// Footnote
-	jQuery('#djinn-tracker-for-character-sheets- > section:nth-child(15) > section').remove();
-	jQuery('#djinn-tracker-for-character-sheets- > section:nth-child(15) > div').after(`<div class="pageNumber auto"></div>`);
-	jQuery('.footnote').text('CHAPITRE 1 | CLASSE ADEPTE');	
-
-	// Reformating for FR
-
-	// Page 2
-	jQuery('section#adept').prepend('<br /><div style="margin-top:621px"></div>')
-
-	jQuery('section#adept-the-power-of-elemental-spirits').before('<section id="add-1"></section>')
-	jQuery('#add-1').append(jQuery('section#adept-the-power-of-elemental-spirits'))
-	jQuery('section#adept-the-power-of-elemental-spirits').prepend('<br /><div style="margin-top:530px"></div>')
-
-	jQuery('#adept-class-features-equipment > section > div.footnote').after('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:20px;right: 398px;width: 362px;transform:scalex(1);">');
-	jQuery('#adept-class-features-equipment > section > div.footnote').after('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-170px; right:0px; width:1000px">');
-	jQuery('#adept-class-features-equipment > section > div.footnote').after('<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; left: 0; width: 420mm">');
-
-	// Page 3
-	jQuery('#p4').before(
-		`
-			<div class="phb" id="p3">
-				<section>
-					<div class="footnote">CHAPITRE 1 | CLASSE ADEPTE</div>
-
-					<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:0px; right: 0; width: 420mm">
-					<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-220px; right:-90px; width:1200px;transform:rotate(-30deg)">
-
-					<div class="pageNumber auto"></div>
-				<section>
-			</div>
-		`
-	);
-	jQuery('#p3 > section').prepend(jQuery('#adept-a-culture-of-magic > p:nth-child(3)'));
-	jQuery('#p3 > section').prepend('<br /><div style="margin-top:558px"></div>');
-	jQuery('#p3 > section > p').after(jQuery('section#adept-creating-an-adept'));
-
-	jQuery('#adept-creating-an-adept > p:nth-child(3)').before('<section id="add-2"></section>')
-	jQuery('#add-2').append(jQuery('#adept-creating-an-adept > p:nth-child(3)'))
-	jQuery('#add-2').append(jQuery('section#adept-creating-an-adept-quick-build'))
-	jQuery('section#adept-creating-an-adept-quick-build').prepend('<br /><div style="margin-top:515px"></div>')
-	jQuery('#add-2').append(jQuery('section#adept-class-features'))
-	jQuery('section#adept').after(jQuery('section#adept-class-features-equipment'))
-	jQuery('section#adept-class-features-equipment').append(jQuery('#adept-creating-an-adept > p:nth-child(4)')) */
-
-
-	// Page 1
-	// jQuery('#adept-a-culture-of-magic > div').remove();
-	// jQuery('#p3').append( jQuery('#adept-class-features-equipment > section') )
-	// jQuery('#adept-class-features-equipment > ul:nth-child(6)').append( jQuery('#p4 > ul > li:nth-child(1)') )
-	// jQuery('#adept-class-features-equipment > ul:nth-child(6)').append( jQuery('#p4 > ul > li:nth-child(1)') )
-	// jQuery('#adept-class-features-equipment').append( jQuery('#p4 > p') )
-	// jQuery('#p4').prepend( jQuery('#adept-class-features') )
+console.log(output)
 });
