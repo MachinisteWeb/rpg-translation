@@ -188,7 +188,7 @@ jq.addEventListener('load', function () {
   #p5:after,
   #p6:after,
   #p7:after,
-  #p16:after {
+  #p19:after {
   	display:none;
   }
   .phb{
@@ -377,46 +377,58 @@ ___
 * **Image mage élémentaire :** OutlawStarStud (https://www.deviantart.com/outlawstarstud/art/Golden-Sun-Mia-Wallpaper-29923620)
 * **Image aptitude de classe :** Orioto (https://www.deviantart.com/orioto/art/Elemental-Star-Chamber-593190127)
 * **Image Adepte :** GLV-DA (https://www.deviantart.com/glv-da/art/Golden-Sun-Mercury-lighthouse-662045625)
+* **Image Djinns Quatre éléments :** RennyRensaur (https://www.goldensunrealm.com/images/golden_sun_10th/Djinn_Elementals_by_Renny.jpg)
+* **Image Djinns Lumière / Ténèbre :** LinkKinuzuma13 (https://zh.fanpop.com/clubs/golden-sun-dark-dawn/images/25205049/title/gs-dd-awesome-way-fanart)
 
 \\page
 
 <div class="toc">
 # Table des matières
 
-### Partie 1                                                                        4
+### Golden Sun                                                            4
+  
+### Partie 1                                                                        5
   
-#### Chapitre 3 : Les classes                                         5
+#### Chapitre 3 : classe additionnelle             6
 
 Adepte ..................................................................................... 6
+
+### Partie 3                                                                     12
+  
+#### Chapitre 10 : méchanisme d'incantation additionnelle                       13
+
+Djinns ................................................................................... 13
 </div>
 
 \\page
 
-<div class="partpage">
-<section id="part-i">
-<h1 id="part-i">1<sup>re</sup> Partie</h1>
-<section id="part-i-creating-a-hero">
-<h5 id="part-i-creating-a-hero">La création de personnages</h5>
-</section>
-</section></div>
+# Golden Sun
 
-<img src="https://images-na.ssl-images-amazon.com/images/I/81t6P5V02AL._AC_SL1500_.jpg" style="position:absolute; top:0px; right:-100px; width:1000px">
+Golden Sun c'est...
 
 <div class="pageNumber">4</div>
-<div class="footnote">1<sup>ère</sup> PARTIE : LA CRÉATION DE PERSONNAGES</div>
+<div class="footnote">GOLDEN SUN</div>
 
 \\page
 
-# Chapitre 3 : les classes
+<div class="partpage">
+<section id="partie-1">
+<h1 id="partie-1-h1">1<sup>re</sup> Partie</h1>
+<section id="partie-1-la-creation-de-personnages">
+<h5 id="partie-1-la-creation-de-personnages-h5">La création de personnages</h5>
+</section>
+</section></div>
+
+<img src="https://images-na.ssl-images-amazon.com/images/I/81t6P5V02AL._AC_SL1500_.jpg" style="position:absolute; top:0px; right:-35px; width:900px">
 
 <div class="pageNumber">5</div>
-<div class="footnote">CHAPITRE 3 : LES CLASSES</div>`)
+<div class="footnote">1<sup>ère</sup> PARTIE : LA CRÉATION DE PERSONNAGES</div>`)
 
 	breakPage()
 
 	plainTag('\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:-30px; left: -140px; width: 240mm">');
 	plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-600px; right:-200px; width:1500px;transform:rotate(-47deg">');
-	plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:30px;left: 50px;width: 300px;transform:scalex(1);">');
+	plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:100px;left: 50px;width: 270px;transform:scalex(1);">');
 	plainTag('\n\r<br>')
 	plainTag('<div style="margin-top:503px"></div>')
 
@@ -482,7 +494,11 @@ Adepte .........................................................................
 				`Votre adepte ne se concentre que sur l'un des quatre éléments, et il est important d'examiner soigneusement lequel. Bien qu'il y ait certains recoupements entre leurs zones d'influence et que les djinns ne donnent qu'un accès limité à leurs propres éléments, la magie d'un adepte provient en grande partie d'un seul élément. Il y a étonnamment peu de tension culturelle entre les adeptes des différents éléments, et la rencontre de deux adeptes sur la route est considérée comme un événement fortuit.`
 			)
 
-	pageNumber(6, 'CHAPITRE 3 : LES CLASSES')
+  plainTag(`<div style="position: absolute; top: 38px; left: 64px;">
+  # Chapitre 3 : classe additionnelle
+  </div>`)
+
+	pageNumber(6, 'CHAPITRE 3 : CLASSE ADDITIONNELLE')
 
 	breakPage()
 
@@ -1574,7 +1590,7 @@ Adepte .........................................................................
 	plainTag('\n\r\n\r<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25954a58-0198-4aff-81c3-ed57fc6df8f5/d9t64fj-c45d570b-f774-48c8-b97a-aca7cf1d1feb.jpg/v1/fill/w_1064,h_751,q_70,strp/elemental_star_chamber_by_orioto_d9t64fj-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD05MDQiLCJwYXRoIjoiXC9mXC8yNTk1NGE1OC0wMTk4LTRhZmYtODFjMy1lZDU3ZmM2ZGY4ZjVcL2Q5dDY0ZmotYzQ1ZDU3MGItZjc3NC00OGM4LWI5N2EtYWNhN2NmMWQxZmViLmpwZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.GK80Cx26mEElWVXdLOP4IVu1gWOXpYwYjF_SUZn7lpY" style="position:absolute; top:750px; left:0; width:210mm">');
 	plainTag('<img src="https://www.gmbinder.com/images/6aELefD.png" style="position:absolute; top:-100px; right:-100px; width:1100px;transform:rotate(10deg)">');
 
-	pageNumber(7, 'CHAPITRE 3 : LES CLASSES')
+	pageNumber(7, 'CHAPITRE 3 : CLASSE ADDITIONNELLE')
 
 	breakPage()
 
@@ -1797,7 +1813,7 @@ your background:`,
 				`Au niveau 1, vous avez déjà commencé votre formation spécialisée en Psynergy. Choisissez un archétype d'adepte, qui représente la façon dont vous utilisez la Psynergy : mage élémentaire ou guerrier élémentaire, tous deux détaillés dans la section Archétypes d'adepte plus loin. L'archétype que vous choisissez vous permet d'obtenir des aptitudes spéciales au niveau 1 puis de nouvelles aux niveaux 3, 6 et 14.`,
 			)
 
-	pageNumber(9, 'CHAPITRE 3 : LES CLASSES')
+	pageNumber(8, 'CHAPITRE 3 : CLASSE ADDITIONNELLE')
 
 	breakPage()
 
@@ -1929,7 +1945,7 @@ your background:`,
 
 			plainTag('\n\r<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/djinns.png" style="position:absolute; top:970px; left:60px; width:85mm">')
 
-	pageNumber(10, 'CHAPITRE 3 : LES CLASSES');
+	pageNumber(9, 'CHAPITRE 3 : CLASSE ADDITIONNELLE');
 
 	breakPage();
 
@@ -2081,7 +2097,7 @@ your background:`,
 					`À partir du niveau 6, votre union avec les éléments et votre connaissance de ceux-ci vous permettent d'exploiter les pouvoirs des quatre. Pour chaque élément autre que le vôtre, choisissez un sort dans la liste des sorts disponibles pour les adeptes de cet élément.\n\r\n\rLe sort que vous choisissez doit être d'un niveau pour lequel vous disposez d'emplacements de sorts, comme indiqué dans le tableau des adeptes, ou d'un tour de magie.`
 				);
 
-	pageNumber(11, 'CHAPITRE 3 : LES CLASSES');
+	pageNumber(10, 'CHAPITRE 3 : CLASSE ADDITIONNELLE');
 
 	breakPage();
 
@@ -2294,9 +2310,139 @@ your background:`,
 					quote = false;
 
 	plainTag('\n\r<img src="https://giantbomb1.cbsistatic.com/uploads/scale_medium/1/11164/437254-isaac2.jpg" style="position:absolute; top:725px; right:-80px; width:570px">');
-	plainTag('<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:0px; right:0px; width:900px;transform:scale(-1) rotate(-7deg)">');
+	plainTag('<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:-30px; right:0px; width:950px;transform:scale(-1) rotate(-7deg)">');
 	
-	pageNumber(12, 'CHAPITRE 3 : LES CLASSES');
+	pageNumber(11, 'CHAPITRE 3 : CLASSE ADDITIONNELLE');
+
+
+
+
+
+
+
+
+// TRADUCTION DJINNS
+
+  currentUrl = 'https://www.gmbinder.com/share/-Lt60x77Cll1cg0ndCaZ';
+
+plainTag(`\\page
+
+<div class="partpage">
+<section id="partie-3">
+<h1 id="partie-3-h1">3<sup>e</sup> Partie</h1>
+<section id="partie-3-les-regles-de-la-magie">
+<h5 id="partie-3-les-regles-de-la-magie-h5">Les règles de la magie</h5>
+</section>
+</section></div>
+
+<img src="https://image.noelshack.com/fichiers/2016/07/1455585893-me0001335583-2.jpg" style="position:absolute; top:0px; right:0; width:820px">
+
+<div class="pageNumber">12</div>
+<div class="footnote">3<sup>e</sup> PARTIE : LES RÈGLES DE LA MAGIE</div>`)
+
+  breakPage();
+
+  plainTag(`
+# Chapitre 10 : méchanisme d'incantation additionnelle`)
+
+  translateItem('section#djinn h2#djinn',
+    `Djinn`,
+    `Djinns`
+  );
+
+  translateItem('#djinn > p:nth-child(2)',
+    `This section details the many different djinn that you can choose from when you gain a new one. The djinn are grouped by their element and sorted alphabetically.`,
+    `Cette section détaille les nombreux djinns différents parmi lesquels vous pouvez choisir lorsque vous en obtenez un nouveau. Les djinns sont regroupés par élément et classés par ordre alphabétique.`
+  );
+
+  translateItem('#djinn > p:nth-child(3)',
+    `A djinni's element doesn't affect what it does or if you can choose it. If you're using the Companion Djinn variant rule, a djinni can speak and read the dialect of Primordial that matches its element. Each djinni's description also describes what the personality of a typical djinni of that variety might be, though the DM is free to give each djinni any personality.`,
+    `L'élément d'un djinn n'affecte pas ce qu'il fait ou si vous pouvez le choisir. Si vous utilisez la variante du djinn compagnon, un djinn peut parler et lire le dialecte du primordial qui correspond à son élément. La description de chaque djinn décrit également ce que pourrait être la personnalité d'un djinn typique de cette variété, bien que le DM soit libre de donner à chaque djinn n'importe quelle personnalité.`
+  );
+
+  translateItem('#djinn > p:nth-child(4)',
+    `A djinni's description includes information that is only relevant to adepts of certain archetypes. The Mage Level column of a djinni's spell table pertains only to elemental mages, and the information for the Unleashed Strike feature in a djinni's description pertains only to elemental warriors.`,
+    `La description d'un djinn comprend des informations qui ne sont pertinentes que pour les adeptes de certains archétypes. La colonne niveau de mage de la table de sorts d'un djinn ne concerne que les mages élémentaires, et les informations relatives à l'élément Frappe déchainée dans la description d'un djinn ne concernent que les guerriers élémentaires.`
+  );
+
+            plainTag(`
+<br>
+
+___
+> ## Companion djinn
+>*Petit élémentaire, neutre*
+> ___
+> - **Classe d'armure** 10
+> - **Points de vie** 2 (1d4)
+> - **Vitesse** 3m
+>___
+>|FOR|DEX|CON|INT|SAG|CHA|
+>|:---:|:---:|:---:|:---:|:---:|:---:|
+>|1 (-5)|10 (+0)|10 (+0)|10 (+0)|10 (+0)|10 (+0)|
+>___
+> - **Condition Immunities** None
+> - **Sens** Perception passive 10
+> - **Langues** Terreuse, Igneuse, Aérienne ou Aquatique
+> - **Dangerosité** 0 (0 XP)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>`);
+
+  translateItem('#djinn > p:nth-child(5)',
+    `If a djinni's ability lets you know a cantrip, this cantrip doesn't count against your number of cantrips known. If it causes you to adopt a Fighting Style, it functions just like the fighter's class feature. Having a particular Fighting Style option from a djinni doesn't prevent you from choosing it from another source, but multiple instances of the same Fighting Style aren't cumulative.`,
+    `Si la caractéristique d'un djinn vous permet de connaître un tour de magie, ce tour de magie ne compte pas dans le nombre de tours de magie connus. Si elle vous fait adopter un Style de combat, elle fonctionne exactement comme l'aptitude de classe du combattant. Le fait d'avoir une option de Style de combat particulière d'un djinn ne vous empêche pas de la choisir à partir d'une autre source, mais de multiples occurrences du même Style de combat ne sont pas cumulatives.`
+  );
+
+          // Variant Rule: Companion Djinn
+          plainTag(`\n\r<br>`);
+          quote = true;
+          translateItem('section#djinn-variant-rule-companion-djinn h5#djinn-variant-rule-companion-djinn',
+            `Variant Rule: Companion Djinn`,
+            `Variante : djinn compagnon`
+          );
+          translateItem('#djinn-variant-rule-companion-djinn > p:nth-child(2)',
+            `Djinn typically take the form of pure elemental energy, manifesting as glowing orbs about the size of a fist, that can't interact with the physical world. They do, however, have their own personalities and preferences. Sometimes, a djinni will assume a physical form to better interact with its adept. With your DM's permission, you can choose one of your willing djinn to become your companion djinni.`,
+            `Le djinn prend généralement la forme d'une énergie élémentaire pure, se manifestant sous forme d'orbes lumineuses de la taille d'un poing, qui ne peuvent pas interagir avec le monde physique. Ils ont cependant leur propre personnalité et leurs préférences. Parfois, un djinn prend une forme physique pour mieux interagir avec son adepte. Avec l'autorisation de votre DM, vous pouvez choisir un de vos djinns volontaires pour devenir votre djinn compagnon.`
+          );
+          translateItem('#djinn-variant-rule-companion-djinn > p:nth-child(3)',
+            `The djinni is controlled by the DM and uses the Companion Djinni stat block. The DM might tweak the djinni's ability scores and alignment to better reflect its personality. Djinn can't attack, and if they are reduced to 0 hit points, they return to their energy form until you finish a long rest. A djinni that's repeatedly mistreated or endangered might choose to remain nonphysical or even leave.`,
+            `Le djinn est contrôlé par le DM qui utilise l'encadré statistique compagnon djinn. Le DM peut modifier les valeur de caractéristique et l'alignement du djinn pour mieux refléter sa personnalité. Le djinn ne peut pas attaquer, et s'il est réduit à 0 point de vie, il reprend sa forme d'énergie jusqu'à ce que vous ayez terminé un long repos. Un djinn qui est maltraité ou mis en danger de façon répétée peut choisir de rester non physique ou même de partir.`
+          );
+          quote = false;
+
+  plainTag('\n\r<img src="https://www.goldensunrealm.com/images/golden_sun_10th/Djinn_Elementals_by_Renny.jpg" style="position:absolute; top:690px; right: 0px; width:500px">');
+  plainTag('<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:-210px; right:-80px; width:1000px;transform:rotate(15deg) scale(-1)">');
+  plainTag('<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:835px; right:-110px; width:900px;transform:rotate(35deg) scale(1)">');
+  plainTag('<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:35px; right:280px; width:900px;transform:rotate(-40deg) scale(-1)">');
+  
+  pageNumber(13, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
+  breakPage();
+
+
+
+  translateItem('section#djinn-companion-djinni-earth-djinn h3#djinn-companion-djinni-earth-djinn',
+    `Earth Djinn`,
+    `Djinn de Terre`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn > p',
+    `The Earth djinn are generally stubborn and reserved. They can speak and read Terran.`,
+    `Les djinns de la Terre sont généralement têtus et réservés. Ils peuvent parler et lire la langue terreuse.`
+  );
+
+  pageNumber(14, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
 
 
 
@@ -2305,7 +2451,7 @@ your background:`,
 // TRADUCTION SORTS
 
   currentUrl = 'https://www.gmbinder.com/share/-Lt60srWR9aVXizwPAHp';
-
+  
   breakPage();
 
   translateItem('section#adept-spell-list h1#adept-spell-list',
@@ -3711,6 +3857,7 @@ your background:`,
   pageNumber(14, "CHAPITRE 11 : LES SORTS D'ADEPTE");
   breakPage();
 
+
 	plainTag(`
 # Suivi de djinn pour personnage
 
@@ -4064,7 +4211,7 @@ ___
 				`Niveau 5 :`
 			)*/
 
-	pageNumber(14, 'CHAPITRE 3 : LES CLASSES');
+	pageNumber(14, 'CHAPITRE 3 : CLASSE ADDITIONNELLE');
 
 	breakPage();
 
