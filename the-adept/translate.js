@@ -2441,6 +2441,28 @@ ___
     `The Earth djinn are generally stubborn and reserved. They can speak and read Terran.`,
     `Les djinns de la Terre sont généralement têtus et réservés. Ils peuvent parler et lire la langue terreuse.`
   );
+  translateItem('section#djinn-companion-djinni-earth-djinn-brick h4#djinn-companion-djinni-earth-djinn-brick',
+    `Brick`,
+    `Brique`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick > p:nth-child(2)',
+    `Brick is the spirit of solid rock. It uses elemental magic to create impenetrable defenses. This Earth djinni is quiet but fearless and faces danger head-on.`,
+    `Brique est l'esprit de la roche solide. Il utilise la magie élémentaire pour créer des défenses impénétrables. Ce djinn de la Terre est calme, sans peur et fait face au danger de front.`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick > p:nth-child(3)',
+    `While Brick is active, you adopt the <em>Protection</em> Fighting Style. You can use the reaction from <em>Protection</em> while not wielding a shield if you have a free hand to make a somatic spell gesture to conjure a small barrier of force. If you have the Unleashed Strike feature, the extra damage you deal with it is force damage.`,
+    `Lorsque Brique est actif, vous adoptez le Style de combat <em>protection</em>. Si vous ne brandissez pas de bouclier et que vous avez la main libre, vous pouvez utiliser la réaction de <em>protection</em> pour conjurer une petite barrière de force avec un geste de sort somatique. Si vous disposez de la fonction Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de force.`,
+    true
+  );
+  
+  plainTag(`##### Sorts de Brique
+| Niveau de sort | Niveau de mage | Sort                  | Reference   |
+|:--------------:|:--------------:|:----------------------|:------------|
+| Niveau 1       | Niveau 3       | armure du mage        | *PHB p.215* |
+| Niveau 2       | Niveau 5       | peau d'écorce         | *PHB p.267* |
+| Niveau 3       | Niveau 9       | fusion dans la pierre | *PHB p.244* |
+| Niveau 4       | Niveau 13      | peau de pierre        | *PHB p.267* |
+| Niveau 5       | Niveau 17      | mur de pierre         | *PHB p.263* |`)
 
   pageNumber(14, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
 
