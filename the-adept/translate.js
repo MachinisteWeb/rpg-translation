@@ -2454,15 +2454,121 @@ ___
     `Lorsque Brique est actif, vous adoptez le Style de combat <em>protection</em>. Si vous ne brandissez pas de bouclier et que vous avez la main libre, vous pouvez utiliser la réaction de <em>protection</em> pour conjurer une petite barrière de force avec un geste de sort somatique. Si vous disposez de la fonction Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de force.`,
     true
   );
+  translateItem('section#djinn-companion-djinni-earth-djinn-brick-bricks-spells h5#djinn-companion-djinni-earth-djinn-brick-bricks-spells',
+    `Brick's Spells`,
+    `Sorts de Brique`
+  );
   
-  plainTag(`##### Sorts de Brique
-| Niveau de sort | Niveau de mage | Sort                  | Reference   |
-|:--------------:|:--------------:|:----------------------|:------------|
-| Niveau 1       | Niveau 3       | armure du mage        | *PHB p.215* |
-| Niveau 2       | Niveau 5       | peau d'écorce         | *PHB p.267* |
-| Niveau 3       | Niveau 9       | fusion dans la pierre | *PHB p.244* |
-| Niveau 4       | Niveau 13      | peau de pierre        | *PHB p.267* |
-| Niveau 5       | Niveau 17      | mur de pierre         | *PHB p.263* |`)
+  plainTag(`
+|`)
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > thead > tr > th:nth-child(1)',
+    `Spell Level`,
+    `Niveau de sort`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > thead > tr > th:nth-child(2)',
+    `Mage Level`,
+    `Niveau de mage`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > thead > tr > th:nth-child(3)',
+    `Spell`,
+    `Sort`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > thead > tr > th:nth-child(4)',
+    `Reference`,
+    `Réference`
+  );
+  plainTag(`
+|:--------------:|:--------------:|:-----|:----------|
+|`, true)
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+    `1st`,
+    `Niveau 1`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `mage armor`,
+    `armure du mage`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.256`,
+    `<em>PHB</em> p.215`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+    `2nd`,
+    `Niveau 2`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `barkskin`,
+    `peau d'écorce`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>PHB</em> p.217`,
+    `<em>PHB</em> p.267`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+    `9th`,
+    `Niveau 9`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `meld into stone`,
+    `fusion dans la pierre`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>PHB</em> p.259`,
+    `<em>PHB</em> p.244`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+    `4th`,
+    `Niveau 4`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+    `13th`,
+    `Niveau 13`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `stoneskin`,
+    `peau de pierre`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.278`,
+    `<em>PHB</em> p.267`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+    `17th`,
+    `Niveau 17`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `wall of stone`,
+    `mur de pierre`
+  );
+  translateItem('#djinn-companion-djinni-earth-djinn-brick-bricks-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>PHB</em> p.287`,
+    `<em>PHB</em> p.263`,
+    true
+  );
 
   pageNumber(14, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
 
