@@ -187,8 +187,7 @@ jq.addEventListener('load', function () {
   #p4:after,
   #p5:after,
   #p6:after,
-  #p7:after,
-  #p20:after {
+  #p7:after {
   	display:none;
   }
   .phb{
@@ -379,6 +378,7 @@ ___
 * **Image Adepte :** GLV-DA (https://www.deviantart.com/glv-da/art/Golden-Sun-Mercury-lighthouse-662045625)
 * **Image Djinns Quatre éléments :** RennyRensaur (https://www.goldensunrealm.com/images/golden_sun_10th/Djinn_Elementals_by_Renny.jpg)
 * **Image Djinns Terre :** Falun89 (https://www.deviantart.com/falun89/art/earth-djinn-343185304)
+* **Image Djinns Feu :** Falun89 (https://www.deviantart.com/falun89/art/Marsdjinn-417751760)
 * **Image Djinns Lumière / Ténèbre :** LinkKinuzuma13 (https://zh.fanpop.com/clubs/golden-sun-dark-dawn/images/25205049/title/gs-dd-awesome-way-fanart)
 
 \\page
@@ -2879,8 +2879,8 @@ plainTag(`
   );
 
   plainTag(`<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dfcd0d4a-8386-408a-b82c-0d23de79972a/d5obnh4-474f4661-373c-4e9e-935b-0543cb425fba.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZGZjZDBkNGEtODM4Ni00MDhhLWI4MmMtMGQyM2RlNzk5NzJhXC9kNW9ibmg0LTQ3NGY0NjYxLTM3M2MtNGU5ZS05MzViLTA1NDNjYjQyNWZiYS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.AjTJYt0_MwECxj0cqAW3BDJOnNHeZM3lbE0Qnx35458" style="position:absolute; top: 0; right: -450px; width:900px">
-<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:0px; right: 0px; width:310mm; transform: scaleX(-1) rotate(-30deg)">
-<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:230px; right: -320px; width:310mm; transform: scaleX(-1) rotate(30deg)">`)
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: -60px; right: 0px; width:310mm; transform: scaleX(-1) rotate(-30deg)">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: 230px; right: -320px; width:310mm; transform: scaleX(-1) rotate(30deg)">`)
 
   pageNumber(14, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
   breakPage();
@@ -3321,11 +3321,11 @@ plainTag(`
   );
 
   plainTag(`<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dfcd0d4a-8386-408a-b82c-0d23de79972a/d5obnh4-474f4661-373c-4e9e-935b-0543cb425fba.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZGZjZDBkNGEtODM4Ni00MDhhLWI4MmMtMGQyM2RlNzk5NzJhXC9kNW9ibmg0LTQ3NGY0NjYxLTM3M2MtNGU5ZS05MzViLTA1NDNjYjQyNWZiYS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.AjTJYt0_MwECxj0cqAW3BDJOnNHeZM3lbE0Qnx35458" style="position:absolute; top: 0; left: -450px; width:900px">
-<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:0px; left: 0px; width:310mm; transform: rotate(-30deg)">
-<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:230px; left: -320px; width:310mm; transform: rotate(30deg)">`)
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: -60px; left: 0px; width:310mm; transform: rotate(-30deg)">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: 230px; left: -320px; width:310mm; transform: rotate(30deg)">`)
 
   pageNumber(15, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
-
+  breakPage();
 
 
 
@@ -3475,20 +3475,20 @@ plainTag(`
   
   translateItem('section#djinn-companion-djinni-fire-djinn-corona h4#djinn-companion-djinni-fire-djinn-corona',
     `Corona`,
-    `Silex`
+    `Cendre`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona > p:nth-child(2)',
     `Corona is the spirit of shielding radiance. Its light is so bright that it can intercept attacks. This Fire djinni passionately stands up for those in need.`,
-    `Silex est l'esprit des coups de pierre. Il délivre des coups puissants qui font tomber les ennemis. Ce djinn de la Terre se veut un mentor pour les adeptes et partage volontiers ses expériences.`
+    `Cendre est l'esprit de la protection contre le rayonnement. Sa lumière est si brillante qu'elle peut intercepter des attaques. Ce djinn du Feu défend passionnément les personnes dans le besoin.`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona > p:nth-child(3)',
     `While Corona is active, you adopt the <em>Defense</em> Fighting Style and your Armor Class while not wearing armor is equal to 12 + your Dexterity modifier. You can use a shield and still gain this benefit. If you have the Unleashed Strike feature, the extra damage you deal with it is radiant damage.`,
-    `Lorsque que Silex est lié, vous adoptez le Style de combat <em>combat à l'arme lourde</em>. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de tonnerre.`,
+    `Lorsque Cendre est lié, vous adoptez le Style de combat <em>défense</em>. Lorsque vous ne portez pas d'armure votre Classe d'armure est égale à 12 + votre modificateur de Dextérité. Vous pouvez utiliser un bouclier tout en bénéficiant de cet avantage. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts radiants.`,
     true
   );
   translateItem('section#djinn-companion-djinni-fire-djinn-corona-coronas-spells h5#djinn-companion-djinni-fire-djinn-corona-coronas-spells',
     `Corona's Spells`,
-    `Sorts de Silex`
+    `Sorts de Cendre`
   );
   plainTag(`
 |`)
@@ -3520,12 +3520,12 @@ plainTag(`
     `Niveau 3`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
-    `thunderous smite`,
-    `frappe tonitruante`
+    `shield`,
+    `bouclier`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
-    `<em>PHB</em> p.282`,
-    `<em>PHB</em> p.244`,
+    `<em>PHB</em> p.275`,
+    `<em>PHB</em> p.218`,
     true
   );
   plainTag(`|`)
@@ -3538,12 +3538,12 @@ plainTag(`
     `Niveau 5`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
-    `shatter`,
-    `briser`
+    `mirror image`,
+    `image miroir`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
-    `<em>PHB</em> p.275`,
-    `<em>PHB</em> p.220`,
+    `<em>PHB</em> p.260`,
+    `<em>PHB</em> p.248`,
     true
   );
   plainTag(`|`)
@@ -3556,12 +3556,12 @@ plainTag(`
     `Niveau 9`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
-    `crusader's mantle`,
-    `aura du croisé`
+    `daylight`,
+    `lumière du jour`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
     `<em>PHB</em> p.230`,
-    `<em>PHB</em> p.216`,
+    `<em>PHB</em> p.255`,
     true
   );
   plainTag(`|`)
@@ -3574,12 +3574,12 @@ plainTag(`
     `Niveau 13`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
-    `staggering smite`,
-    `frappe assommante`
+    `fire shield`,
+    `bouclier de feu`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
-    `<em>PHB</em> p.278`,
-    `<em>PHB</em> p.243`,
+    `<em>PHB</em> p.242`,
+    `<em>PHB</em> p.218`,
     true
   );
   plainTag(`|`)
@@ -3592,12 +3592,12 @@ plainTag(`
     `Niveau 17`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
-    `destructive wave`,
-    `vague destructrice`
+    `wall of light`,
+    `mur de lumière`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-corona-coronas-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
-    `<em>PHB</em> p.231`,
-    `<em>PHB</em> p.288`,
+    `<em>XGE</em> p.170`,
+    `<em>XGE</em> p.163`,
     true
   );
 
@@ -3644,137 +3644,137 @@ plainTag(`
 <br>
 `)
   
-  translateItem('section#djinn-companion-djinni-fire-djinn-hemlock h4#djinn-companion-djinni-fire-djinn-hemlock',
-    `Hemlock`,
-    `Aconit`
+  translateItem('section#djinn-companion-djinni-fire-djinn-fever h4#djinn-companion-djinni-fire-djinn-fever',
+    `Fever`,
+    `Fièvre`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock > p:nth-child(2)',
-    `Hemlock is the spirit of deadly plants and curses. It is often associated with death an misfortune. This Earth djinni has no qualms about aiding adepts with nefarious motives.`,
-    `Aconit est l'esprit des plantes mortelles et des malédictions. Il est souvent associée à la mort et au malheur. Ce djinn de la Terre n'a aucun scrupule à aider les adeptes aux motifs maléfiques.`
+  translateItem('#djinn-companion-djinni-fire-djinn-fever > p:nth-child(2)',
+    `Fever is the spirit of dizzying heat. It creates mirages to baffle foes. This Fire djinni likes hanging around with people that have strong passions or ambitions.`,
+    `Fièvre est l'esprit de la chaleur étourdissante. Il crée des mirages pour déconcerter les ennemis. Ce djinn du Feu aime traîner avec des gens qui ont de fortes passions ou ambitions.`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock > p:nth-child(3)',
-    `While Hemlock is active, you have advantage on saving throws against poison and resistance to poison damage. If you have the Unleashed Strike feature, the extra damage you deal with it is necrotic damage.`,
-    `Lorsque que Aconit est lié, vous avez l'avantage aux jets de sauvegarde contre le poison et une résistance aux dommages causés par le poison. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts nécrotiques.`,
+  translateItem('#djinn-companion-djinni-fire-djinn-fever > p:nth-child(3)',
+    `While Fever is active, you know the <em>minor illusion</em> cantrip (<em>PHB</em> p.260). If you have the Unleashed Strike feature, the extra damage you deal with it is poison damage.`,
+    `Lorsque que Fièvre est lié, vous connaissez le tour de magie <em>illusion mineure</em> (<em>PHB</em> p.247). Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de poison.`,
     true
   );
-  translateItem('section#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells h5#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells',
-    `Hemlock's Spells`,
-    `Sorts d'Aconit`
+  translateItem('section#djinn-companion-djinni-fire-djinn-fever-fevers-spells h5#djinn-companion-djinni-fire-djinn-fever-fevers-spells',
+    `Fever's Spells`,
+    `Sorts de Fièvre`
   );
   plainTag(`
 |`)
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > thead > tr > th:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > thead > tr > th:nth-child(1)',
     `Spell Level`,
     `Niveau de sort`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > thead > tr > th:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > thead > tr > th:nth-child(2)',
     `Mage Level`,
     `Niveau de mage`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > thead > tr > th:nth-child(3)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > thead > tr > th:nth-child(3)',
     `Spell`,
     `Sort`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > thead > tr > th:nth-child(4)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > thead > tr > th:nth-child(4)',
     `Reference`,
     `Réference`
   );
   plainTag(`
 |:--------------:|:--------------:|:-----|:----------|
 |`, true)
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
     `1st`,
     `Niveau 1`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
     `3rd`,
     `Niveau 3`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
-    `hex`,
-    `maléfice`
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `ray of sickness`,
+    `rayon empoisonné`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
-    `<em>PHB</em> p.251`,
-    `<em>PHB</em> p.256`,
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.271`,
+    `<em>PHB</em> p.274`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
     `2nd`,
     `Niveau 2`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
     `5th`,
     `Niveau 5`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
-    `ray of enfeeblement`,
-    `rayon affaiblissant`
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `blur`,
+    `flou`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
-    `<em>PHB</em> p.271`,
-    `<em>PHB</em> p.272`,
-    true
-  );
-  plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
-    `3rd`,
-    `Niveau 3`
-  );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
-    `9th`,
-    `Niveau 9`
-  );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
-    `bestow curse`,
-    `jeter une malédiction`
-  );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
-    `<em>PHB</em> p.218`,
-    `<em>PHB</em> p.252`,
-    true
-  );
-  plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
-    `4th`,
-    `Niveau 4`
-  );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
-    `13th`,
-    `Niveau 13`
-  );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
-    `blight`,
-    `flétrissement`
-  );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
     `<em>PHB</em> p.219`,
     `<em>PHB</em> p.240`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
-    `5th`,
-    `Niveau 5`
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+    `3rd`,
+    `Niveau 3`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
-    `17th`,
-    `Niveau 17`
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+    `9th`,
+    `Niveau 9`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
-    `enervation`,
-    `énervation`
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `enemies abound`,
+    `ennemis à foison`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-hemlock-hemlocks-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
     `<em>XGE</em> p.155`,
     `<em>XGE</em> p.155`,
     true
   );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+    `4th`,
+    `Niveau 4`
+  );
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+    `13th`,
+    `Niveau 13`
+  );
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `sickening radiance`,
+    `rayonnement écoeurant`
+  );
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>XGE</em> p.164`,
+    `<em>XGE</em> p.165`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+    `17th`,
+    `Niveau 17`
+  );
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `seeming`,
+    `apparence trompeuse`
+  );
+  translateItem('#djinn-companion-djinni-fire-djinn-fever-fevers-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>PHB</em> p.274`,
+    `<em>PHB</em> p.214`,
+    true
+  );
 
-  plainTag(`<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dfcd0d4a-8386-408a-b82c-0d23de79972a/d5obnh4-474f4661-373c-4e9e-935b-0543cb425fba.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZGZjZDBkNGEtODM4Ni00MDhhLWI4MmMtMGQyM2RlNzk5NzJhXC9kNW9ibmg0LTQ3NGY0NjYxLTM3M2MtNGU5ZS05MzViLTA1NDNjYjQyNWZiYS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.AjTJYt0_MwECxj0cqAW3BDJOnNHeZM3lbE0Qnx35458" style="position:absolute; top: 0; right: -450px; width:900px">
-<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:0px; right: 0px; width:310mm; transform: scaleX(-1) rotate(-30deg)">
-<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:230px; right: -320px; width:310mm; transform: scaleX(-1) rotate(30deg)">`)
+  plainTag(`<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dfcd0d4a-8386-408a-b82c-0d23de79972a/d6wpvbk-956e8042-682b-4953-8e1f-c189450102ab.jpg/v1/fill/w_1024,h_768,q_75,strp/marsdjinn_by_falun89_d6wpvbk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03NjgiLCJwYXRoIjoiXC9mXC9kZmNkMGQ0YS04Mzg2LTQwOGEtYjgyYy0wZDIzZGU3OTk3MmFcL2Q2d3B2YmstOTU2ZTgwNDItNjgyYi00OTUzLThlMWYtYzE4OTQ1MDEwMmFiLmpwZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Qeyzbd5Nzc_F2pyVvG8SwhcmCGP1q0mKFyWPXD-Al8I" style="position:absolute; top: 0; right: -450px; width:900px">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: -60px; right: 0px; width:310mm; transform: scaleX(-1) rotate(-30deg)">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: 230px; right: -320px; width:310mm; transform: scaleX(-1) rotate(30deg)">`)
 
   pageNumber(16, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
   breakPage();
@@ -3822,131 +3822,131 @@ plainTag(`
 <br>
 `)
   
-  translateItem('section#djinn-companion-djinni-fire-djinn-magnet h4#djinn-companion-djinni-fire-djinn-magnet',
-    `Magnet`,
-    `Aimant`
+  translateItem('section#djinn-companion-djinni-fire-djinn-forge h4#djinn-companion-djinni-fire-djinn-forge',
+    `Forge`,
+    `Forge`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet > p:nth-child(2)',
-    `Magnet is the spirit of electromagnetic fields. It manipulates the ferrous minerals in the earth to restrain foes. This Earth djinni is more charismatic and outgoing than its kin.`,
-    `Aimant est l'esprit des champs électromagnétiques. Il manipule les minéraux ferreux de la terre pour retenir les ennemis. Ce djinn de la Terre est plus charismatique et extraverti que ses semblables.`
+  translateItem('#djinn-companion-djinni-fire-djinn-forge > p:nth-child(2)',
+    `Forge is the spirit of strengthening heat. Its magic enhances the potency of weapons. This Fire djinni has a great appreciation for art and prefers creative adepts.`,
+    `Forge est l'esprit du renforcement de la chaleur. Sa magie augmente la puissance des armes. Ce djinn du Feu apprécie beaucoup l'art et préfère les adeptes de la créativité.`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet > p:nth-child(3)',
-    `While Magnet is active, you know the <em>shocking grasp</em> cantrip (<em>PHB</em> p.275). If you have the Unleashed Strike feature, the extra damage you deal with it is lightning damage.`,
-    `Lorsque Aimant est lié, vous connaissez le tour de magie <em>poigne électrique</em> (<em>PHB</em> p.269). Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de foudre.`,
+  translateItem('#djinn-companion-djinni-fire-djinn-forge > p:nth-child(3)',
+    `While Forge is active, you adopt the <em>Dueling</em> Fighting Style. If you have the Unleashed Strike feature, the extra damage you deal with it is fire damage.`,
+    `Pendant que Forge est lié, vous adoptez le Style de combat <em>duel</em>. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de feu.`,
     true
   );
-  translateItem('section#djinn-companion-djinni-fire-djinn-magnet-magnets-spells h5#djinn-companion-djinni-fire-djinn-magnet-magnets-spells',
-    `Magnet's Spells`,
-    `Sorts d'Aimant`
+  translateItem('section#djinn-companion-djinni-fire-djinn-forge-forges-spells h5#djinn-companion-djinni-fire-djinn-forge-forges-spells',
+    `Forge's Spells`,
+    `Sorts de Forge`
   );
   plainTag(`
 |`)
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > thead > tr > th:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > thead > tr > th:nth-child(1)',
     `Spell Level`,
     `Niveau de sort`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > thead > tr > th:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > thead > tr > th:nth-child(2)',
     `Mage Level`,
     `Niveau de mage`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > thead > tr > th:nth-child(3)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > thead > tr > th:nth-child(3)',
     `Spell`,
     `Sort`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > thead > tr > th:nth-child(4)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > thead > tr > th:nth-child(4)',
     `Reference`,
     `Réference`
   );
   plainTag(`
 |:--------------:|:--------------:|:-----|:----------|
 |`, true)
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
     `1st`,
     `Niveau 1`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
     `3rd`,
     `Niveau 3`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
-    `witch bolt`,
-    `carreau ensorcelé`
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `searing smite`,
+    `frappe ardente`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
-    `<em>PHB</em> p.289`,
-    `<em>PHB</em> p.221`,
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.274`,
+    `<em>PHB</em> p.242`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
     `2nd`,
     `Niveau 2`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
     `5th`,
     `Niveau 5`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
-    `earthbind`,
-    `attraction terrestre`
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `magic weapon`,
+    `arme magique`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
-    `<em>XGE</em> p.154`,
-    `<em>XGE</em> p.150`,
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>PHB</em> p.257`,
+    `<em>PHB</em> p.215`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
     `3rd`,
     `Niveau 3`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
     `9th`,
     `Niveau 9`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
-    `lightning bolt`,
-    `éclair`
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `elemental weapon`,
+    `arme élémentaire`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
-    `<em>PHB</em> p.255`,
-    `<em>PHB</em> p.235`,
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>PHB</em> p.237`,
+    `<em>PHB</em> p.215`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
     `4th`,
     `Niveau 4`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
     `13th`,
     `Niveau 13`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
-    `Otiluke's resilient sphere`,
-    `sphère résiliente d'Otiluke`
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `fabricate`,
+    `fabrication`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
-    `<em>PHB</em> p.264`,
-    `<em>PHB</em> p.280`,
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.239`,
+    `<em>PHB</em> p.239`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
     `5th`,
     `Niveau 5`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
     `17th`,
     `Niveau 17`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
-    `telekineses`,
-    `Télékinésie`
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `holy weapon`,
+    `arme sacrée`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-magnet-magnets-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
-    `<em>PHB</em> p.280`,
-    `<em>PHB</em> p.282`,
+  translateItem('#djinn-companion-djinni-fire-djinn-forge-forges-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>PHB</em> p.157`,
+    `<em>XGE</em> p.150`,
     true
   );
 
@@ -3956,267 +3956,267 @@ plainTag(`
 <br>
 `)
   
-  translateItem('section#djinn-companion-djinni-fire-djinn-mud h4#djinn-companion-djinni-fire-djinn-mud',
-    `Mud`,
-    `Boue`
+  translateItem('section#djinn-companion-djinni-fire-djinn-glare h4#djinn-companion-djinni-fire-djinn-glare',
+    `Glare`,
+    `Fournaise`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud > p:nth-child(2)',
-    `Mud is the spirit of soft, damp earth. It alters the composition of minerals to more easily manipulate them. This Earth djinni is a pushover and prefers adepts who stand up for it.`,
-    `Boue est l'esprit de la terre douce et humide. Il modifie la composition des minéraux pour les manipuler plus facilement. Ce djinn de la Terre préfère les adeptes qui le défendent.`
+  translateItem('#djinn-companion-djinni-fire-djinn-glare > p:nth-child(2)',
+    `Glare is the spirit of blinding light. It uses flashing lights and mirages to conceal its allies. This Fire djinni likes to show off and be the center of attention.`,
+    `Fournaise est l'esprit de la lumière aveuglante. Il utilise des lumières clignotantes et des mirages pour dissimuler ses alliés. Ce djinn du Feu aime se montrer et être le centre de l'attention.`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud > p:nth-child(3)',
-    `While Mud is active, you know the <em>mold earth</em> cantrip (<em>XGE</em> p.162). If you have the Unleashed Strike feature, the extra damage you deal with it is bludgeoning damage.`,
-    `Pendant que Boue est lié, vous connaissez le tour de magie <em>modeler la terre</em> (<em>XGE</em> p.162). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dégats contondants.`,
+  translateItem('#djinn-companion-djinni-fire-djinn-glare > p:nth-child(3)',
+    `While Glare is active, you know the <em>word of radiance</em> cantrip (<em>XGE</em> p.171). If you have the Unleashed Strike feature, the extra damage you deal with it is radiant damage.`,
+    `Pendant que Glare est lié, vous connaissez le tour de magie <em>mot de radiance</em> (<em>XGE</em> p.162). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages radiants.`,
     true
   );
-  translateItem('section#djinn-companion-djinni-fire-djinn-mud-muds-spells h5#djinn-companion-djinni-fire-djinn-mud-muds-spells',
-    `Mud's Spells`,
-    `Sorts de Boue`
+  translateItem('section#djinn-companion-djinni-fire-djinn-glare-glares-spells h5#djinn-companion-djinni-fire-djinn-glare-glares-spells',
+    `Glare's Spells`,
+    `Sorts de Fournaise`
   );
   plainTag(`
 |`)
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > thead > tr > th:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > thead > tr > th:nth-child(1)',
     `Spell Level`,
     `Niveau de sort`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > thead > tr > th:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > thead > tr > th:nth-child(2)',
     `Mage Level`,
     `Niveau de mage`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > thead > tr > th:nth-child(3)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > thead > tr > th:nth-child(3)',
     `Spell`,
     `Sort`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > thead > tr > th:nth-child(4)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > thead > tr > th:nth-child(4)',
     `Reference`,
     `Réference`
   );
   plainTag(`
 |:--------------:|:--------------:|:-----|:----------|
 |`, true)
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
     `1st`,
     `Niveau 1`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
     `3rd`,
     `Niveau 3`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
-    `earth tremor`,
-    `secousse sismique`
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `color spray`,
+    `couleurs dansantes`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
-    `<em>XGE</em> p.155`,
-    `<em>XGE</em> p.166`,
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.222`,
+    `<em>PHB</em> p.229`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
     `2nd`,
     `Niveau 2`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
     `5th`,
     `Niveau 5`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
-    `Maximilian's earthen grasp`,
-    `poigne terreuse de Maximilien`
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `invisibility`,
+    `invisibilité`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
-    `<em>XGE</em> p.161`,
-    `<em>XGE</em> p.164`,
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>PHB</em> p.254`,
+    `<em>PHB</em> p.250`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
     `3rd`,
     `Niveau 3`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
     `9th`,
     `Niveau 9`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
-    `erupting earth`,
-    `éruption de terre`
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `blinding smite`,
+    `frappe aveuglante`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
-    `<em>XGE</em> p.155`,
-    `<em>XGE</em> p.156`,
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>PHB</em> p.219`,
+    `<em>PHB</em> p.243`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
     `4th`,
     `Niveau 4`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
     `13th`,
     `Niveau 13`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
-    `stone shape`,
-    `façonnage de la pierre`
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `greater invisibility`,
+    `invisibilité supérieure`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
-    `<em>PHB</em> p.278`,
-    `<em>PHB</em> p.239`,
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.246`,
+    `<em>PHB</em> p.250`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
     `5th`,
     `Niveau 5`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
     `17th`,
     `Niveau 17`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
-    `transmute rock`,
-    `transmutation de la pierre`
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `dawn`,
+    `aube`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-mud-muds-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
-    `<em>XGE</em> p.169`,
-    `<em>XGE</em> p.170`,
+  translateItem('#djinn-companion-djinni-fire-djinn-glare-glares-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>XGE</em> p.153`,
+    `<em>XGE</em> p.150`,
     true
   );
 
 
   
-  translateItem('section#djinn-companion-djinni-fire-djinn-vine h4#djinn-companion-djinni-fire-djinn-vine',
-    `Vine`,
-    `Lierre`
+  translateItem('section#djinn-companion-djinni-fire-djinn-torch h4#djinn-companion-djinni-fire-djinn-torch',
+    `Torch`,
+    `Torche`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine > p:nth-child(2)',
-    `Vine is the spirit of seeds and growth. It uses its magic to create and control plantlife. This Earth djinni prefers plants to people and often seems distant, even with friends.`,
-    `Lierre est l'esprit des semences et de la croissance. Il utilise sa magie pour créer et contrôler la vie végétale. Ce djinn de la Terre préfère les plantes aux gens et semble souvent distant, même avec ses amis.`
+  translateItem('#djinn-companion-djinni-fire-djinn-torch > p:nth-child(2)',
+    `Torch is the spirit of searing flames. It masterfully attacks with heat and fire. This Fire djinni has big emotions and never hides how it's feeling.`,
+    `Torche est l'esprit des flammes brûlantes. Il attaque magistralement avec la chaleur et le feu. Ce djinn du Feu a de grandes émotions et ne cache jamais ce qu'il ressent.`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine > p:nth-child(3)',
-    `While Vine is active, you know the <em>thorn whip</em> cantrip (<em>PHB</em> p.282). If you have the Unleashed Strike feature, the extra damage you deal with it is piercing damage.`,
-    `Pendant que Lierre est lié, vous connaissez le tour de magie <em>fouet épineux</em> (<em>PHB</em> p.242). Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts perforants.`,
+  translateItem('#djinn-companion-djinni-fire-djinn-torch > p:nth-child(3)',
+    `While Torch is active, you know the <em>fire bolt</em> cantrip (<em>PHB</em> p.242). If you have the Unleashed Strike feature, the extra damage you deal with it is fire damage.`,
+    `Pendant que Torche est lié, vous connaissez le tour de magie <em>trait de feu</em> (<em>PHB</em> p.285). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages de feu.`,
     true
   );
-  translateItem('section#djinn-companion-djinni-fire-djinn-vine-vines-spells h5#djinn-companion-djinni-fire-djinn-vine-vines-spells',
-    `Vine's Spells`,
-    `Sorts de Lierre`
+  translateItem('section#djinn-companion-djinni-fire-djinn-torch-torchs-spells h5#djinn-companion-djinni-fire-djinn-torch-torchs-spells',
+    `Torch's Spells`,
+    `Sorts de Torche`
   );
   plainTag(`
 |`)
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > thead > tr > th:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > thead > tr > th:nth-child(1)',
     `Spell Level`,
     `Niveau de sort`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > thead > tr > th:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > thead > tr > th:nth-child(2)',
     `Mage Level`,
     `Niveau de mage`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > thead > tr > th:nth-child(3)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > thead > tr > th:nth-child(3)',
     `Spell`,
     `Sort`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > thead > tr > th:nth-child(4)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > thead > tr > th:nth-child(4)',
     `Reference`,
     `Réference`
   );
   plainTag(`
 |:--------------:|:--------------:|:-----|:----------|
 |`, true)
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
     `1st`,
     `Niveau 1`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
     `3rd`,
     `Niveau 3`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
-    `entangle`,
-    `enchevêtrement`
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `burning hands`,
+    `mains brûlantes`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
-    `<em>PHB</em> p.238`,
-    `<em>PHB</em> p.236`,
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.220`,
+    `<em>PHB</em> p.256`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
     `2nd`,
     `Niveau 2`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
     `5th`,
     `Niveau 5`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
-    `spike growth`,
-    `croissance d'épines`
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `Aganazzar's scorcher`,
+    `flambée d'Aganazzar`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
-    `<em>PHB</em> p.277`,
-    `<em>PHB</em> p.231`,
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>XGE</em> p.150`,
+    `<em>XGE</em> p.156`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
     `3rd`,
     `Niveau 3`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
     `9th`,
     `Niveau 9`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
-    `plant growth`,
-    `croissance végétale`
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `Melf's minute meteors`,
+    `minuscules météores de Melf`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
-    `<em>PHB</em> p.266`,
-    `<em>PHB</em> p.231`,
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>XGE</em> p.161`,
+    `<em>XGE</em> p.162`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
     `4th`,
     `Niveau 4`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
     `13th`,
     `Niveau 13`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
-    `grasping vine`,
-    `liane agrippeuse`
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `wall of fire`,
+    `mur de feu`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
-    `<em>PHB</em> p.246`,
-    `<em>PHB</em> p.253`,
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.285`,
+    `<em>PHB</em> p.261`,
     true
   );
   plainTag(`|`)
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
     `5th`,
     `Niveau 5`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
     `17th`,
     `Niveau 17`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
-    `wrath of nature`,
-    `fureur de la nature`
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `immolation`,
+    `immolation`
   );
-  translateItem('#djinn-companion-djinni-fire-djinn-vine-vines-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
-    `<em>XGE</em> p.171`,
+  translateItem('#djinn-companion-djinni-fire-djinn-torch-torchs-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
     `<em>XGE</em> p.158`,
+    `<em>XGE</em> p.159`,
     true
   );
 
-  plainTag(`<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dfcd0d4a-8386-408a-b82c-0d23de79972a/d5obnh4-474f4661-373c-4e9e-935b-0543cb425fba.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZGZjZDBkNGEtODM4Ni00MDhhLWI4MmMtMGQyM2RlNzk5NzJhXC9kNW9ibmg0LTQ3NGY0NjYxLTM3M2MtNGU5ZS05MzViLTA1NDNjYjQyNWZiYS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.AjTJYt0_MwECxj0cqAW3BDJOnNHeZM3lbE0Qnx35458" style="position:absolute; top: 0; left: -450px; width:900px">
-<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:0px; left: 0px; width:310mm; transform: rotate(-30deg)">
-<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top:230px; left: -320px; width:310mm; transform: rotate(30deg)">`)
+  plainTag(`<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dfcd0d4a-8386-408a-b82c-0d23de79972a/d6wpvbk-956e8042-682b-4953-8e1f-c189450102ab.jpg/v1/fill/w_1024,h_768,q_75,strp/marsdjinn_by_falun89_d6wpvbk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03NjgiLCJwYXRoIjoiXC9mXC9kZmNkMGQ0YS04Mzg2LTQwOGEtYjgyYy0wZDIzZGU3OTk3MmFcL2Q2d3B2YmstOTU2ZTgwNDItNjgyYi00OTUzLThlMWYtYzE4OTQ1MDEwMmFiLmpwZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Qeyzbd5Nzc_F2pyVvG8SwhcmCGP1q0mKFyWPXD-Al8I" style="position:absolute; top: 0; left: -450px; width:900px">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: -60px; left: 0px; width:310mm; transform: rotate(-30deg)">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: 230px; left: -320px; width:310mm; transform: rotate(30deg)">`)
 
   pageNumber(17, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
 
