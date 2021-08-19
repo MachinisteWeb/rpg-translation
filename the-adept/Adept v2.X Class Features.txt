@@ -1,10 +1,31 @@
 # Traduction de Adept v2.X Class Features
 
+## Partie 1 - Classe
+
 Allez à la page : https://www.gmbinder.com/share/-Lt5h99cNy9JF9sKolty
+
+Exécuter le code du contenu du fichier `translate.js` dans la console du navigateur de la page.
+
+Utilisez « Copy » et copier le résultat à l'adresse : https://homebrewery.naturalcrit.com/
+
+
+
+
+
+## Partie 2 - Sorts
+
+Allez à la page : https://www.gmbinder.com/share/-Lt60srWR9aVXizwPAHp
+
+Exécuter le code du contenu du fichier `translate.js` dans la console du navigateur de la page.
+
+Utilisez « Copy » et copier le résultat à l'adresse : https://homebrewery.naturalcrit.com/
+
+
+
+
 
 ## Traduire
 
-Exécuter le code du contenu du fichier `translate.js` dans la console du navigateur de la page.
 
 ## En cas d'issue
 

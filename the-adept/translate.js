@@ -3072,7 +3072,7 @@ plainTag(`
   );
   translateItem('#djinn-companion-djinni-earth-djinn-mud > p:nth-child(3)',
     `While Mud is active, you know the <em>mold earth</em> cantrip (<em>XGE</em> p.162). If you have the Unleashed Strike feature, the extra damage you deal with it is bludgeoning damage.`,
-    `Pendant que Boue est lié, vous connaissez le tour de magie <em>modeler la terre</em> (<em>XGE</em> p.162). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dégats contondants.`,
+    `Lorsque Boue est lié, vous connaissez le tour de magie <em>modeler la terre</em> (<em>XGE</em> p.162). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dégats contondants.`,
     true
   );
   translateItem('section#djinn-companion-djinni-earth-djinn-mud-muds-spells h5#djinn-companion-djinni-earth-djinn-mud-muds-spells',
@@ -3202,7 +3202,7 @@ plainTag(`
   );
   translateItem('#djinn-companion-djinni-earth-djinn-vine > p:nth-child(3)',
     `While Vine is active, you know the <em>thorn whip</em> cantrip (<em>PHB</em> p.282). If you have the Unleashed Strike feature, the extra damage you deal with it is piercing damage.`,
-    `Pendant que Lierre est lié, vous connaissez le tour de magie <em>fouet épineux</em> (<em>PHB</em> p.242). Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts perforants.`,
+    `Lorsque Lierre est lié, vous connaissez le tour de magie <em>fouet épineux</em> (<em>PHB</em> p.242). Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts perforants.`,
     true
   );
   translateItem('section#djinn-companion-djinni-earth-djinn-vine-vines-spells h5#djinn-companion-djinni-earth-djinn-vine-vines-spells',
@@ -3353,7 +3353,7 @@ plainTag(`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-brand > p:nth-child(3)',
     `While Brand is active, you have resistance to fire damage. If you have the Unleashed Strike feature, the extra damage you deal with it is fire damage.`,
-    `Pendant que Stigmate est lié, vous résistez aux dommages causés par le feu. Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages de feu.`,
+    `Lorsque Stigmate est lié, vous résistez aux dommages causés par le feu. Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages de feu.`,
     true
   );
   translateItem('section#djinn-companion-djinni-fire-djinn-brand-brands-spells h5#djinn-companion-djinni-fire-djinn-brand-brands-spells',
@@ -3654,7 +3654,7 @@ plainTag(`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-fever > p:nth-child(3)',
     `While Fever is active, you know the <em>minor illusion</em> cantrip (<em>PHB</em> p.260). If you have the Unleashed Strike feature, the extra damage you deal with it is poison damage.`,
-    `Lorsque que Fièvre est lié, vous connaissez le tour de magie <em>illusion mineure</em> (<em>PHB</em> p.247). Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de poison.`,
+    `Lorsque Fièvre est lié, vous connaissez le tour de magie <em>illusion mineure</em> (<em>PHB</em> p.247). Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de poison.`,
     true
   );
   translateItem('section#djinn-companion-djinni-fire-djinn-fever-fevers-spells h5#djinn-companion-djinni-fire-djinn-fever-fevers-spells',
@@ -3832,7 +3832,7 @@ plainTag(`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-forge > p:nth-child(3)',
     `While Forge is active, you adopt the <em>Dueling</em> Fighting Style. If you have the Unleashed Strike feature, the extra damage you deal with it is fire damage.`,
-    `Pendant que Forge est lié, vous adoptez le Style de combat <em>duel</em>. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de feu.`,
+    `Lorsque Forge est lié, vous adoptez le Style de combat <em>duel</em>. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de feu.`,
     true
   );
   translateItem('section#djinn-companion-djinni-fire-djinn-forge-forges-spells h5#djinn-companion-djinni-fire-djinn-forge-forges-spells',
@@ -3966,7 +3966,7 @@ plainTag(`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-glare > p:nth-child(3)',
     `While Glare is active, you know the <em>word of radiance</em> cantrip (<em>XGE</em> p.171). If you have the Unleashed Strike feature, the extra damage you deal with it is radiant damage.`,
-    `Pendant que Glare est lié, vous connaissez le tour de magie <em>mot de radiance</em> (<em>XGE</em> p.162). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages radiants.`,
+    `Lorsque Glare est lié, vous connaissez le tour de magie <em>mot de radiance</em> (<em>XGE</em> p.162). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages radiants.`,
     true
   );
   translateItem('section#djinn-companion-djinni-fire-djinn-glare-glares-spells h5#djinn-companion-djinni-fire-djinn-glare-glares-spells',
@@ -4096,7 +4096,7 @@ plainTag(`
   );
   translateItem('#djinn-companion-djinni-fire-djinn-torch > p:nth-child(3)',
     `While Torch is active, you know the <em>fire bolt</em> cantrip (<em>PHB</em> p.242). If you have the Unleashed Strike feature, the extra damage you deal with it is fire damage.`,
-    `Pendant que Torche est lié, vous connaissez le tour de magie <em>trait de feu</em> (<em>PHB</em> p.285). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages de feu.`,
+    `Lorsque Torche est lié, vous connaissez le tour de magie <em>trait de feu</em> (<em>PHB</em> p.285). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages de feu.`,
     true
   );
   translateItem('section#djinn-companion-djinni-fire-djinn-torch-torchs-spells h5#djinn-companion-djinni-fire-djinn-torch-torchs-spells',
@@ -4219,6 +4219,949 @@ plainTag(`
 <img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: 230px; left: -320px; width:310mm; transform: rotate(30deg)">`)
 
   pageNumber(17, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
+  breakPage();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Water Djinn
+
+  translateItem('section#djinn-companion-djinni-water-djinn h3#djinn-companion-djinni-water-djinn',
+    `Water Djinn`,
+    `Djinn de l'Eau`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn > p',
+    `The Water djinn are usually quiet and contemplative. They can speak and read Aquan.`,
+    `Les djinns de l'Eau sont généralement calmes et contemplatifs. Ils peuvent parler et lire la langue aquatique.`
+  );
+
+
+
+  translateItem('section#djinn-companion-djinni-water-djinn-balm h4#djinn-companion-djinni-water-djinn-balm',
+    `Balm`,
+    `Baume`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm > p:nth-child(2)',
+    `Balm is the spirit of soothing and rejuvination. Its healing energies purge the body of sickness and corruption. This Water djinni is doting and parent-like.`,
+    `Baume est l'esprit d'apaisement et de rajeunissement. Ses énergies curatives purgent le corps de la maladie et de la corruption. Ce djinn de l'Eau est affectueux et se comporte comme un parent.`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm > p:nth-child(3)',
+    `While Balm is active, you know the <em>spare the dying</em> cantrip (<em>PHB</em> p.277). If you have the Unleashed Strike feature, the extra damage you deal with it is poison damage.`,
+    `Tant que Baume est actif, vous connaissez le tour de magie <em>épargner les mourants</em> (<em>PHB</em> p.237). Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de poison.`,
+    true
+  );
+  translateItem('section#djinn-companion-djinni-water-djinn-balm-balms-spells h5#djinn-companion-djinni-water-djinn-balm-balms-spells',
+    `Balm's Spells`,
+    `Sorts de Baume`
+  );
+  plainTag(`
+|`)
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > thead > tr > th:nth-child(1)',
+    `Spell Level`,
+    `Niveau de sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > thead > tr > th:nth-child(2)',
+    `Mage Level`,
+    `Niveau de mage`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > thead > tr > th:nth-child(3)',
+    `Spell`,
+    `Sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > thead > tr > th:nth-child(4)',
+    `Reference`,
+    `Réference`
+  );
+  plainTag(`
+|:--------------:|:--------------:|:-----|:----------|
+|`, true)
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+    `1st`,
+    `Niveau 1`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `purify food and drink`,
+    `purification de la nourriture et de l'eau`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.270`,
+    `<em>PHB</em> p.272`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+    `2nd`,
+    `Niveau 2`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `lesser restoration`,
+    `restauration inférieure`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>PHB</em> p.255`,
+    `<em>PHB</em> p.275`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+    `9th`,
+    `Niveau 9`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `remove curse`,
+    `lever une malédiction`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>PHB</em> p.271`,
+    `<em>PHB</em> p.253`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+    `4th`,
+    `Niveau 4`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+    `13th`,
+    `Niveau 13`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `aura of purity`,
+    `aura de pureté`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.216`,
+    `<em>PHB</em> p.216`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+    `17th`,
+    `Niveau 17`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `greater restoration`,
+    `restauration supérieure`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-balm-balms-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>PHB</em> p.246`,
+    `<em>PHB</em> p.275`,
+    true
+  );
+
+
+  
+  translateItem('section#djinn-companion-djinni-water-djinn-foam h4#djinn-companion-djinni-water-djinn-foam',
+    `Foam`,
+    `Mousse`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam > p:nth-child(2)',
+    `Foam is the spirit of churning oceans. It calls upon elemental water in battle. This Water djinni takes life as it comes and tends not to worry about much.`,
+    `Mousse est l'esprit du remous des océans. Il fait appel à l'eau élémentaire dans les combats. Ce djinn de l'Eau prend la vie comme elle vient et a tendance à ne pas s'inquiéter de grand-chose.`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam > p:nth-child(3)',
+    `While Foam is active, you can breathe underwater and have a swim speed equal to your walking speed. If you have the Unleashed Strike feature, the extra damage you deal with it is bludgeoning damage.`,
+    `Lorsque Mousse est lié, vous pouvez respirer sous l'eau et avez une vitesse de nage égale à votre vitesse de marche. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts contondants.`,
+    true
+  );
+  translateItem('section#djinn-companion-djinni-water-djinn-foam-foams-spells h5#djinn-companion-djinni-water-djinn-foam-foams-spells',
+    `Foam's Spells`,
+    `Sorts de Mousse`
+  );
+  plainTag(`
+|`)
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > thead > tr > th:nth-child(1)',
+    `Spell Level`,
+    `Niveau de sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > thead > tr > th:nth-child(2)',
+    `Mage Level`,
+    `Niveau de mage`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > thead > tr > th:nth-child(3)',
+    `Spell`,
+    `Sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > thead > tr > th:nth-child(4)',
+    `Reference`,
+    `Réference`
+  );
+  plainTag(`
+|:--------------:|:--------------:|:-----|:----------|
+|`, true)
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+    `1st`,
+    `Niveau 1`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `create or destroy water`,
+    `création ou destruction d'eau`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.229`,
+    `<em>PHB</em> p.230`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+    `2nd`,
+    `Niveau 2`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `darkvision`,
+    `vision dans le noir`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>PHB</em> p.230`,
+    `<em>PHB</em> p.289`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+    `9th`,
+    `Niveau 9`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `tidal wave`,
+    `raz-de-marée`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>XGE</em> p.168`,
+    `<em>XGE</em> p.165`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+    `4th`,
+    `Niveau 4`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+    `13th`,
+    `Niveau 13`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `control water`,
+    `contrôle de l'eau`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.227`,
+    `<em>PHB</em> p.228`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+    `17th`,
+    `Niveau 17`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `maelstrom`,
+    `maelström`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-foam-foams-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>XGE</em> p.160`,
+    `<em>XGE</em> p.161`,
+    true
+  );
+
+
+
+plainTag(`
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+`)
+  
+  translateItem('section#djinn-companion-djinni-water-djinn-hail h4#djinn-companion-djinni-water-djinn-hail',
+    `Hail`,
+    `Ecume`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail > p:nth-child(2)',
+    `Hail is the spirit of ice and sleet. It attacks from the sky with frozen chunks. This Water djinni goes from cold indifference to chilling aggression in battle.`,
+    `Ecume est l'esprit de la glace et du grésil. Il attaque depuis le ciel avec des morceaux gelés. Ce djinn de l'eau passe de l'indifférence froide à l'agressivité glaciale au combat.`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail > p:nth-child(3)',
+    `While Hail is active, you adopt the <em>Archery</em> Fighting Style. If you have the Unleashed Strike feature, the extra damage you deal with it is cold damage.`,
+    `Lorsque Ecume est lié, vous adoptez le Style de combat <em>archerie</em>. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de froid.`,
+    true
+  );
+  translateItem('section#djinn-companion-djinni-water-djinn-hail-hails-spells h5#djinn-companion-djinni-water-djinn-hail-hails-spells',
+    `Hail's Spells`,
+    `Sorts de Ecume`
+  );
+  plainTag(`
+|`)
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > thead > tr > th:nth-child(1)',
+    `Spell Level`,
+    `Niveau de sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > thead > tr > th:nth-child(2)',
+    `Mage Level`,
+    `Niveau de mage`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > thead > tr > th:nth-child(3)',
+    `Spell`,
+    `Sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > thead > tr > th:nth-child(4)',
+    `Reference`,
+    `Réference`
+  );
+  plainTag(`
+|:--------------:|:--------------:|:-----|:----------|
+|`, true)
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+    `1st`,
+    `Niveau 1`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `hail of thorns`,
+    `grêle d'épines`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.249`,
+    `<em>PHB</em> p.246`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+    `2nd`,
+    `Niveau 2`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `Snilloc's snowball swarm`,
+    `nuée de boules de neige de Snilloc`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>XGE</em> p.165`,
+    `<em>XGE</em> p.240`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+    `9th`,
+    `Niveau 9`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `sleet storm`,
+    `tempête de neige`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>PHB</em> p.276`,
+    `<em>PHB</em> p.283`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+    `4th`,
+    `Niveau 4`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+    `13th`,
+    `Niveau 13`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `ice storm`,
+    `tempête de grêle`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.252`,
+    `<em>PHB</em> p.283`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+    `17th`,
+    `Niveau 17`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `cone of cold`,
+    `cône de froid`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-hail-hails-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>PHB</em> p.224`,
+    `<em>PHB</em> p.226`,
+    true
+  );
+
+  plainTag(`<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dfcd0d4a-8386-408a-b82c-0d23de79972a/d8rn6pa-e145693f-e150-4c7a-a5fe-86285793eded.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZGZjZDBkNGEtODM4Ni00MDhhLWI4MmMtMGQyM2RlNzk5NzJhXC9kOHJuNnBhLWUxNDU2OTNmLWUxNTAtNGM3YS1hNWZlLTg2Mjg1NzkzZWRlZC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.nKqikuVC2TRjDrXwJ3xZ6DsTqKORxSCrQEPmskG_7EE" style="position:absolute; top: 0; right: -450px; width:900px">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: -60px; right: 0px; width:310mm; transform: scaleX(-1) rotate(-30deg)">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: 230px; right: -320px; width:310mm; transform: scaleX(-1) rotate(30deg)">`)
+
+  pageNumber(18, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
+  breakPage();
+
+
+plainTag(`
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+`)
+  
+  translateItem('section#djinn-companion-djinni-water-djinn-forge h4#djinn-companion-djinni-water-djinn-forge',
+    `Forge`,
+    `Forge`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge > p:nth-child(2)',
+    `Forge is the spirit of strengthening heat. Its magic enhances the potency of weapons. This Fire djinni has a great appreciation for art and prefers creative adepts.`,
+    `Forge est l'esprit du renforcement de la chaleur. Sa magie augmente la puissance des armes. Ce djinn du Feu apprécie beaucoup l'art et préfère les adeptes de la créativité.`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge > p:nth-child(3)',
+    `While Forge is active, you adopt the <em>Dueling</em> Fighting Style. If you have the Unleashed Strike feature, the extra damage you deal with it is fire damage.`,
+    `Lorsque Forge est lié, vous adoptez le Style de combat <em>duel</em>. Si vous disposez de l'aptitude Frappe déchainée, les dégâts supplémentaires que vous subissez sont des dégâts de feu.`,
+    true
+  );
+  translateItem('section#djinn-companion-djinni-water-djinn-forge-forges-spells h5#djinn-companion-djinni-water-djinn-forge-forges-spells',
+    `Forge's Spells`,
+    `Sorts de Forge`
+  );
+  plainTag(`
+|`)
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > thead > tr > th:nth-child(1)',
+    `Spell Level`,
+    `Niveau de sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > thead > tr > th:nth-child(2)',
+    `Mage Level`,
+    `Niveau de mage`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > thead > tr > th:nth-child(3)',
+    `Spell`,
+    `Sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > thead > tr > th:nth-child(4)',
+    `Reference`,
+    `Réference`
+  );
+  plainTag(`
+|:--------------:|:--------------:|:-----|:----------|
+|`, true)
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+    `1st`,
+    `Niveau 1`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `searing smite`,
+    `frappe ardente`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.274`,
+    `<em>PHB</em> p.242`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+    `2nd`,
+    `Niveau 2`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `magic weapon`,
+    `arme magique`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>PHB</em> p.257`,
+    `<em>PHB</em> p.215`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+    `9th`,
+    `Niveau 9`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `elemental weapon`,
+    `arme élémentaire`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>PHB</em> p.237`,
+    `<em>PHB</em> p.215`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+    `4th`,
+    `Niveau 4`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+    `13th`,
+    `Niveau 13`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `fabricate`,
+    `fabrication`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.239`,
+    `<em>PHB</em> p.239`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+    `17th`,
+    `Niveau 17`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `holy weapon`,
+    `arme sacrée`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-forge-forges-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>PHB</em> p.157`,
+    `<em>XGE</em> p.150`,
+    true
+  );
+
+
+
+plainTag(`
+<br>
+`)
+  
+  translateItem('section#djinn-companion-djinni-water-djinn-glare h4#djinn-companion-djinni-water-djinn-glare',
+    `Glare`,
+    `Fournaise`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare > p:nth-child(2)',
+    `Glare is the spirit of blinding light. It uses flashing lights and mirages to conceal its allies. This Fire djinni likes to show off and be the center of attention.`,
+    `Fournaise est l'esprit de la lumière aveuglante. Il utilise des lumières clignotantes et des mirages pour dissimuler ses alliés. Ce djinn du Feu aime se montrer et être le centre de l'attention.`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare > p:nth-child(3)',
+    `While Glare is active, you know the <em>word of radiance</em> cantrip (<em>XGE</em> p.171). If you have the Unleashed Strike feature, the extra damage you deal with it is radiant damage.`,
+    `Lorsque Glare est lié, vous connaissez le tour de magie <em>mot de radiance</em> (<em>XGE</em> p.162). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages radiants.`,
+    true
+  );
+  translateItem('section#djinn-companion-djinni-water-djinn-glare-glares-spells h5#djinn-companion-djinni-water-djinn-glare-glares-spells',
+    `Glare's Spells`,
+    `Sorts de Fournaise`
+  );
+  plainTag(`
+|`)
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > thead > tr > th:nth-child(1)',
+    `Spell Level`,
+    `Niveau de sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > thead > tr > th:nth-child(2)',
+    `Mage Level`,
+    `Niveau de mage`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > thead > tr > th:nth-child(3)',
+    `Spell`,
+    `Sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > thead > tr > th:nth-child(4)',
+    `Reference`,
+    `Réference`
+  );
+  plainTag(`
+|:--------------:|:--------------:|:-----|:----------|
+|`, true)
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+    `1st`,
+    `Niveau 1`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `color spray`,
+    `couleurs dansantes`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.222`,
+    `<em>PHB</em> p.229`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+    `2nd`,
+    `Niveau 2`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `invisibility`,
+    `invisibilité`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>PHB</em> p.254`,
+    `<em>PHB</em> p.250`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+    `9th`,
+    `Niveau 9`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `blinding smite`,
+    `frappe aveuglante`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>PHB</em> p.219`,
+    `<em>PHB</em> p.243`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+    `4th`,
+    `Niveau 4`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+    `13th`,
+    `Niveau 13`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `greater invisibility`,
+    `invisibilité supérieure`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.246`,
+    `<em>PHB</em> p.250`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+    `17th`,
+    `Niveau 17`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `dawn`,
+    `aube`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-glare-glares-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>XGE</em> p.153`,
+    `<em>XGE</em> p.150`,
+    true
+  );
+
+
+  
+  translateItem('section#djinn-companion-djinni-water-djinn-torch h4#djinn-companion-djinni-water-djinn-torch',
+    `Torch`,
+    `Torche`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch > p:nth-child(2)',
+    `Torch is the spirit of searing flames. It masterfully attacks with heat and fire. This Fire djinni has big emotions and never hides how it's feeling.`,
+    `Torche est l'esprit des flammes brûlantes. Il attaque magistralement avec la chaleur et le feu. Ce djinn du Feu a de grandes émotions et ne cache jamais ce qu'il ressent.`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch > p:nth-child(3)',
+    `While Torch is active, you know the <em>fire bolt</em> cantrip (<em>PHB</em> p.242). If you have the Unleashed Strike feature, the extra damage you deal with it is fire damage.`,
+    `Lorsque Torche est lié, vous connaissez le tour de magie <em>trait de feu</em> (<em>PHB</em> p.285). Si vous disposez de l'aptitude Frappe déchainée, les dommages supplémentaires que vous subissez sont des dommages de feu.`,
+    true
+  );
+  translateItem('section#djinn-companion-djinni-water-djinn-torch-torchs-spells h5#djinn-companion-djinni-water-djinn-torch-torchs-spells',
+    `Torch's Spells`,
+    `Sorts de Torche`
+  );
+  plainTag(`
+|`)
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > thead > tr > th:nth-child(1)',
+    `Spell Level`,
+    `Niveau de sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > thead > tr > th:nth-child(2)',
+    `Mage Level`,
+    `Niveau de mage`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > thead > tr > th:nth-child(3)',
+    `Spell`,
+    `Sort`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > thead > tr > th:nth-child(4)',
+    `Reference`,
+    `Réference`
+  );
+  plainTag(`
+|:--------------:|:--------------:|:-----|:----------|
+|`, true)
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(1) > td:nth-child(1)',
+    `1st`,
+    `Niveau 1`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+    `burning hands`,
+    `mains brûlantes`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+    `<em>PHB</em> p.220`,
+    `<em>PHB</em> p.256`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(2) > td:nth-child(1)',
+    `2nd`,
+    `Niveau 2`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(2) > td:nth-child(2)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(2) > td:nth-child(3)',
+    `Aganazzar's scorcher`,
+    `flambée d'Aganazzar`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(2) > td:nth-child(4)',
+    `<em>XGE</em> p.150`,
+    `<em>XGE</em> p.156`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(3) > td:nth-child(1)',
+    `3rd`,
+    `Niveau 3`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(3) > td:nth-child(2)',
+    `9th`,
+    `Niveau 9`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(3) > td:nth-child(3)',
+    `Melf's minute meteors`,
+    `minuscules météores de Melf`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(3) > td:nth-child(4)',
+    `<em>XGE</em> p.161`,
+    `<em>XGE</em> p.162`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(4) > td:nth-child(1)',
+    `4th`,
+    `Niveau 4`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(4) > td:nth-child(2)',
+    `13th`,
+    `Niveau 13`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(4) > td:nth-child(3)',
+    `wall of fire`,
+    `mur de feu`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(4) > td:nth-child(4)',
+    `<em>PHB</em> p.285`,
+    `<em>PHB</em> p.261`,
+    true
+  );
+  plainTag(`|`)
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(5) > td:nth-child(1)',
+    `5th`,
+    `Niveau 5`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(5) > td:nth-child(2)',
+    `17th`,
+    `Niveau 17`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(5) > td:nth-child(3)',
+    `immolation`,
+    `immolation`
+  );
+  translateItem('#djinn-companion-djinni-water-djinn-torch-torchs-spells > table > tbody > tr:nth-child(5) > td:nth-child(4)',
+    `<em>XGE</em> p.158`,
+    `<em>XGE</em> p.159`,
+    true
+  );
+
+  plainTag(`<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dfcd0d4a-8386-408a-b82c-0d23de79972a/d8rn6pa-e145693f-e150-4c7a-a5fe-86285793eded.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZGZjZDBkNGEtODM4Ni00MDhhLWI4MmMtMGQyM2RlNzk5NzJhXC9kOHJuNnBhLWUxNDU2OTNmLWUxNTAtNGM3YS1hNWZlLTg2Mjg1NzkzZWRlZC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.nKqikuVC2TRjDrXwJ3xZ6DsTqKORxSCrQEPmskG_7EE" style="position:absolute; top: 0; left: -450px; width:900px">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: -60px; left: 0px; width:310mm; transform: rotate(-30deg)">
+<img src="https://www.gmbinder.com/images/x5MXJJ4.png" style="position:absolute; top: 230px; left: -320px; width:310mm; transform: rotate(30deg)">`)
+
+  pageNumber(17, "CHAPITRE 10 : MÉCHANISME D'INCANTATION ADDITIONNELLE");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
