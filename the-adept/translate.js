@@ -431,7 +431,7 @@ Golden Sun c'est...
 	plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-600px; right:-200px; width:1500px;transform:rotate(-47deg">');
 	plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:100px;left: 50px;width: 270px;transform:scalex(1);">');
 	plainTag('\n\r<br>')
-	plainTag('<div style="margin-top:503px"></div>')
+	plainTag('<div style="margin-top: 136mm;"></div>')
 
 		translateItem('section#adept h2#adept',
 			`Adept`,
@@ -465,7 +465,7 @@ Golden Sun c'est...
 			)
 
 	plainTag('\n\r<br>')
-	plainTag('<div style="margin-top:186px"></div>')
+	plainTag('<div style="margin-top: 55mm;"></div>')
 
 	plainTag(`\n\rContrairement aux puissants djinns du plan élémentaire de l'air, ces djinns sont des esprits élémentaires mineurs qui naissent sur le plan matériel et incarnent des aspects des quatre éléments. Les djinns se révèlent aux adeptes avec des valeurs et des objectifs qui s'alignent sur les leurs. Ce n'est que par la résonance entre un adepte et son djinn que la véritable puissance de la Psynergie peut être éveillée.`)
 
@@ -1515,7 +1515,7 @@ Golden Sun c'est...
 				)
 
 	plainTag('\n\r<br>')
-	plainTag('<div style="margin-top:128px"></div>')
+	plainTag('<div style="margin-top: 38mm;"></div>')
 
 
 
@@ -1709,6 +1709,10 @@ your background:`,
 					`At 1st level, you know two cantrips of your choice from your adept spell list. You learn additional adept cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Adept table.`,
 					`Au niveau 1, vous connaissez deux tours de magie de votre choix dans votre liste de l'adepte. Vous apprenez d'autres tours de magie de l'adepte de votre choix aux niveaux supérieurs, comme indiqué dans la colonne tours de magie connus de la table de l'adepte.`
 				)
+
+  plainTag('\n\r<br>')
+  plainTag('<div style="margin-top: 0mm;"></div>')
+
 				translateItem('#adept-class-features-spellcasting-cantrips > p:nth-child(3)',
 					`Additionally, when you gain a level in this class, you can choose one of the adept cantrips you know and replace it with another cantrip from your adept spell list.`,
 					`De plus, lorsque vous gagnez un niveau dans cette classe, vous pouvez choisir un des tours de magie de l'adepte que vous connaissez et le remplacer par un autre tour de magie de votre liste des sorts de l'adepte.`
@@ -1953,7 +1957,7 @@ your background:`,
 	plainTag('\n\r<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ec3a9251-1fa4-480a-bd75-1f0600b20815/dhtd7o-8196ba72-073a-4787-93d0-bd6a1919235b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZWMzYTkyNTEtMWZhNC00ODBhLWJkNzUtMWYwNjAwYjIwODE1XC9kaHRkN28tODE5NmJhNzItMDczYS00Nzg3LTkzZDAtYmQ2YTE5MTkyMzViLmpwZyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl19.1gcPriNfJpFgln7QqdlpWt8wGU188L7dwVJMHUO40Zc" style="position:absolute; top:0px; left:-740px; width:480mm">');
 	plainTag('<img src="https://www.gmbinder.com/images/ohZghLL.png" style="position:absolute; top:0px; right:-80px; width:900px">');
 	plainTag('\n\r<br>');
-	plainTag('<div style="margin-top:976px"></div>');
+	plainTag('<div style="margin-top: 259mm;"></div>');
 
 		// Adept Archetypes
 		translateItem('section#adept-adept-archetypes h2#adept-adept-archetypes',
