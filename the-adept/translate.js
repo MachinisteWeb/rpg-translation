@@ -320,7 +320,7 @@ personnages heroïques dans le monde de Weyard
 </div>
 
 <img src="https://i.pinimg.com/originals/e1/b0/63/e1b06382c76e958dbf4f7b40b34af4d9.jpg" style="position:absolute; top:-90px; right:-250px; width:1800px">
-<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/dnd-cover.png" style="position:absolute; top:20px; right:320px; width:160px">
+<img src="https://raw.githubusercontent.com/MachinisteWeb/rpg-translation/main/the-adept/dnd-cover.png" style="position:absolute; top:20px; right:320px; width:160px">
 <img src="https://pngimage.net/wp-content/uploads/2018/06/golden-sun-png.png" style="position:absolute; top:80px; right:40px; width:700px">
 <img src="https://www.gmbinder.com/images/SGYtcP2.png" style="position:absolute; top:290px; right:100px; width:580px">
 
@@ -346,7 +346,7 @@ personnages heroïques dans le monde de Weyard
 </div>
 
 <img src="https://www.gmbinder.com/images/SGYtcP2.png" style="position:absolute; top:320px; right:100px; width:580px">
-<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/dnd-n.png" style="position:absolute; top:1000px; right:350px; width:80px">
+<img src="https://raw.githubusercontent.com/MachinisteWeb/rpg-translation/main/the-adept/dnd-n.png" style="position:absolute; top:1000px; right:350px; width:80px">
 <img src="https://pbs.twimg.com/media/ElpvZ0WWMAEGZ6O?format=jpg&name=large" style="position:absolute; top:500px; right:0px; width: 210mm">
 <img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-200px; right:0px; width:1050px;transform:rotate(180deg)">
 <img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:230px; right:-80px; width:1050px;transform:rotate(0deg)">
@@ -429,7 +429,7 @@ Golden Sun c'est...
 
 	plainTag('\n\r<img src="https://wallpapermemory.com/uploads/202/golden-sun-wallpaper-hd-1680x1050-89359.jpg" style="position:absolute; top:-30px; left: -140px; width: 240mm">');
 	plainTag('<img src="https://www.gmbinder.com/images/rNOAD8A.png" style="position:absolute; top:-600px; right:-200px; width:1500px;transform:rotate(-47deg">');
-	plainTag('<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:100px;left: 50px;width: 270px;transform:scalex(1);">');
+	plainTag('<img src="https://raw.githubusercontent.com/MachinisteWeb/rpg-translation/main/the-adept/adept.png" style="position:absolute;top:100px;left: 50px;width: 270px;transform:scalex(1);">');
 	plainTag('\n\r<br>')
 	plainTag('<div style="margin-top: 136mm;"></div>')
 
@@ -1948,7 +1948,7 @@ your background:`,
 				`Enfin, en passant 1 minute en méditation avec la nature, vous pouvez récupérer les points de Psynergie dépensés et resélectionner votre djinn lié comme si vous veniez de terminer un court repos. Vous devez ensuite terminer un long repos avant de le refaire.`
 			)
 
-			plainTag('\n\r<img src="https://raw.githubusercontent.com/Haeresis/rpg-translation/main/the-adept/djinns.png" style="position:absolute; top:970px; left:60px; width:85mm">')
+			plainTag('\n\r<img src="https://raw.githubusercontent.com/MachinisteWeb/rpg-translation/main/the-adept/djinns.png" style="position:absolute; top:970px; left:60px; width:85mm">')
 
 	pageNumber(9, 'CHAPITRE 3 : CLASSE ADDITIONNELLE');
 
